@@ -6,7 +6,7 @@ Trabalho desenvolvido durante a disciplina de BD1
 ### 1. COMPONENTES<br>
 Integrantes do grupo<br>
 André Altivo: andrehdx@gmail.com<br>
-Gabriela Piffer:<br>
+Gabriela Piffer: gabrielamarinato@hotmail.com<br>
 Lucca Pedrini: pedrinilucca@gmail.com<br>
 Marcelo Passamai Mendes:marceloestudoifes@gmail.com<br>
 
