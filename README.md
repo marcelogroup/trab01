@@ -13,8 +13,8 @@ Marcelo Passamai Mendes:marceloestudoifes@gmail.com<br>
 ### 2.INTRODUÇÃO E MOTIVAÇAO<br>
 Este documento contém a especificação do projeto do banco de dados <nome do projeto> 
 <br>e motivação da escolha realizada. <br>
-
-> Dado o problema da empresa frigorifico fricarnes em gerenciar o estoque, rotas de transporte, temperatura do alimento no transporte e outros que podem alterar na qualidade. Fomos proucurados com o objetivo de resolver esses pontos dentro da empresa com um software para genciamento de estoque e transporte. Sendo assim nossa solução integra iot e banco dados para solucionar esse problema de qualidade do nosso cliente. 
+ 
+Com o constante crescimento na area da piscicultura e os riscos que envolvem criar peixes em ambientes controlados nosso cliente pensou em uma solução para aumentar a produção e a qualidade dos peixes por meio de um sistema de monitoramento da água. Esse sistema deverá monitorar, registrar informações (PH, temperatura e oxigênio) e avisar quando os niveis estiverem fora do esperado. O monitoramento será feito por sensores e os dados serão enviados para quem estiver cuidando do aquário, cada peixe será tratado de forma diferente, com isso será avisado se a água não estiver em condições ideiais para que seja tomada uma decisão. 
  
 
 ### 3.MINI-MUNDO Novo<br>
@@ -25,7 +25,11 @@ Descrição textual das regras de negócio definidas como um  subconjunto do mun
 cujos elementos são propriedades que desejamos incluir, processar, armazenar, 
 gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
 
->O frigorifico fricarnes dispõe de de uma frota de veiculos e uma camara frigorifica, onde são armazendas as carnes, o sabor da carne pode ser alterado em algumas situações, como por exemplo se a carne ficar congelada por muito tempo em uma temperatura muito baixa os sucos da carne se congelam e o sabor é alterado, ou se a carne ficar muito tempo em estoque, algumas propriedas dentro do suco da carne perdem o seu sabor original, levando ao consumidor final um sabor diferente. Hoje as rotas são dividas por municipio, cada caminhão fica com uma cidadde da grande vitória que possui clientes, o cliente não sabe se essa é melhor escolha, pois alguns funcionários retornam muito cedo e outros não, gerando insatifação entre alguns funcionários da empresa. Nosso cliente gostaria de remajar afim de evitar problemas entre seus funcionários, transformar a divisão do trabalho em algo mais justo. O uso do termoquim causa um impacto significativo em consumo de combustivel, sendo assim nosso cliente tambem gostaria de essa variavel pudesse ser observada. 
+O sistema que o cliente deseja é um sistema para monitoramento de tanques de piscicultura onde teremos sensores para medir o Ph, oxigênio e temperatura da água a cada instante predeterminado. O aplicativo deve informar diretamente ao funcionário responsável caso algum dos valores informados pelo sensor esteja fora da média esperada. Por isso o sistema terá que cadastrar funcionários e tanques.
+Cada tanque terá apenas um tipo de peixe, com isso devemos guardar informações relevantes de cada peixe para monitorar cada tanque de forma individual.
+
+
+ 
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 Neste ponto a codificação não e necessária, somente as ideias de telas devem ser criadas, o princípio aqui é pensar na criação da interface para identificar possíveis informações a serem armazenadas ou descartadas <br>
