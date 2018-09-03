@@ -187,7 +187,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 
 
 ###canvas<br>
-    ![Alt text](https://github.com/discipbd1/trab01/blob/master/images/concept_sample.png?raw=true "Modelo Conceitual")
+    ![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/CanvasPiscicultura.jpg?raw=true "Modelo Conceitual")
     
 
     
