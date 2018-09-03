@@ -186,7 +186,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     https://guides.github.com/features/mastering-markdown/
 
 
-### 15. CANVAS<br>
+canvas<br>
     ![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/CanvasPiscicultura.jpg?raw=true "Modelo Conceitual")
     
 
