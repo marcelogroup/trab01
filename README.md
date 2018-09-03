@@ -170,8 +170,8 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 ### 14  FORMATACAO NO GIT: https://help.github.com/articles/basic-writing-and-formatting-syntax/
 <comentario no git>
  
-### 15 CANVAS <br>
-    ![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/CanvasPiscicultura.jpg?raw=true "Canvas")
+
+    
 ##### About Formatting
     https://help.github.com/articles/about-writing-and-formatting-on-github/
     
@@ -186,7 +186,8 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
     https://guides.github.com/features/mastering-markdown/
 
 
-
+###canvas<br>
+    ![Alt text](https://github.com/discipbd1/trab01/blob/master/images/concept_sample.png?raw=true "Modelo Conceitual")
     
 
     
