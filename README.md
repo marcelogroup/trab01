@@ -171,7 +171,7 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 <comentario no git>
  
 ### 15 CANVAS <br>
-    ![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/CanvasPiscicultura.jpg)
+    ![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/CanvasPiscicultura.jpg?raw=true "Canvas")
 ##### About Formatting
     https://help.github.com/articles/about-writing-and-formatting-on-github/
     
