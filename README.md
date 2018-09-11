@@ -182,10 +182,11 @@ Cada tanque terá apenas um tipo de peixe, com isso devemos guardar informaçõe
     https://guides.github.com/features/mastering-markdown/
 
 
-canvas<br>
-    ![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/CanvasPiscicultura.jpg?raw=true "Modelo Conceitual")
+### 15 Canvas<br>
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/CanvasPiscicultura.jpg?raw=true "Modelo Conceitual")
     
-
+### 16 Trello<br>
+  https://trello.com/b/s6o1Ke4c/trabalho-integrado
     
 ### OBSERVAÇÕES IMPORTANTES
 
