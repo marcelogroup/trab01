@@ -1,4 +1,4 @@
-# TRABALHO 01:  Título do Trabalho
+# TRABALHO 01:  Piscicultura Inteligente
 Trabalho desenvolvido durante a disciplina de BD1
 
 # Sumário
@@ -47,22 +47,14 @@ Cada tanque terá apenas um tipo de peixe, com isso devemos guardar informaçõe
  
  
 #### 4.2 TABELA DE DADOS DO SISTEMA:
-    a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
-    b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
-    e deve ser criada antes do modelo conceitual
-    c) Após criada esta tabela não deve ser modificada, pois será comparada com os resultados finais na conclusão do trabalho
-    
-![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipbd1/trab01/blob/master/arquivos/TabelaEmpresaDevCom_sample.xlsx?raw=true "Tabela - Empresa Devcom")
+   
+![Tabela](https://github.com/pisciculturainteligente/trab01/blob/master/Planilha%20Projeto%20Psicultura.xlsx?raw=true "Tabela")
     
 >## Marco de Entrega 01 em: (30/08/2018)<br>
 
 ### 5.MODELO CONCEITUAL<br>
-    A) NOTACAO ENTIDADE RELACIONAMENTO 
-        * Para nosso prótótipo limitaremos o modelo conceitual nas 6 principais entidades do escopo
-        * O protótipo deve possui no mínimo duas relações N para N
-        * o mínimo de entidades do modelo conceitual será igual a 5
         
-![Alt text](https://github.com/discipbd1/trab01/blob/master/images/concept_sample.png?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/mapaConceitual.png?raw=true "Modelo Conceitual")
     
     B) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
     C) QUALIDADE 
@@ -77,12 +69,17 @@ Cada tanque terá apenas um tipo de peixe, com isso devemos guardar informaçõe
     [Grupo02]: [Nomes dos que participaram na avaliação]
 
 #### 5.2 DECISÕES DE PROJETO
-    [atributo]: [descrição da decisão]
+    a) Sensor: Campo que guarda a informação sobre quais sensores estão associados com esse tanque.
     
-    EXEMPLO:
-    a) Campo endereço: em nosso projeto optamos por um campo multivalorado e composto, pois a empresa 
-    pode possuir para cada departamento mais de uma localização... 
-    b) justifique!
+    b) Temperatura mínima e máxima: possui a informação da temperatura máxima e mínima que o peixe precisa para sobreviver.
+    
+    c) Oxigênio mínima e máxima: possui a informação do oxigênio máximo e mínimo que o peixe precisa para sobreviver.
+    
+    d) Ph mínima e máxima: possui a informação do Ph máximo e mínimo que o peixe precisa para sobreviver.
+    
+    e) Especie: Nome do tipo do peixe, é preciso saber para saber as condições ideais do tanque.
+    
+    f) Data e Hora: necessário para manter um histórico das informações.
 
 >## Marco de Entrega 02 em: (13/09/2018)<br>
 #### 5.3 DESCRIÇÃO DOS DADOS 
