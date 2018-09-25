@@ -19,17 +19,12 @@ Com o constante crescimento na area da piscicultura e os riscos que envolvem cri
 
 ### 3.MINI-MUNDO Novo<br>
 
-Descrever o mini-mundo! (Não deve ser maior do que 30 linhas) <br>
-Entrevista com o usuário e identificação dos requisitos.<br>
-Descrição textual das regras de negócio definidas como um  subconjunto do mundo real 
-cujos elementos são propriedades que desejamos incluir, processar, armazenar, 
-gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
-
-O sistema que o cliente deseja é um sistema para monitoramento de tanques de piscicultura onde teremos sensores para medir o Ph, oxigênio e temperatura da água a cada instante predeterminado. O aplicativo deve informar diretamente ao funcionário responsável caso algum dos valores informados pelo sensor esteja fora da média esperada. Por isso o sistema terá que cadastrar funcionários e tanques.
-Cada tanque terá apenas um tipo de peixe, com isso devemos guardar informações relevantes de cada peixe para monitorar cada tanque de forma individual.
-
-
- 
+ O sistema que o cliente deseja é um sistema para monitoramento de tanques de piscicultura, deve ser capaz de gerenciar os funcinários
+responsaveis pelos tanques, qual funcionário deve estar em qual tanque, seus dados como contato e turno de atividade.
+Os peixes devem estar em uma condição expecífica para sua sobrevivência saudável,os dados de: PH, oxigênio e temperatura devem ser medidos de tempo em tempo, afim de garantir a qualidade.
+ Existe uma faixa de temperatura ideial para cada peixe, assim como PH: através da urina o peixe torna a água mais ácida, por fim também existe uma faixa de porcetagem oxigêncio na água para impedir a eutrofização.  
+ O aplicativo deve informar diretamente ao funcionário responsável caso algum dos valores informados pelo sensor esteja fora da média esperada. 
+ Cada tanque terá apenas um tipo de peixe, com isso devemos guardar informações relevantes de cada peixe para monitorar cada tanque de forma individual. 
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 
