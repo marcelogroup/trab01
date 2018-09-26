@@ -52,6 +52,7 @@ Os peixes devem estar em uma condição expecífica para sua sobrevivência saud
 ![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/Brmodelonovo.png?raw=true "Brmodelonovo")
     
     B) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/modelagem%20de%20classe_trabalho.png?raw=true "Modelagem de classe")
     C) QUALIDADE 
         Garantir que a semântica dos atributos seja clara no esquema
         Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
