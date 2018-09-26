@@ -49,7 +49,7 @@ Os peixes devem estar em uma condição expecífica para sua sobrevivência saud
 
 ### 5.MODELO CONCEITUAL<br>
         
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/mapaConceitual.png?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/Brmodelonovo.png?raw=true "Brmodelonovo")
     
     B) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
     C) QUALIDADE 
