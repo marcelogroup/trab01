@@ -79,12 +79,67 @@ Os peixes devem estar em uma condição expecífica para sua sobrevivência saud
 
 >## Marco de Entrega 02 em: (13/09/2018)<br>
 #### 5.3 DESCRIÇÃO DOS DADOS 
-    [objeto]: [descrição do objeto]
+    Funcionario: Tabela que armazena as informações relacionadas ao funcionario;
+     Id: campo de identificação do funcionario;
+     IdTurno: campo de identificação do turno que o funcionario trabalha;
+     IdCargo: campo de identificação do cargo que o funcionario atua;
+     Nome: campo que armazena o nome do funcionario;
+     CPF: campo que armazena o número de Cadastro de Pessoa Física para cada funcionario;
+     IdTanque: campo de identificação do tanque cujo o funcionario é responsavel.
     
-    EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
-
+    Turno: Tabela que armazena os turnos de trabalho;
+     Id: campo de identificação do turno;
+     Horario: campo que armazena o periodo do turno.
+    
+    Cargo: Tabela que armazena as informações relacionadas aos Cargos de trabalho;
+     Id: campo de identificação do cargo;
+     Nome: campo que armazena o nome do cargo.
+    
+    Endereço: Tabela que armazena as informações relacionadas ao endereço de certo funcionario;
+     IdFuncionario: campo de identificação do funcionario cujo pertence o endereço;
+     Cidade: campo que armazena o nome da cidade;
+     Bairro: campo que armazena o nome do bairro;
+     Logradouro: campo que armazena a rua,avenida,etc;
+     Numero: campo que armazena o numero da casa;
+     Complemento: campo que armazena o complemento (caso tenha);
+     CEP: campo que armazena o CEP do endereço.
+     
+    Contato: Tabela que armazena os contatos do funcionario;
+     Id: campo de identificação do contato;
+     IdFuncionario: campo de identificação do funcionario dono do contato;
+     IdTipo: campo de identificação do tipo de contato (telefone, email, whatsapp, etc);
+     Dado: campo que armazena o contato.
+    
+    TipoContato: Tabela que armazena os tipos de contatos disponiveis;
+     Id: campo de identificação do contato;
+     Tipo: nome do tipo de contato.
+     
+    Tanque: Tabela que armazena as informações relacionadas ao tanque;
+     Id: campo de identificação do Tanque;
+     IdFuncionario: campo de identificação do funcionario responsavel pelo tanque;
+     IdPeixe: campo de identificação do peixe presente no tanque;
+     Sensor: campo de identificação dos sensores presentes no tanque.
+    
+    HistoricoMedição: Tabela que armazena o Historico de Medição relacionada ao Tanque informado pelos Sensores;
+     Id: campo de identificação do historico
+     Temperatura: campo que armazena a temperatura da água no momento;
+     PH: campo que armazena o PH da água no momento;
+     Oxigenio: campo que armazena a Oxigenação da água no momento;
+     IdTanque: campo de identificação do tanque cujo os dados pertencem;
+     Hora: campo que informa a hora em que os dados foram medidos;
+     Data: campo que informa a data em que os dados foram medidos;
+     
+    Peixe: Tablea que armazena as informações relacionadas ao Peixe;
+     Id: campo de identificação do peixe;
+     Especie: campo que armazena a especie do peixe;
+     TipoAgua: campo que armazena o tipo de agua do peixe;
+     TempMax: temperatura maxima da agua recomendada para a sobrevivencia do peixe;
+     TempMin: temperatura minima da agua recomendada para a sobrevivencia do peixe;
+     PHMax: PH maximo da agua recomendada para a sobrevivencia do peixe;
+     TempMin: PH minimo da agua recomendada para a sobrevivencia do peixe;
+     OxMax: oxigenação maxima da agua recomendada para a sobrevivencia do peixe;
+     OxMin: oxigenação minima da agua recomendada para a sobrevivencia do peixe.
+    
 
 ### 6	MODELO LÓGICO<br>
         a) inclusão do modelo lógico do banco de dados
