@@ -149,8 +149,8 @@ Os peixes devem estar em uma condição expecífica para sua sobrevivência saud
         (não serão aceitos modelos que não estejam em conformidade)
 
 ### 7	MODELO FÍSICO<br>
-        a) inclusão das instruções de criacão das estruturas DDL 
-        (criação de tabelas, alterações, etc..)          
+https://github.com/pisciculturainteligente/trab01/blob/master/modelo%20fisico%20final%20por%20favor.txt
+      
         
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
