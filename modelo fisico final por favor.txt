@@ -1,4 +1,4 @@
-/* logicoNovo: */
+/* logicoNovo_v2: */
 
 CREATE TABLE Funcionario (
     IdFuncionario INTEGER PRIMARY KEY,
@@ -43,8 +43,11 @@ CREATE TABLE Endereco (
 CREATE TABLE Tanque (
     IdTanque INTEGER PRIMARY KEY,
     IdPeixe INTEGER,
-    Sensor VARCHAR,
-    IdFuncionario INTEGER
+    QuatidadeSensor INTEGER,
+    IdFuncionario INTEGER,
+    Temperetura FLOAT,
+    Ph FLOAT,
+    Oxigenio FLOAT
 );
 
 CREATE TABLE Peixe (
@@ -98,6 +101,15 @@ ALTER TABLE Tanque ADD CONSTRAINT FK_Tanque_1
     FOREIGN KEY (IdFuncionario)
     REFERENCES Funcionario (IdFuncionario)
     ON DELETE RESTRICT ON UPDATE RESTRICT;
+ 
+ALTER TABLE Tanque ADD CONSTRAINT FK_Tanque_2
+    FOREIGN KEY (IdPeixe)
+    REFERENCES Peixe (IdPeixe);
+ 
+ALTER TABLE Peixe ADD CONSTRAINT FK_Peixe_1
+    FOREIGN KEY (FK_Tanque_IdTanque)
+    REFERENCES Tanque (IdTanque)
+    ON DELETE CASCADE ON UPDATE CASCADE;
  
 ALTER TABLE HistoricoMedicao ADD CONSTRAINT FK_HistoricoMedicao_1
     FOREIGN KEY (IdTanque)
