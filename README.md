@@ -142,6 +142,8 @@ Os peixes devem estar em uma condição expecífica para sua sobrevivência saud
     
 
 ### 6	MODELO LÓGICO<br>
+
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/logicoNovo.png?raw=true "Brmodelonovo")
         a) inclusão do modelo lógico do banco de dados
         b) verificação de correspondencia com o modelo conceitual 
         (não serão aceitos modelos que não estejam em conformidade)
