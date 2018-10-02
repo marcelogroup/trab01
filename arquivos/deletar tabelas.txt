@@ -15,3 +15,168 @@ DROP TABLE TANQUE CASCADE;
 DROP TABLE PEIXE CASCADE;
 
 DROP TABLE HISTORICOMEDICAO CASCADE;
+
+CREATE TABLE Funcionario (
+    IdFuncionario INTEGER PRIMARY KEY,
+    Nome VARCHAR,
+    CPF CHAR(12),
+    IdTanque INTEGER,
+    IdTurno INTEGER,
+    IdCargo INTEGER
+);
+
+CREATE TABLE Turno (
+    IdTurno INTEGER PRIMARY KEY,
+    Horario VARCHAR
+);
+
+CREATE TABLE Cargo (
+    IdCargo INTEGER PRIMARY KEY,
+    NomeCargo VARCHAR
+);
+
+CREATE TABLE Contato (
+    IdContato INTEGER PRIMARY KEY,
+    Dado VARCHAR,
+    IdTipo INTEGER,
+    IdFuncionario INTEGER
+);
+
+CREATE TABLE TipoContato (
+    IdTipo INTEGER PRIMARY KEY,
+    Tipo VARCHAR
+);
+
+CREATE TABLE Endereco (
+    Cidade VARCHAR,
+    Bairro VARCHAR,
+    Logradouro VARCHAR,
+    Complemento VARCHAR,
+    CEP VARCHAR,
+    IdFuncionario INTEGER PRIMARY KEY
+);
+
+CREATE TABLE Tanque (
+    IdTanque INTEGER PRIMARY KEY,
+    IdPeixe INTEGER,
+    QuatidadeSensor INTEGER,
+    IdFuncionario INTEGER,
+    Temperetura FLOAT,
+    Ph FLOAT,
+    Oxigenio FLOAT
+);
+
+CREATE TABLE Peixe (
+    IdPeixe INTEGER PRIMARY KEY,
+    Especie VARCHAR,
+    TipoAgua VARCHAR,
+    TempMin FLOAT,
+    TempMax FLOAT,
+    PhMin FLOAT,
+    PhMax FLOAT,
+    OxMin FLOAT,
+    OxMax FLOAT
+);
+
+CREATE TABLE HistoricoMedicao (
+    IdHistorico INTEGER PRIMARY KEY,
+    Temperatura FLOAT,
+    Ph FLOAT,
+    Oxigenio FLOAT,
+    IdTanque INTEGER,
+    Hora TIME,
+    Data DATE
+);
+ 
+ALTER TABLE Funcionario ADD CONSTRAINT FK_Funcionario_1
+    FOREIGN KEY (IdTurno)
+    REFERENCES Turno (IdTurno)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Funcionario ADD CONSTRAINT FK_Funcionario_2
+    FOREIGN KEY (IdCargo)
+    REFERENCES Cargo (IdCargo)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Contato ADD CONSTRAINT FK_Contato_1
+    FOREIGN KEY (IdTipo)
+    REFERENCES TipoContato (IdTipo)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Contato ADD CONSTRAINT FK_Contato_2
+    FOREIGN KEY (IdFuncionario)
+    REFERENCES Funcionario (IdFuncionario)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Endereco ADD CONSTRAINT FK_Endereco_0
+    FOREIGN KEY (IdFuncionario)
+    REFERENCES Funcionario (IdFuncionario)
+    ON DELETE RESTRICT ON UPDATE RESTRICT;
+ 
+ALTER TABLE Tanque ADD CONSTRAINT FK_Tanque_1
+    FOREIGN KEY (IdFuncionario)
+    REFERENCES Funcionario (IdFuncionario)
+    ON DELETE RESTRICT ON UPDATE RESTRICT;
+ 
+ALTER TABLE Tanque ADD CONSTRAINT FK_Tanque_2
+    FOREIGN KEY (IdPeixe)
+    REFERENCES Peixe (IdPeixe);
+
+ 
+ALTER TABLE HistoricoMedicao ADD CONSTRAINT FK_HistoricoMedicao_1
+    FOREIGN KEY (IdTanque)
+    REFERENCES Tanque (IdTanque);
+
+
+INSERT INTO Funcionario(IdFuncionario, Nome, CPF)
+
+VALUES(1, 'Gabriela Piffer', '123567928372'),
+
+(2, 'José Bezerra', '21324578532'),
+
+(3, 'Jão Silvino', '21467890964');
+
+
+
+INSERT INTO Turno(IdTurno, Horario)
+VALUES(1, 'manhã'),
+(2, 'tarde'),
+(3, 'noite');
+
+INSERT INTO Cargo(IdCargo, NomeCargo)
+VALUES(1, 'gerente'),
+(2, 'funcionário'),
+(3, 'estagiário');
+
+INSERT INTO TipoContato(idTipo, Tipo)
+VALUES(1, 'email'),
+(2, 'telefone');
+
+INSERT INTO Peixe(IdPeixe, Especie, TipoAgua, TempMin, TempMax, PhMin, PhMax, OxMin, OxMax )
+VALUES(1, 'Baiacu', 'Salgada', 12, 18, 7, 8, 8, 10),
+(2, 'Dourado', 'Salgada', 13, 14, 7, 8, 8, 10);
+
+INSERT INTO Tanque(IdTanque, IdPeixe, QuatidadeSensor, IdFuncionario, Temperetura, Ph, Oxigenio)
+VALUES(1, 1, 3, 2, 20, 7, 8),
+(3, 2, 2, 1, 21, 6, 12);
+
+INSERT INTO Endereco(Cidade, Bairro, Logradouro, Complemento, CEP, IdFuncionario)
+VALUES('Serra', 'São Marcos', 'Rua 8', NULL, 12342010, 2),
+('Vila Velha', 'Itapuã', 'Rua 29', NULL, 12342029,3);
+
+
+INSERT INTO Contato(IdContato, Dado, IdTipo, IdFuncionario)
+VALUES(1, '999877812', 2, 1),
+(2, 'gabriela@sadgirl.com', 1, 1);
+
+INSERT INTO HistoricoMedicao(IdHistorico, Temperatura, Ph, Oxigenio, IdTanque, Hora, Data)
+VALUES(1, 20, 7, 8, 1, '16:20', '2018/07/04'),
+(2, 21, 6, 12, 3, '13:15', '2018/06/02');
+
+
+UPDATE Funcionario SET IdTanque=NULL, IdTurno=2, IdCargo=1
+WHERE idfuncionario=1;
+
+
+UPDATE Funcionario SET IdTanque=3, IdTurno=1, IdCargo=2
+WHERE idfuncionario=2;
