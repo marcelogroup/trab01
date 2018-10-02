@@ -152,13 +152,12 @@ Com o constante crescimento na area da piscicultura e os riscos que envolvem cri
         (não serão aceitos modelos que não estejam em conformidade)
 
 ### 7	MODELO FÍSICO<br>
-https://github.com/pisciculturainteligente/trab01/blob/master/modelo%20fisico%20final%20por%20favor.txt
+https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/cria%C3%A7%C3%A3o%20de%20tabela.txt
       
         
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
-        a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico 
-        b) formato .SQL
+https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/insers%C3%A3o%20de%20dados.txt
 
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELAS E INSERÇÃO DOS DADOS
         a) Junção dos scripts anteriores em um único script 
