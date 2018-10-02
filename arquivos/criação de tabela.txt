@@ -3,7 +3,7 @@
 CREATE TABLE Funcionario (
     IdFuncionario INTEGER PRIMARY KEY,
     Nome VARCHAR,
-    CPF INTEGER,
+    CPF CHAR(12),
     IdTanque INTEGER,
     IdTurno INTEGER,
     IdCargo INTEGER
