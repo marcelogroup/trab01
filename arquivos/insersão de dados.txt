@@ -1,0 +1,55 @@
+INSERT INTO Funcionario(IdFuncionario, Nome, CPF)
+
+VALUES(1, 'Gabriela Piffer', '123567928372'),
+
+(2, 'José Bezerra', '21324578532'),
+
+(3, 'Jão Silvino', '21467890964');
+
+
+
+INSERT INTO Turno(IdTurno, Horario)
+VALUES(1, 'manhã'),
+(2, 'tarde'),
+(3, 'noite');
+
+INSERT INTO Cargo(IdCargo, NomeCargo)
+VALUES(1, 'gerente'),
+(2, 'funcionário'),
+(3, 'estagiário');
+
+
+INSERT INTO TipoContato(idTipo, Tipo)
+VALUES(1, 'email'),
+(2, 'telefone');
+
+
+INSERT INTO Peixe(IdPeixe, Especie, TipoAgua, TempMin, TempMax, PhMin, PhMax, OxMin, OxMax )
+VALUES(1, 'Baiacu', 'Salgada', 12, 18, 7, 8, 8, 10),
+(2, 'Dourado', 'Salgada', 13, 14, 7, 8, 8, 10);
+
+INSERT INTO Tanque(IdTanque, IdPeixe, QuatidadeSensor, IdFuncionario, Temperetura, Ph, Oxigenio)
+VALUES(1, 1, 3, 2, 20, 7, 8),
+(3, 2, 2, 1, 21, 6, 12);
+
+INSERT INTO Endereco(Cidade, Bairro, Logradouro, Complemento, CEP, IdFuncionario)
+VALUES('Serra', 'São Marcos', 'Rua 8', NULL, 12342010, 2),
+('Vila Velha', 'Itapuã', 'Rua 29', NULL, 12342029,3);
+
+
+INSERT INTO Contato(IdContato, Dado, IdTipo, IdFuncionario)
+VALUES(1, '999877812', 2, 1),
+(2, 'gabriela@sadgirl.com', 1, 1);
+
+INSERT INTO HistoricoMedicao(IdHistorico, Temperatura, Ph, Oxigenio, IdTanque, Hora, Data)
+VALUES(1, 20, 7, 8, 1, '16:20', '2018/07/04'),
+(2, 21, 6, 12, 3, '13:15', '2018/06/02');
+
+
+UPDATE Funcionario SET IdTanque=NULL, IdTurno=2, IdCargo=1
+WHERE idfuncionario=1;
+
+
+UPDATE Funcionario SET IdTanque=3, IdTurno=1, IdCargo=2
+WHERE idfuncionario=2;
+

@@ -1,0 +1,112 @@
+/* logicoNovo_v2: */
+
+CREATE TABLE Funcionario (
+    IdFuncionario INTEGER PRIMARY KEY,
+    Nome VARCHAR,
+    CPF INTEGER,
+    IdTanque INTEGER,
+    IdTurno INTEGER,
+    IdCargo INTEGER
+);
+
+CREATE TABLE Turno (
+    IdTurno INTEGER PRIMARY KEY,
+    Horario VARCHAR
+);
+
+CREATE TABLE Cargo (
+    IdCargo INTEGER PRIMARY KEY,
+    NomeCargo VARCHAR
+);
+
+CREATE TABLE Contato (
+    IdContato INTEGER PRIMARY KEY,
+    Dado VARCHAR,
+    IdTipo INTEGER,
+    IdFuncionario INTEGER
+);
+
+CREATE TABLE TipoContato (
+    IdTipo INTEGER PRIMARY KEY,
+    Tipo VARCHAR
+);
+
+CREATE TABLE Endereco (
+    Cidade VARCHAR,
+    Bairro VARCHAR,
+    Logradouro VARCHAR,
+    Complemento VARCHAR,
+    CEP VARCHAR,
+    IdFuncionario INTEGER PRIMARY KEY
+);
+
+CREATE TABLE Tanque (
+    IdTanque INTEGER PRIMARY KEY,
+    IdPeixe INTEGER,
+    QuatidadeSensor INTEGER,
+    IdFuncionario INTEGER,
+    Temperetura FLOAT,
+    Ph FLOAT,
+    Oxigenio FLOAT
+);
+
+CREATE TABLE Peixe (
+    IdPeixe INTEGER PRIMARY KEY,
+    Especie VARCHAR,
+    TipoAgua VARCHAR,
+    TempMin FLOAT,
+    TempMax FLOAT,
+    PhMin FLOAT,
+    PhMax FLOAT,
+    OxMin FLOAT,
+    OxMax FLOAT
+);
+
+CREATE TABLE HistoricoMedicao (
+    IdHistorico INTEGER PRIMARY KEY,
+    Temperatura FLOAT,
+    Ph FLOAT,
+    Oxigenio FLOAT,
+    IdTanque INTEGER,
+    Hora TIME,
+    Data DATE
+);
+ 
+ALTER TABLE Funcionario ADD CONSTRAINT FK_Funcionario_1
+    FOREIGN KEY (IdTurno)
+    REFERENCES Turno (IdTurno)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Funcionario ADD CONSTRAINT FK_Funcionario_2
+    FOREIGN KEY (IdCargo)
+    REFERENCES Cargo (IdCargo)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Contato ADD CONSTRAINT FK_Contato_1
+    FOREIGN KEY (IdTipo)
+    REFERENCES TipoContato (IdTipo)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Contato ADD CONSTRAINT FK_Contato_2
+    FOREIGN KEY (IdFuncionario)
+    REFERENCES Funcionario (IdFuncionario)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+ 
+ALTER TABLE Endereco ADD CONSTRAINT FK_Endereco_0
+    FOREIGN KEY (IdFuncionario)
+    REFERENCES Funcionario (IdFuncionario)
+    ON DELETE RESTRICT ON UPDATE RESTRICT;
+ 
+ALTER TABLE Tanque ADD CONSTRAINT FK_Tanque_1
+    FOREIGN KEY (IdFuncionario)
+    REFERENCES Funcionario (IdFuncionario)
+    ON DELETE RESTRICT ON UPDATE RESTRICT;
+ 
+ALTER TABLE Tanque ADD CONSTRAINT FK_Tanque_2
+    FOREIGN KEY (IdPeixe)
+    REFERENCES Peixe (IdPeixe);
+
+ 
+ALTER TABLE HistoricoMedicao ADD CONSTRAINT FK_HistoricoMedicao_1
+    FOREIGN KEY (IdTanque)
+    REFERENCES Tanque (IdTanque);
