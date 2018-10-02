@@ -160,17 +160,11 @@ https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/cria%C3%A
 https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/insers%C3%A3o%20de%20dados.txt
 
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELAS E INSERÇÃO DOS DADOS
-        a) Junção dos scripts anteriores em um único script 
-        (create para tabelas e estruturas de dados + dados a serem inseridos)
-        b) Criar um novo banco de dados para testar a restauracao 
-        (em caso de falha na restauração o grupo não pontuará neste quesito)
-        c) formato .SQL
+https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/criacao%20e%20insers%C3%A3o.txt
+
 #### 8.3 INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS
-        a) Junção dos scripts anteriores em um único script
-        (Drop para exclusão de tabelas + create para tabelas e estruturas de dados + dados a serem inseridos)
-        b) Criar um novo banco de dados para testar a restauracao 
-        (em caso de falha na restauração o grupo não pontuará neste quesito)
-        c) formato .SQL
+https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/deletar%20tabelas.txt
+
 >## Marco de Entrega 03 em: (27/09/18) <br>
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
