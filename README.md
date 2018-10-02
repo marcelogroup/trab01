@@ -19,12 +19,15 @@ Com o constante crescimento na area da piscicultura e os riscos que envolvem cri
 
 ### 3.MINI-MUNDO Novo<br>
 
- O sistema que o cliente deseja é um sistema para monitoramento de tanques de piscicultura, deve ser capaz de gerenciar os funcinários
-responsaveis pelos tanques, qual funcionário deve estar em qual tanque, seus dados como contato e turno de atividade.
-Os peixes devem estar em uma condição expecífica para sua sobrevivência saudável,os dados de: PH, oxigênio e temperatura devem ser medidos de tempo em tempo, afim de garantir a qualidade.
- Existe uma faixa de temperatura ideial para cada peixe, assim como PH: através da urina o peixe torna a água mais ácida, por fim também existe uma faixa de porcetagem oxigêncio na água para impedir a eutrofização.  
- O aplicativo deve informar diretamente ao funcionário responsável caso algum dos valores informados pelo sensor esteja fora da média esperada. 
- Cada tanque terá apenas um tipo de peixe, com isso devemos guardar informações relevantes de cada peixe para monitorar cada tanque de forma individual. 
+ O sistema que o cliente deseja precisa auxiliar no gerenciamento de diversos tanques de piscicultura, monitorando e informando dados sensíveis em tempo real para que seja tomada providências de forma exata e ágil. Esse sistema também deve gerenciar funcionários individualmente para que se possa obter a informação de qual funcionário está responsável por qual tanque em certa hora do dia.
+ 
+ Com isso, foi decidido que a melhor forma de resolver esse problema é com um aplicativo mobile, que irá notificar o funcionário responsável e o gerente quando um valor estiver fora do padrão pré definido. Esse padrão é definido pelo tipo de peixe que está em cada tanque (somente uma espécie de peixe por tanque), os peixes poderão ser cadastrados pelo gerente que irá informar todos os intervalos de valores aceitáveis para criação daquela espécie de peixe.
+ 
+ Todos os dados serão obtidos por meio de sensores que tem como objetivo monitorar a Temperatura, Ph e o Oxigênio do tanque. Como a maioria dos peixes precisam de uma condição ideal para sobreviver esses dados serão atualizados a todo minuto para que se garanta a confiabilidade do sistema. Essas informações serão apresentadas de forma intuitiva para ajudar no entendimento da situação e serão guardados históricos no banco de dados para que se possa comparar e analisar como o tanque se comportou em um certo período de tempo.
+ 
+ O aplicativo deve conter um sistema de login, que tem como principal objetivo separar o usuário funcionário do gerente. Enquanto os funcionários só terão acesso às informações pessoais e funções designadas a eles o gerente poderá modificar os dados de todos os funcionários e terá acesso a funções administrativas (cadastrar tanques, cadastrar funcionários e cadastrar peixes).
+
+ 
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 
