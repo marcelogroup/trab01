@@ -52,7 +52,7 @@ Com o constante crescimento na area da piscicultura e os riscos que envolvem cri
 
 ### 5.MODELO CONCEITUAL<br>
         
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/Brmodelonovo.png?raw=true "Brmodelonovo")
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/Brmodelonovov2.png?raw=true "Brmodelonovo")
     
     B) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
 ![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/modelagem%20de%20classe_trabalho.png?raw=true "Modelagem de classe")
@@ -64,8 +64,8 @@ Com o constante crescimento na area da piscicultura e os riscos que envolvem cri
         
     
 #### 5.1 Validação do Modelo Conceitual
-    [Grupo01]: [Nomes dos que participaram na avaliação]
-    [Grupo02]: [Nomes dos que participaram na avaliação]
+    Transportes de perecíveis: Rafael dos Anjos e Andreas José, Nicolas e Daniel Comerio
+    QRBus: Everson, Tadeu
 
 #### 5.2 DECISÕES DE PROJETO
     a) Sensor: Campo que guarda a informação sobre quais sensores estão associados com esse tanque.
