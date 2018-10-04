@@ -65,7 +65,7 @@ Com o constante crescimento na area da piscicultura e os riscos que envolvem cri
     
 #### 5.1 Validação do Modelo Conceitual
     Transportes de perecíveis: Rafael dos Anjos e Andreas José, Nicolas e Daniel Comerio
-    QRBus: Everson, Tadeu e Lorran
+    QRBus: Ewerson Vieira, Giuliano de Paulo, Lorran Gabriel e Marcos Antônio
 
 #### 5.2 DECISÕES DE PROJETO
     a) Sensor: Campo que guarda a informação sobre quais sensores estão associados com esse tanque.
