@@ -1,12 +1,10 @@
-/* logicoNovo_v2: */
-
 CREATE TABLE Funcionario (
     IdFuncionario INTEGER PRIMARY KEY,
     Nome VARCHAR,
-    CPF CHAR(12),
-    IdTanque INTEGER,
-    IdTurno INTEGER,
-    IdCargo INTEGER
+    CPF VARCHAR,
+    FK_Tanque_IdTanque INTEGER,
+    FK_Turno_IdTurno INTEGER,
+    FK_Cargo_IdCargo INTEGER
 );
 
 CREATE TABLE Turno (
@@ -22,8 +20,8 @@ CREATE TABLE Cargo (
 CREATE TABLE Contato (
     IdContato INTEGER PRIMARY KEY,
     Dado VARCHAR,
-    IdTipo INTEGER,
-    IdFuncionario INTEGER
+    FK_TipoContato_IdTipo INTEGER,
+    FK_Funcionario_IdFuncionario INTEGER
 );
 
 CREATE TABLE TipoContato (
@@ -32,28 +30,27 @@ CREATE TABLE TipoContato (
 );
 
 CREATE TABLE Endereco (
+    IdFuncionario INTEGER PRIMARY KEY,
     Cidade VARCHAR,
     Bairro VARCHAR,
     Logradouro VARCHAR,
     Complemento VARCHAR,
     CEP VARCHAR,
-    IdFuncionario INTEGER PRIMARY KEY
+    FK_Funcionario_IdFuncionario INTEGER
 );
 
 CREATE TABLE Tanque (
     IdTanque INTEGER PRIMARY KEY,
-    IdPeixe INTEGER,
-    QuatidadeSensor INTEGER,
-    IdFuncionario INTEGER,
-    Temperetura FLOAT,
+    Temperatura FLOAT,
     Ph FLOAT,
-    Oxigenio FLOAT
+    Oxigenio FLOAT,
+    FK_Peixe_IdPeixe INTEGER
 );
 
 CREATE TABLE Peixe (
     IdPeixe INTEGER PRIMARY KEY,
-    Especie VARCHAR,
-    TipoAgua VARCHAR,
+    NomeCientifico VARCHAR,
+    TipoAgua BOOLEAN,
     TempMin FLOAT,
     TempMax FLOAT,
     PhMin FLOAT,
@@ -67,46 +64,47 @@ CREATE TABLE HistoricoMedicao (
     Temperatura FLOAT,
     Ph FLOAT,
     Oxigenio FLOAT,
-    IdTanque INTEGER,
     Hora TIME,
-    Data DATE
+    Data DATE,
+    FK_Tanque_IdTanque INTEGER
 );
  
 ALTER TABLE Funcionario ADD CONSTRAINT FK_Funcionario_1
-    FOREIGN KEY (IdTurno)
-    REFERENCES Turno (IdTurno)
+    FOREIGN KEY (FK_Tanque_IdTanque)
+    REFERENCES Tanque (IdTanque)
     ON DELETE CASCADE ON UPDATE CASCADE;
  
 ALTER TABLE Funcionario ADD CONSTRAINT FK_Funcionario_2
-    FOREIGN KEY (IdCargo)
-    REFERENCES Cargo (IdCargo)
+    FOREIGN KEY (FK_Turno_IdTurno)
+    REFERENCES Turno (IdTurno)
     ON DELETE CASCADE ON UPDATE CASCADE;
  
+ALTER TABLE Funcionario ADD CONSTRAINT FK_Funcionario_3
+    FOREIGN KEY (FK_Cargo_IdCargo)
+    REFERENCES Cargo (IdCargo)
+    ON DELETE RESTRICT ON UPDATE RESTRICT;
+ 
 ALTER TABLE Contato ADD CONSTRAINT FK_Contato_1
-    FOREIGN KEY (IdTipo)
+    FOREIGN KEY (FK_TipoContato_IdTipo)
     REFERENCES TipoContato (IdTipo)
     ON DELETE CASCADE ON UPDATE CASCADE;
  
 ALTER TABLE Contato ADD CONSTRAINT FK_Contato_2
-    FOREIGN KEY (IdFuncionario)
+    FOREIGN KEY (FK_Funcionario_IdFuncionario)
     REFERENCES Funcionario (IdFuncionario)
     ON DELETE CASCADE ON UPDATE CASCADE;
  
-ALTER TABLE Endereco ADD CONSTRAINT FK_Endereco_0
-    FOREIGN KEY (IdFuncionario)
+ALTER TABLE Endereco ADD CONSTRAINT FK_Endereco_1
+    FOREIGN KEY (FK_Funcionario_IdFuncionario)
     REFERENCES Funcionario (IdFuncionario)
     ON DELETE RESTRICT ON UPDATE RESTRICT;
  
 ALTER TABLE Tanque ADD CONSTRAINT FK_Tanque_1
-    FOREIGN KEY (IdFuncionario)
-    REFERENCES Funcionario (IdFuncionario)
-    ON DELETE RESTRICT ON UPDATE RESTRICT;
- 
-ALTER TABLE Tanque ADD CONSTRAINT FK_Tanque_2
-    FOREIGN KEY (IdPeixe)
-    REFERENCES Peixe (IdPeixe);
-
+    FOREIGN KEY (FK_Peixe_IdPeixe)
+    REFERENCES Peixe (IdPeixe)
+    ON DELETE SET NULL ON UPDATE CASCADE;
  
 ALTER TABLE HistoricoMedicao ADD CONSTRAINT FK_HistoricoMedicao_1
-    FOREIGN KEY (IdTanque)
-    REFERENCES Tanque (IdTanque);
+    FOREIGN KEY (FK_Tanque_IdTanque)
+    REFERENCES Tanque (IdTanque)
+    ON DELETE CASCADE ON UPDATE CASCADE;
