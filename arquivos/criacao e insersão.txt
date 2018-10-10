@@ -1,12 +1,10 @@
-/* logicoNovo_v2: */
-
 CREATE TABLE Funcionario (
     IdFuncionario INTEGER PRIMARY KEY,
     Nome VARCHAR,
-    CPF CHAR(12),
-    IdTanque INTEGER,
-    IdTurno INTEGER,
-    IdCargo INTEGER
+    CPF VARCHAR,
+    FK_Tanque_IdTanque INTEGER,
+    FK_Turno_IdTurno INTEGER,
+    FK_Cargo_IdCargo INTEGER
 );
 
 CREATE TABLE Turno (
@@ -22,8 +20,8 @@ CREATE TABLE Cargo (
 CREATE TABLE Contato (
     IdContato INTEGER PRIMARY KEY,
     Dado VARCHAR,
-    IdTipo INTEGER,
-    IdFuncionario INTEGER
+    FK_TipoContato_IdTipo INTEGER,
+    FK_Funcionario_IdFuncionario INTEGER
 );
 
 CREATE TABLE TipoContato (
@@ -32,28 +30,27 @@ CREATE TABLE TipoContato (
 );
 
 CREATE TABLE Endereco (
+    IdFuncionario INTEGER PRIMARY KEY,
     Cidade VARCHAR,
     Bairro VARCHAR,
     Logradouro VARCHAR,
     Complemento VARCHAR,
     CEP VARCHAR,
-    IdFuncionario INTEGER PRIMARY KEY
+    FK_Funcionario_IdFuncionario INTEGER
 );
 
 CREATE TABLE Tanque (
     IdTanque INTEGER PRIMARY KEY,
-    IdPeixe INTEGER,
-    QuatidadeSensor INTEGER,
-    IdFuncionario INTEGER,
-    Temperetura FLOAT,
+    Temperatura FLOAT,
     Ph FLOAT,
-    Oxigenio FLOAT
+    Oxigenio FLOAT,
+    FK_Peixe_IdPeixe INTEGER
 );
 
 CREATE TABLE Peixe (
     IdPeixe INTEGER PRIMARY KEY,
-    Especie VARCHAR,
-    TipoAgua VARCHAR,
+    NomeCientifico VARCHAR,
+    TipoAgua BOOLEAN,
     TempMin FLOAT,
     TempMax FLOAT,
     PhMin FLOAT,
@@ -67,101 +64,98 @@ CREATE TABLE HistoricoMedicao (
     Temperatura FLOAT,
     Ph FLOAT,
     Oxigenio FLOAT,
-    IdTanque INTEGER,
     Hora TIME,
-    Data DATE
+    Data DATE,
+    FK_Tanque_IdTanque INTEGER
 );
  
 ALTER TABLE Funcionario ADD CONSTRAINT FK_Funcionario_1
-    FOREIGN KEY (IdTurno)
-    REFERENCES Turno (IdTurno)
+    FOREIGN KEY (FK_Tanque_IdTanque)
+    REFERENCES Tanque (IdTanque)
     ON DELETE CASCADE ON UPDATE CASCADE;
  
 ALTER TABLE Funcionario ADD CONSTRAINT FK_Funcionario_2
-    FOREIGN KEY (IdCargo)
-    REFERENCES Cargo (IdCargo)
+    FOREIGN KEY (FK_Turno_IdTurno)
+    REFERENCES Turno (IdTurno)
     ON DELETE CASCADE ON UPDATE CASCADE;
  
+ALTER TABLE Funcionario ADD CONSTRAINT FK_Funcionario_3
+    FOREIGN KEY (FK_Cargo_IdCargo)
+    REFERENCES Cargo (IdCargo)
+    ON DELETE RESTRICT ON UPDATE RESTRICT;
+ 
 ALTER TABLE Contato ADD CONSTRAINT FK_Contato_1
-    FOREIGN KEY (IdTipo)
+    FOREIGN KEY (FK_TipoContato_IdTipo)
     REFERENCES TipoContato (IdTipo)
     ON DELETE CASCADE ON UPDATE CASCADE;
  
 ALTER TABLE Contato ADD CONSTRAINT FK_Contato_2
-    FOREIGN KEY (IdFuncionario)
+    FOREIGN KEY (FK_Funcionario_IdFuncionario)
     REFERENCES Funcionario (IdFuncionario)
     ON DELETE CASCADE ON UPDATE CASCADE;
  
-ALTER TABLE Endereco ADD CONSTRAINT FK_Endereco_0
-    FOREIGN KEY (IdFuncionario)
+ALTER TABLE Endereco ADD CONSTRAINT FK_Endereco_1
+    FOREIGN KEY (FK_Funcionario_IdFuncionario)
     REFERENCES Funcionario (IdFuncionario)
     ON DELETE RESTRICT ON UPDATE RESTRICT;
  
 ALTER TABLE Tanque ADD CONSTRAINT FK_Tanque_1
-    FOREIGN KEY (IdFuncionario)
-    REFERENCES Funcionario (IdFuncionario)
-    ON DELETE RESTRICT ON UPDATE RESTRICT;
- 
-ALTER TABLE Tanque ADD CONSTRAINT FK_Tanque_2
-    FOREIGN KEY (IdPeixe)
-    REFERENCES Peixe (IdPeixe);
-
+    FOREIGN KEY (FK_Peixe_IdPeixe)
+    REFERENCES Peixe (IdPeixe)
+    ON DELETE SET NULL ON UPDATE CASCADE;
  
 ALTER TABLE HistoricoMedicao ADD CONSTRAINT FK_HistoricoMedicao_1
-    FOREIGN KEY (IdTanque)
-    REFERENCES Tanque (IdTanque);
-
-
+    FOREIGN KEY (FK_Tanque_IdTanque)
+    REFERENCES Tanque (IdTanque)
+    ON DELETE CASCADE ON UPDATE CASCADE;
+    
+    
 INSERT INTO Funcionario(IdFuncionario, Nome, CPF)
-
 VALUES(1, 'Gabriela Piffer', '123567928372'),
-
-(2, 'JosÈ Bezerra', '21324578532'),
-
-(3, 'J„o Silvino', '21467890964');
-
+(2, 'Jos√© Bezerra', '21324578532'),
+(3, 'J√£o Silvino', '21467890964');
 
 
 INSERT INTO Turno(IdTurno, Horario)
-VALUES(1, 'manh„'),
+VALUES(1, 'manh√£'),
 (2, 'tarde'),
 (3, 'noite');
 
+
 INSERT INTO Cargo(IdCargo, NomeCargo)
 VALUES(1, 'gerente'),
-(2, 'funcion·rio'),
-(3, 'estagi·rio');
+(2, 'funcion√°rio'),
+(3, 'estagi√°rio');
+
 
 INSERT INTO TipoContato(idTipo, Tipo)
 VALUES(1, 'email'),
 (2, 'telefone');
 
-INSERT INTO Peixe(IdPeixe, Especie, TipoAgua, TempMin, TempMax, PhMin, PhMax, OxMin, OxMax )
-VALUES(1, 'Baiacu', 'Salgada', 12, 18, 7, 8, 8, 10),
-(2, 'Dourado', 'Salgada', 13, 14, 7, 8, 8, 10);
 
-INSERT INTO Tanque(IdTanque, IdPeixe, QuatidadeSensor, IdFuncionario, Temperetura, Ph, Oxigenio)
-VALUES(1, 1, 3, 2, 20, 7, 8),
-(3, 2, 2, 1, 21, 6, 12);
+INSERT INTO Peixe(IdPeixe, NomeCientifico, TipoAgua, TempMin, TempMax, PhMin, PhMax, OxMin, OxMax )
+VALUES(1, 'Baiacu', true, 12, 18, 7, 8, 8, 10),
+(2, 'Dourado', false, 13, 14, 7, 8, 8, 10);
+
+INSERT INTO Tanque(IdTanque, FK_Peixe_IdPeixe, Temperatura, Ph, Oxigenio)
+VALUES(1, 1, 20, 7, 8),
+(3, 2, 21, 6, 12);
 
 INSERT INTO Endereco(Cidade, Bairro, Logradouro, Complemento, CEP, IdFuncionario)
-VALUES('Serra', 'S„o Marcos', 'Rua 8', NULL, 12342010, 2),
-('Vila Velha', 'Itapu„', 'Rua 29', NULL, 12342029,3);
+VALUES('Serra', 'S√£o Marcos', 'Rua 8', NULL, 12342010, 2),
+('Vila Velha', 'Itapu√£', 'Rua 29', NULL, 12342029,3);
 
 
-INSERT INTO Contato(IdContato, Dado, IdTipo, IdFuncionario)
+INSERT INTO Contato(IdContato, Dado, FK_TipoContato_IdTipo, FK_Funcionario_IdFuncionario)
 VALUES(1, '999877812', 2, 1),
 (2, 'gabriela@sadgirl.com', 1, 1);
 
-INSERT INTO HistoricoMedicao(IdHistorico, Temperatura, Ph, Oxigenio, IdTanque, Hora, Data)
+INSERT INTO HistoricoMedicao(IdHistorico, Temperatura, Ph, Oxigenio, FK_Tanque_IdTanque, Hora, Data)
 VALUES(1, 20, 7, 8, 1, '16:20', '2018/07/04'),
 (2, 21, 6, 12, 3, '13:15', '2018/06/02');
 
-
-UPDATE Funcionario SET IdTanque=NULL, IdTurno=2, IdCargo=1
+UPDATE Funcionario SET FK_Tanque_IdTanque=NULL, FK_Turno_IdTurno=2, FK_Cargo_IdCargo=1
 WHERE idfuncionario=1;
 
-
-UPDATE Funcionario SET IdTanque=3, IdTurno=1, IdCargo=2
+UPDATE Funcionario SET FK_Tanque_IdTanque=3, FK_Turno_IdTurno=1, FK_Cargo_IdCargo=2
 WHERE idfuncionario=2;
-
