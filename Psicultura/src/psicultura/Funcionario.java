@@ -12,7 +12,7 @@ package psicultura;
 public class Funcionario extends Pessoa{
     public Tanque tanque_do_func;
       public Funcionario(String nome, String cpf, String turno, String cidade, String bairro, String lorgadouro, String complemento, String cep, boolean permissao,Tanque tanque_do_func){
-             super.nome=nome;
+        super.nome=nome;
         super.cpf=cpf;
         super.turno=turno;
         //lista de contatos
@@ -24,9 +24,7 @@ public class Funcionario extends Pessoa{
         super.cep=cep;
         super.permissao=permissao;        
         this.tanque_do_func=tanque_do_func;
-    } 
-
-   
+    }    
         
 }
 
