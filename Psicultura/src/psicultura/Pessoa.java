@@ -9,11 +9,14 @@ package psicultura;
  *
  * @author marcelo
  */
-public abstract class Pessoa extends Contato{
+public abstract class Pessoa {
    String nome;
    String cpf;
-   String identidade;
    String turno;
-   String id_funcionario;
-   
+   //lista de contatos
+   String [] listadecontatos ;
+   String cidade;  
+   String bairro;
+   String lorgadouro;
+   String cep;
 }
