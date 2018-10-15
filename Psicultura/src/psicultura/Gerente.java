@@ -1,15 +1,19 @@
 package psicultura;
 
 public class Gerente extends Pessoa {
-    public Gerente(String nome,String cpf,String turno,String cep,String bairro,String cidade){
+    public Gerente(String nome, String cpf, String turno, String cidade, String bairro, String lorgadouro, String complemento, String cep, boolean permissao){
         // atributos de pessoa 
-        super.nome = nome;
-        super.cpf  = cpf;        
-        super.turno = turno;               
-        super.cep=cep;
+        super.nome=nome;
+        super.cpf=cpf;
+        super.turno=turno;
+   //lista de contatos
+   //String [] listadecontatos ;
+        super.cidade=cidade;  
         super.bairro=bairro;
-        super.cidade=cidade;
-        
-        
+        super.lorgadouro=lorgadouro;
+        super.complemento=complemento;
+        super.cep=cep;
+        super.permissao=permissao;
     } 
 }
+   // //

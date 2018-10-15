@@ -25,13 +25,13 @@ public class Main {
         tanque.addPeixe(peixe);
         //
         System.out.println("especie "+peixe.nome_especie+" adicionada ao tanque"+tanque.id_tanque);
-        Gerente gerente= new  Gerente("jose","14730683714", "matutino","29106090","soteco","vila ");
-        //
-        System.out.println("gerente de nome "+gerente.nome + " cadastrado");
+        //Gerente gerente= new  Gerente("jose","14730683714", "matutino","29106090","soteco","vila ");
+        ///
+        //System.out.println("gerente de nome "+gerente.nome + " cadastrado");
         
-        Funcionario func= new Funcionario("Joao manoel","14783730715","maturino","290106803","cocal","cariacica",tanque);    
+        //Funcionario func= new Funcionario("Joao manoel","14783730715","maturino","290106803","cocal","cariacica",tanque);    
         //
-        System.out.println("funcionario de nome "+func.nome + " cadastrado");
+        //System.out.println("funcionario de nome "+func.nome + " cadastrado");
        
     }
 }

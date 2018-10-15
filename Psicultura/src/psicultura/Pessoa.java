@@ -19,4 +19,5 @@ public abstract class Pessoa {
    String bairro;
    String lorgadouro;
    String cep;
+   boolean permissao;
 }
