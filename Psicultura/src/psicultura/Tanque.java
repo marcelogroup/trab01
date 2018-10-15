@@ -22,7 +22,7 @@ public class Tanque {
     public void addPeixe(EspeciePeixe peixe){
         this.peixe=peixe;
     }      
-    public boolean estaVBazio(){
+    public boolean estaVazio(){
         if(this.peixe==null){
             return true;
         }

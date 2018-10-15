@@ -15,4 +15,5 @@ public abstract class Pessoa extends Contato{
    String identidade;
    String turno;
    String id_funcionario;
+   
 }

@@ -12,14 +12,26 @@ public class Main {
         int codigoOperacao;
         Tanque tanque= new Tanque(29.7f,0.0077f,7.045f,1);
         //
-        EspeciePeixe peixe= new EspeciePeixe("tilapia","doce",40.5f,15.9f,7.99f,6.89f,0.0100f,0.0010f);
+        System.out.println("novo tanque criado "+tanque.id_tanque);
+        EspeciePeixe peixe= new EspeciePeixe("tilapia","doce", 40.5f, 15.9f, 7.99f, 6.89f, 0.0100f, 0.0010f);
         //
+        System.out.println("nova especie adicionada "+peixe.nome_especie);
+        if(tanque.estaVazio()){
+            System.out.println("tanque esta vazio");
+        }
+        else{
+            System.out.println("tanque ja tem um especie");
+        }
         tanque.addPeixe(peixe);
         //
+        System.out.println("especie "+peixe.nome_especie+" adicionada ao tanque"+tanque.id_tanque);
         Gerente gerente= new  Gerente("jose","14730683714","220372", "matutino","0001","Rua carijós","29106090","soteco","vila ","02730631033");
         //
-        Funcionario func= new Funcionario("Joao manoel","14783730715","330227","maturino","0002","Rua machado de Assis","290106803","cocal","cariacica","02732569875",1);    
+        System.out.println("gerente de nome "+gerente.nome + " cadastrado");
         
+        Funcionario func= new Funcionario("Joao manoel","14783730715","330227","maturino","0002","Rua machado de Assis","290106803","cocal","cariacica","02732569875",tanque);    
+        //
+        System.out.println("funcionario de nome "+func.nome + " cadastrado");
        
     }
 }
@@ -48,8 +60,7 @@ public class Main {
             }
             if(codigoOperacao==4){
                 
-            }
-        
+            }  
             
             
             op_str =JOptionPane.showInputDialog(null,"Digite a operacao");

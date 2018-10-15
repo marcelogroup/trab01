@@ -10,8 +10,8 @@ package psicultura;
  * @author marcelo
  */
 public class Funcionario extends Pessoa{
-    public int id_tanque;
-      public Funcionario(String nome,String cpf,String identidade, String endereco, String turno, String contato, String id_funcionarios, String rua,String cep,String bairro,String cidade,String telefone,int id_tanque){
+    public Tanque tanque_do_func;
+      public Funcionario(String nome,String cpf,String identidade,  String turno, String id_funcionarios, String rua,String cep,String bairro,String cidade,String telefone,Tanque tanque_do_func){
         // atributos de pessoa 
         super.nome = nome;
         super.cpf  = cpf;
@@ -24,8 +24,10 @@ public class Funcionario extends Pessoa{
         super.bairro=bairro;
         super.cidade=cidade;
         super.telefone=telefone;
-        this.id_tanque=id_tanque;
+        this.tanque_do_func=tanque_do_func;
     } 
+
+   
         
 }
 
