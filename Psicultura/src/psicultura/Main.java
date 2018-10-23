@@ -12,6 +12,8 @@ public class Main {
         int codigoOperacao;
         Tanque tanque= new Tanque(29.7f,0.0077f,7.045f,1);
         //
+        DBConexao conexao = null;
+        conexao.getInstance();
         System.out.println("novo tanque criado "+tanque.id_tanque);
         EspeciePeixe peixe= new EspeciePeixe("tilapia","doce", 40.5f, 15.9f, 7.99f, 6.89f, 0.0100f, 0.0010f);
         //
