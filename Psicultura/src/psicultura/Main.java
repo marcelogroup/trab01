@@ -1,19 +1,62 @@
 
 package psicultura;
 
+import java.sql.*;
 
 
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
+  
     public static void main(String[] args) {
+     /*   try{
+        Class.forName("org.postgresql.Driver");
+        } catch (java.lang.ClassNotFoundException e) {
+            System.out.println(e.getMessage());
+        }*/
+    
+        //Postgres con = new Postgres();
+        try{
+        Class.forName("org.postgresql.Driver");
+        } catch (java.lang.ClassNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+       /* definindo padrões*/
+        String url = "jdbc:postgres://stampy.db.elephantsql.com:5432/pvunmqpv";
+        
+        String username = "pvunmqpv";
+        String password = "rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA";
+        try {
+            Connection db = DriverManager.getConnection(url, username, password);
+            Statement st = db.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM funcionario;");
+             while (rs.next()) {
+                System.out.print("Column 1 returned ");
+                System.out.println(rs.getString(2));
+                System.out.print("Column 2 returned ");
+                System.out.println(rs.getString(3));
+            }
+            rs.close();
+            st.close();
+        }
+        catch (java.sql.SQLException e) {
+            System.out.println(e.getMessage());    
+        }
+    
+    }
+        
+        
+        
+        
+        
+       
+    
+}
+/*
         int codigoOperacao;
         Tanque tanque= new Tanque(29.7f,0.0077f,7.045f,1);
         //
-        DBConexao conexao = null;
-        conexao.getInstance();
+       // DBConexao conexao = null;
+      //  conexao.getInstance();
         System.out.println("novo tanque criado "+tanque.id_tanque);
         EspeciePeixe peixe= new EspeciePeixe("tilapia","doce", 40.5f, 15.9f, 7.99f, 6.89f, 0.0100f, 0.0010f);
         //
@@ -33,38 +76,4 @@ public class Main {
         
         Funcionario func= new Funcionario("Homero", "30659823654","matutino","Serra","Serra dourada VI", "Av. jose manoel", "52","20392090",false,tanque,"02733394433","Homerojuca@gmail.com");
         //
-        System.out.println("funcionario de nome "+func.nome + " cadastrado");
-       
-    }
-}
-
- /*codigos de operação
-        1 criar tanque 
-        2 criar gerente 
-        3 criar funcionario 
-        4 criar peixe
-        5 adcionar peixe ao tanque
-        0 sair
-        
-        String op_str =JOptionPane.showInputDialog(null,"Digite a operacao");
-        codigoOperacao = Integer.parseInt(op_str);
-        while(codigoOperacao!=0){
-            if(codigoOperacao==1){
-                //criar tanque
-                String id_str =JOptionPane.showInputDialog(null,"O id do tanque");
-                Tanque tanque=new Tanque();
-            }
-            if(codigoOperacao==2){
-                //criar gerente
-            }
-            if(codigoOperacao==3){
-                //criar funcionario
-            }
-            if(codigoOperacao==4){
-                
-            }  
-            
-            
-            op_str =JOptionPane.showInputDialog(null,"Digite a operacao");
-            codigoOperacao = Integer.parseInt(op_str);
-        }*/
+        System.out.println("funcionario de nome "+func.nome + " cadastrado");*/
