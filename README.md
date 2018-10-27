@@ -52,7 +52,7 @@ Com o constante crescimento na area da piscicultura e os riscos que envolvem cri
 
 ### 5.MODELO CONCEITUAL<br>
         
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/Brmodelonovov2.png?raw=true "Brmodelonovo")
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/modelo_conceitual_v4.png?raw=true "Modelo Conceitual")
     
     B) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
 ![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/modelagem%20de%20classe_trabalho.png?raw=true "Modelagem de classe")
