@@ -20,9 +20,8 @@ public class Main {
         
         SelectTable select = new SelectTable();
         select.selectTable();
-        /*
-        DeleteTable delete = new DeleteTable();
-        delete.deleteTable();*/
+               
+        
       
         int codigoOperacao;
         Tanque tanque= new Tanque(29.7f,0.0077f,7.045f,1);
@@ -39,7 +38,7 @@ public class Main {
         }
         tanque.addPeixe(peixe);
         //
-        System.out.println("especie "+peixe.nome_especie+" adicionada ao tanque"+tanque.getId_tanque());
+        System.out.println("especie "+peixe.getNome_especie()+" adicionada ao tanque"+tanque.getId_tanque());
         Gerente gerente = new Gerente("Jose","14730683714","matutino","Serra","Laranjeiras","rua carajás","33","20106080",true,"02730631033","jose@gmail.com");
         ///
         System.out.println("gerente de nome "+gerente.getNome() + " cadastrado");
