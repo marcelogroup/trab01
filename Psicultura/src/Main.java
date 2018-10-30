@@ -1,6 +1,7 @@
 
 
 
+import conexao.InsertTable;
 import conexao.SelectTable;
 import java.sql.*;
 import psicultura.EspeciePeixe;
@@ -20,32 +21,12 @@ public class Main {
         
         SelectTable select = new SelectTable();
         select.selectTable();
-               
         
+        EspeciePeixe p1=new EspeciePeixe("sardinha", true, 37, 18, 8.1f, 6.9f,5,2);
+        InsertTable insert =new InsertTable();
+        insert.insertTable("peixe", , );
       
-        int codigoOperacao;
-        Tanque tanque= new Tanque(29.7f,0.0077f,7.045f,1);
-        //
-        System.out.println("novo tanque criado "+tanque.getId_tanque() );
-        EspeciePeixe peixe= new EspeciePeixe("tilapia","doce", 40.5f, 15.9f, 7.99f, 6.89f, 0.0100f, 0.0010f);
-        //
-        System.out.println("nova especie adicionada "+peixe.getNome_especie());
-        if(tanque.estaVazio()){
-            System.out.println("tanque esta vazio");
-        }
-        else{
-            System.out.println("tanque ja tem um especie");
-        }
-        tanque.addPeixe(peixe);
-        //
-        System.out.println("especie "+peixe.getNome_especie()+" adicionada ao tanque"+tanque.getId_tanque());
-        Gerente gerente = new Gerente("Jose","14730683714","matutino","Serra","Laranjeiras","rua carajás","33","20106080",true,"02730631033","jose@gmail.com");
-        ///
-        System.out.println("gerente de nome "+gerente.getNome() + " cadastrado");
-        
-        Funcionario func= new Funcionario("Homero", "30659823654","matutino","Serra","Serra dourada VI", "Av. jose manoel", "52","20392090",false,tanque,"02733394433","Homerojuca@gmail.com");
-        //
-        System.out.println("funcionario de nome "+func.getNome() + " cadastrado");
+  
        
     }
 }

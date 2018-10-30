@@ -7,9 +7,9 @@ public class EspeciePeixe {
     float porcetagem_oxi_max;
     float porcetagem_oxi_min;
     String nome_especie;
-    String tipo_agua;
+    boolean tipo_agua;
     
-    public EspeciePeixe(String nome, String agua, float temp_max, float temp_min, float ph_max, float ph_min,float porcetagem_oxi_max, float porcetagem_oxi_min){
+    public EspeciePeixe(String nome, boolean agua, float temp_max, float temp_min, float ph_max, float ph_min,float porcetagem_oxi_max, float porcetagem_oxi_min){
         this.nome_especie=nome;
         this.tipo_agua=agua;
         this.ph_max = ph_max;
@@ -78,11 +78,11 @@ public class EspeciePeixe {
         this.nome_especie = nome_especie;
     }
 
-    public String getTipo_agua() {
+    public boolean getTipo_agua() {
         return tipo_agua;
     }
 
-    public void setTipo_agua(String tipo_agua) {
+    public void setTipo_agua(boolean tipo_agua) {
         this.tipo_agua = tipo_agua;
     }
     

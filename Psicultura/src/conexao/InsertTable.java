@@ -11,7 +11,7 @@ public class InsertTable {
 
     
     public void insertTable(String tabela,String[]campos , String[] valores){
-        /**/
+        if(valida_Argumentos( tabela,campos ,  valores) ){
         Connection c = null;
         Statement stmt = null;
         String campos_str=lista_to_string(campos);
@@ -30,6 +30,7 @@ public class InsertTable {
                     e.getMessage());            
         }
         System.out.println("Table created successfully");
+        }
     }
    private String lista_to_string(String[] lista){
        String result="";
@@ -39,6 +40,19 @@ public class InsertTable {
        
        return result;
    } 
+   private boolean valida_Argumentos(String tabela,String[]campos , String[] valores){
+       /* 
+       peixe 9
+       tanque 4       
+       */
+       boolean result=false;
+       if(tabela.equals("peixe")){
+           if(valores.length==9 && campos.length==9){
+               result=true;
+            } 
+          }       
+       return result;
+   }
         
     
 }

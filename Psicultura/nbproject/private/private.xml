@@ -2,13 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group>
             <file>file:/C:/Users/marcelo/Documents/GitHub/trab01/Psicultura/src/psicultura/Tanque.java</file>
+            <file>file:/C:/Users/marcelo/Documents/GitHub/trab01/Psicultura/src/Main.java</file>
+            <file>file:/C:/Users/marcelo/Documents/GitHub/trab01/Psicultura/src/psicultura/EspeciePeixe.java</file>
             <file>file:/C:/Users/marcelo/Documents/GitHub/trab01/Psicultura/src/psicultura/Funcionario.java</file>
+            <file>file:/C:/Users/marcelo/Documents/GitHub/trab01/Psicultura/src/conexao/InsertTable.java</file>
         </group>
-=======
-        <group/>
->>>>>>> c9e131a2a57146b00581cf5bd0abbb9efd5844b4
     </open-files>
 </project-private>
