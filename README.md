@@ -172,6 +172,7 @@ https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/deletar%2
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
 ![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.1/todos.png?raw=true "Modelagem de classe")
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.2/todos.png?raw=true "Modelagem de classe")
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
     b) Criar no mínimo 3 consultas com operadores aritméticos 
