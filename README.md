@@ -175,15 +175,16 @@ https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/deletar%2
 ![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.2/todos.png?raw=true "query")
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     
-	
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.3/a/compilado.png?raw=true "query")
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.3/b/compilado.png?raw=true "query")
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.3/c/compilado.png?raw=true "query")
 	a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.3/a/compilado.png?raw=true "query")
+
+	b) Criar no mínimo 3 consultas com operadores aritméticos 
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.3/b/compilado.png?raw=true "query")
+
+	c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.3/c/compilado.png?raw=true "query")    
 	
-    b) Criar no mínimo 3 consultas com operadores aritméticos 
-	
-    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+    
 	
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) 
 ![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.4/compilado.png?raw=true "query")
