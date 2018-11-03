@@ -176,9 +176,9 @@ https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/deletar%2
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
     
 	
-	![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.3/a/compilado.png?raw=true "query")
-	![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.3/b/compilado.png?raw=true "query")
-	![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.3/c/compilado.png?raw=true "query")
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.3/a/compilado.png?raw=true "query")
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.3/b/compilado.png?raw=true "query")
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.3/c/compilado.png?raw=true "query")
 	a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
 	
     b) Criar no mínimo 3 consultas com operadores aritméticos 
