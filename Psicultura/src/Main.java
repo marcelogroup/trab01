@@ -24,7 +24,7 @@ public class Main {
         
         EspeciePeixe p1=new EspeciePeixe("sardinha", true, 37, 18, 8.1f, 6.9f,5,2);
         InsertTable insert =new InsertTable();
-        insert.insertTable("peixe", , );
+       // insert.insertTable("peixe", , );
       
   
        

@@ -6,8 +6,7 @@ public class Tanque {
     float sensor_oxi;
     float sensor_ph;
     int id_tanque;
-    EspeciePeixe peixe;
-    
+    EspeciePeixe peixe;    
     
     public Tanque(float temp,float oxi,float ph,int id_tanque){
         this.sensor_temp=temp;
@@ -16,7 +15,8 @@ public class Tanque {
         this.id_tanque=id_tanque;
        
     }
-    public void criarAddPeixe(String nome, String agua, float temp_max, float temp_min, float ph_max, float ph_min,float porcetagem_oxi_max, float porcetagem_oxi_min){      
+    
+    public void criarAddPeixe(String nome, boolean agua, float temp_max, float temp_min, float ph_max, float ph_min,float porcetagem_oxi_max, float porcetagem_oxi_min){      
       this.peixe= new EspeciePeixe( nome,agua, temp_max,  temp_min, ph_max,  ph_min, porcetagem_oxi_max, porcetagem_oxi_min);
     }
     public void addPeixe(EspeciePeixe peixe){
