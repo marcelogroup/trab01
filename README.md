@@ -192,6 +192,8 @@ https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/deletar%2
     b) Criar uma consulta para cada tipo de função data apresentada.
 
 #### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.5/compilado.png?raw=true "query")
+
 
 >## Marco de Entrega 04 em: (18/10/2017)<br>
 
