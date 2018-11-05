@@ -8,9 +8,22 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import psicultura.Funcionario;
 import psicultura.Tanque;
-
+/**
+ * banco = "jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv"
+ * user = "pvunmqpv"
+ * password = "rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA"
+ * @author 20151bsi0436
+ */
 public class InsertTable {
-
+    String banco;
+    String user;
+    String password;
+   
+    public InsertTable(String banco,String user,String password){
+        this.setBanco(banco);
+        this.setUser(user);
+        this.setPassword(password);
+    }
     
     public void insertTable(String tabela,String[]campos , String[] valores){       
         Connection c = null;
@@ -19,7 +32,7 @@ public class InsertTable {
         String valores_str=lista_to_string(valores);
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv", "rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA"); 
+            c = DriverManager.getConnection(banco,user,password ); 
             System.out.println("Base de dados aberta");
             stmt = c.createStatement();
             String sql = ("insert into"+tabela+"("+campos_str+")"+"VALUES"+valores_str );
@@ -58,7 +71,7 @@ public class InsertTable {
         int tam;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv", "rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA"); 
+            c = DriverManager.getConnection(banco,user,password ); 
             System.out.println("Base de dados aberta");
             stmt_1 = c.createStatement();
             stmt_2 = c.createStatement();
@@ -140,17 +153,19 @@ public class InsertTable {
         System.out.println("insert successfully");
         
     }
+   
+   
    /**
     * insere um objeto tanque dentro do banco de dados 
     * (idtanque,temperatura,ph,oxigenio,fk_peixe_idpeixe)
     * @param t 
-    */
+    */  
    public void insertTanque(Tanque t){
        Connection c = null;
        Statement stm = null;
        try{
            Class.forName("org.postgresql.Driver");
-           c = DriverManager.getConnection("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv", "rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA"); 
+           c = DriverManager.getConnection(banco,user,password ); 
            System.out.println("Base de dados aberta");
            /**
             * criar variaveis para aabrir o tipo tanque 
@@ -181,4 +196,32 @@ public class InsertTable {
         }
        System.out.println("insert tanque successfully");
    }
+    /**
+    * getter e setter
+    */
+    public String getBanco() {
+        return banco;
+    }
+
+    public void setBanco(String banco) {
+        this.banco = banco;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+   
+   
 }

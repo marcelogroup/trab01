@@ -27,8 +27,8 @@ public class SelectTable {
             System.out.println("Opened database successfully");            
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery(comando);
-            System.out.println("--------------");
-           // System.out.println(rs);
+            //System.out.println("--------------");
+            //System.out.println(rs);
             while (rs.next()) {
                 //System.out.print("Column 1 returned ");
                 //System.out.println(rs.getString(2));
@@ -36,7 +36,7 @@ public class SelectTable {
                 //System.out.println(rs.getString(3));
                 listResult.add(rs);
             }
-            System.out.println("--------------");
+            //System.out.println("--------------");
             rs.close();
             stmt.close();
             c.close();

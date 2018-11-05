@@ -26,7 +26,7 @@ public class Main {
       Tanque tan1 = new Tanque( 34.5f,12.5f,7.1f,3);
 
       
-      InsertTable insert_func=new InsertTable();
+      InsertTable insert_func=new InsertTable("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv","rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");
       insert_func.insertFuncionario(fun1);
       //insert_func.insertFuncionario(fun2);
   
