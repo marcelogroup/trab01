@@ -5,13 +5,11 @@
  */
 package psicultura;
 
-/**
- *
- * @author marcelo
- */
+
 public class Funcionario extends Pessoa{
     public Tanque tanque_do_func;
       public Funcionario(String nome, String cpf, String turno, String cidade, String bairro, String lorgadouro, String complemento, String cep, boolean permissao,Tanque tanque_do_func,String email,String telefone){
+                         //"josé esmaraldo","1212","1"         ,"viana"       ,"azulino"    ,"rua carlos victor", "numero 12"       ,"29106080", true              ,null                ,"zees@gmail.com","33394433");   
         super.nome=nome;
         super.cpf=cpf;
         super.turno=turno;
@@ -25,7 +23,11 @@ public class Funcionario extends Pessoa{
         super.listadecontatos=new String[2];
         super.listadecontatos[0] = email;
         super.listadecontatos[1] = telefone;
-    }    
+    }   
+      
+    public String[] pega_contatos(Funcionario func){
+        return super.getListadecontatos();
+    }  
         
 }
 

@@ -16,8 +16,8 @@ import java.util.ArrayList;
  * @author 20171BSI0081
  */
 public class SelectTable {
-    public synchronized ArrayList selectTable() {
-        ArrayList listVeiculos = new ArrayList();        
+    public synchronized ArrayList selectTable(String comando) {
+        ArrayList listResult = new ArrayList();        
         Connection c = null;
         Statement stmt = null;
         try {
@@ -26,14 +26,15 @@ public class SelectTable {
             c = DriverManager.getConnection("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv", "rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");   
             System.out.println("Opened database successfully");            
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM funcionario;");
+            ResultSet rs = stmt.executeQuery(comando);
             System.out.println("--------------");
            // System.out.println(rs);
             while (rs.next()) {
-                System.out.print("Column 1 returned ");
-                System.out.println(rs.getString(2));
-                System.out.print("Column 2 returned ");
-                System.out.println(rs.getString(3));
+                //System.out.print("Column 1 returned ");
+                //System.out.println(rs.getString(2));
+                //System.out.print("Column 2 returned ");
+                //System.out.println(rs.getString(3));
+                listResult.add(rs);
             }
             System.out.println("--------------");
             rs.close();
@@ -43,6 +44,6 @@ public class SelectTable {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());            
         }
         System.out.println("Operation done successfully select");
-        return listVeiculos;
+        return listResult;
     }
 }

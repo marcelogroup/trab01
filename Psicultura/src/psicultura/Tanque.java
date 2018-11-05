@@ -15,7 +15,17 @@ public class Tanque {
         this.id_tanque=id_tanque;
        
     }
-    
+    /**
+     * 
+     * @param nome
+     * @param agua boolean true para agua doce, false para agua salgada; 
+     * @param temp_max
+     * @param temp_min
+     * @param ph_max
+     * @param ph_min
+     * @param porcetagem_oxi_max
+     * @param porcetagem_oxi_min 
+     */
     public void criarAddPeixe(String nome, boolean agua, float temp_max, float temp_min, float ph_max, float ph_min,float porcetagem_oxi_max, float porcetagem_oxi_min){      
       this.peixe= new EspeciePeixe( nome,agua, temp_max,  temp_min, ph_max,  ph_min, porcetagem_oxi_max, porcetagem_oxi_min);
     }

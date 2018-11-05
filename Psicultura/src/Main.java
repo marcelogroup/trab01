@@ -11,53 +11,26 @@ import psicultura.Tanque;
 
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         
         /*CreateTable create = new CreateTable();
         create.createTable();*/
         
-        SelectTable select = new SelectTable();
-        select.selectTable();
+       // SelectTable select = new SelectTable();
+       // select.selectTable("SELECT * FROM funcionario;");
         
-        EspeciePeixe p1=new EspeciePeixe("sardinha", true, 37, 18, 8.1f, 6.9f,5,2);
-        InsertTable insert =new InsertTable();
-       // insert.insertTable("peixe", , );
+   /*inserir  um obejto  uma funcionario*/   
+   
+      Funcionario fun1 = new Funcionario("josé esmaraldo","1212","1","viana","azulino","rua carlos victor", "numero 12","29106080", true,null,"zees@gmail.com","33394433"); 
+      Funcionario fun2 = new Funcionario("marcelo mendes","1717","1","Serra","laranjeiras","rua caixa", "numero 24","29106180", true,null,"marcelopm@gmail.com","98539226"); 
+      Tanque tan1 = new Tanque( 34.5f,12.5f,7.1f,3);
+
       
+      InsertTable insert_func=new InsertTable();
+      insert_func.insertFuncionario(fun1);
+      //insert_func.insertFuncionario(fun2);
   
        
     }
 }
 
- /*codigos de operação
-        1 criar tanque 
-        2 criar gerente 
-        3 criar funcionario 
-        4 criar peixe
-        5 adcionar peixe ao tanque
-        0 sair
-        
-        String op_str =JOptionPane.showInputDialog(null,"Digite a operacao");
-        codigoOperacao = Integer.parseInt(op_str);
-        while(codigoOperacao!=0){
-            if(codigoOperacao==1){
-                //criar tanque
-                String id_str =JOptionPane.showInputDialog(null,"O id do tanque");
-                Tanque tanque=new Tanque();
-            }
-            if(codigoOperacao==2){
-                //criar gerente
-            }
-            if(codigoOperacao==3){
-                //criar funcionario
-            }
-            if(codigoOperacao==4){
-                
-            }  
-            
-            
-            op_str =JOptionPane.showInputDialog(null,"Digite a operacao");
-            codigoOperacao = Integer.parseInt(op_str);
-        }*/
