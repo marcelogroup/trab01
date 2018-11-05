@@ -56,7 +56,8 @@ public class InsertTable {
        
        return result;
    } 
-    /**
+    
+   /**
       * devem ser feitos 3 inserts  para inserir um objeto funcinario dentro do banco
       * @param f 
       * aqui abrimos o objeto funcionario e transformamos em string de comando SQL
@@ -89,22 +90,21 @@ public class InsertTable {
             String idcargo="2";
             
             SelectTable select = new SelectTable();
-            dados   = select.selectTable("SELECT * FROM funcionario;");
-            tam     = dados.size()+1;            
-            idfuncionario =  String.valueOf(tam);
-            nome    = f.getNome();
-            cpf     = f.getCpf();
-                       
+            dados           = select.selectTable("SELECT * FROM funcionario;");
+            tam             = dados.size()+1;            
+            idfuncionario   = String.valueOf(tam);
+            nome            = f.getNome();
+            cpf             = f.getCpf();                       
             //pegando tanque
             if(f.tanque_do_func==null){
-                idtanque="null";
+                idtanque    = "null";
             }else{
-                idtanque=String.valueOf(f.tanque_do_func.getId_tanque());
+                idtanque    = String.valueOf(f.tanque_do_func.getId_tanque());
             }
         
-            idturno=f.getTurno();
-            comando_insFun= idfuncionario+",'"+nome +"', '"+ cpf +"',"+ idtanque+","+ idturno+","+ idcargo ;
-            comando_insFun= "insert into funcionario (idfuncionario , nome, cpf, fk_tanque_idtanque, fk_turno_idturno, fk_cargo_idcargo) values ("+comando_insFun+");" ;
+            idturno =f.getTurno();
+            comando_insFun = idfuncionario+",'"+nome +"', '"+ cpf +"',"+ idtanque+","+ idturno+","+ idcargo ;
+            comando_insFun = "insert into funcionario (idfuncionario , nome, cpf, fk_tanque_idtanque, fk_turno_idturno, fk_cargo_idcargo) values ("+comando_insFun+");" ;
             /**
              * inserindo na tabela contato
              * tipo contato 2 telefone ,1 email
@@ -112,37 +112,24 @@ public class InsertTable {
              * insert email
              * insert telefone
              */
-            //
             ArrayList  tabela_contato = select.selectTable("SELECT * FROM contato;");
-            String idcontato1 = String.valueOf(tabela_contato.size()+1);
-            String idcontato2 = String.valueOf(tabela_contato.size()+2);
-            String[] contatos = f.pega_contatos(f);
-            String email=contatos[0];
-            String telefone=contatos[1];
+            String idcontato1         = String.valueOf(tabela_contato.size()+1);
+            String idcontato2         = String.valueOf(tabela_contato.size()+2);
+            String[] contatos         = f.pega_contatos(f);
+            String email              = contatos[0];
+            String telefone           = contatos[1];
             String fk_tipocontato_idtipo;
             String fk_funcionario_idfuncionario=String.valueOf(tam) ;
             String ins_cont1 = idcontato1 + ",'" + email      + "' ,1 ,"+fk_funcionario_idfuncionario;
             String ins_cont2 = idcontato2 + ",'" + telefone   + "' ,2 ,"+fk_funcionario_idfuncionario;
+            
             ins_cont1 = "insert into contato(idcontato,dado,fk_tipocontato_idtipo,fk_funcionario_idfuncionario) values("+ins_cont1+");";
             ins_cont2 = "insert into contato(idcontato,dado,fk_tipocontato_idtipo,fk_funcionario_idfuncionario) values("+ins_cont2+");";
-            //System.out.println(ins_cont1);
-            //System.out.println(ins_cont2);
-            
-            
-            /**
-             * fazendo as inserções
-             */
-            String sql_query_1 = (comando_insFun);
-            String sql_query_2 = (ins_cont1);
-            String sql_query_3 = (ins_cont2);
-            
-            stmt_1.executeUpdate(sql_query_1);               
-            stmt_2.executeUpdate(sql_query_2);    
-            stmt_3.executeUpdate(sql_query_3);
-            //System.out.println(sql_query_1);
-            //System.out.println(sql_query_2);
-            //System.out.println(sql_query_3);
-            
+ 
+            stmt_1.executeUpdate(comando_insFun);               
+            stmt_2.executeUpdate(ins_cont1);    
+            stmt_3.executeUpdate(ins_cont2);
+
             stmt_1.close();
             stmt_2.close();
             stmt_3.close();
@@ -153,7 +140,9 @@ public class InsertTable {
         System.out.println("insert successfully");
         
     }
-   
+  /**
+   * criar script dce insert contato sepearar do 
+   */
    
    /**
     * insere um objeto tanque dentro do banco de dados 
@@ -196,7 +185,8 @@ public class InsertTable {
         }
        System.out.println("insert tanque successfully");
    }
-    /**
+    
+   /**
     * getter e setter
     */
     public String getBanco() {

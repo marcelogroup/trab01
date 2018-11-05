@@ -19,8 +19,7 @@ public class Main {
        // SelectTable select = new SelectTable();
        // select.selectTable("SELECT * FROM funcionario;");
         
-   /*inserir  um obejto  uma funcionario*/   
-   
+        /*inserir  um obejto  uma funcionario*/   
       Funcionario fun1 = new Funcionario("josé esmaraldo","1212","1","viana","azulino","rua carlos victor", "numero 12","29106080", true,null,"zees@gmail.com","33394433"); 
       Funcionario fun2 = new Funcionario("marcelo mendes","1717","1","Serra","laranjeiras","rua caixa", "numero 24","29106180", true,null,"marcelopm@gmail.com","98539226"); 
       Tanque tan1 = new Tanque( 34.5f,12.5f,7.1f,3);
