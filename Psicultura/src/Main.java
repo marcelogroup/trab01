@@ -17,6 +17,7 @@ public class Main {
 
     public static void main(String[] args) {
         
+
        Date agora= new Date();
        
        /* fazendo 5 tanques*/       
@@ -69,6 +70,7 @@ public class Main {
        Endereco end_g1 = new Endereco("29106120","vila velha","cristovao colombo","rua condado"," numero 7");
        g1.AtualizarEndereco(end_g1);
       
+
        
     }
 }
