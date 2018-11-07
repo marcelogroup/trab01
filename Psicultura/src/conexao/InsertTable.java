@@ -10,44 +10,12 @@ import psicultura.Funcionario;
 import psicultura.Tanque;
 
 public class InsertTable {
-
-    
-    public void insertTable(String tabela,String[]campos , String[] valores){       
-        Connection c = null;
-        Statement stmt = null;
-        String campos_str=lista_to_string(campos);
-        String valores_str=lista_to_string(valores);
-        try {
-            Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv", "rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA"); 
-            System.out.println("Base de dados aberta");
-            stmt = c.createStatement();
-            String sql = ("insert into"+tabela+"("+campos_str+")"+"VALUES"+valores_str );
-            stmt.executeQuery(sql);
-            stmt.close();
-            c.close();
-        } catch (Exception e) {
-            System.err.println(e.getClass().getName() + ": " + 
-                    e.getMessage());            
-        }
-        System.out.println("Table created successfully");
-        
-    }
-    
-    
-   private String lista_to_string(String[] lista){
-       String result="";
-       for (int i=0 ; i<lista.length ; i++ ){
-           result=result+", "+lista[1];           
-       }
-       
-       return result;
-   } 
+ 
     /**
       * devem ser feitos 3 inserts  para inserir um objeto funcinario dentro do banco
       * @param f 
       * aqui abrimos o objeto funcionario e transformamos em string de comando SQL
-      */   
+         
    public void insertFuncionario(Funcionario f){
         Connection c = null;
         Statement stmt_1 = null;
@@ -63,11 +31,7 @@ public class InsertTable {
             stmt_1 = c.createStatement();
             stmt_2 = c.createStatement();
             stmt_3 = c.createStatement();
-            /**
-             * preparar dados do objeto funcionario para inserssão
-             * dados( idfuncionario , nome, cpf, fk_tanque_idtanque, fk_turno_idturno, fk_cargo_idcargo)
-             */
-            
+           
             String idfuncionario; 
             String nome;
             String cpf;
@@ -98,7 +62,7 @@ public class InsertTable {
              * valores da tabela contato (idcontato, dado, fk_tipocontato_idtipo, fk_funcionario_idfuncionario)
              * insert email
              * insert telefone
-             */
+            
             //
             ArrayList  tabela_contato = select.selectTable("SELECT * FROM contato;");
             String idcontato1 = String.valueOf(tabela_contato.size()+1);
@@ -116,9 +80,7 @@ public class InsertTable {
             //System.out.println(ins_cont2);
             
             
-            /**
-             * fazendo as inserções
-             */
+            
             String sql_query_1 = (comando_insFun);
             String sql_query_2 = (ins_cont1);
             String sql_query_3 = (ins_cont2);
@@ -144,7 +106,7 @@ public class InsertTable {
     * insere um objeto tanque dentro do banco de dados 
     * (idtanque,temperatura,ph,oxigenio,fk_peixe_idpeixe)
     * @param t 
-    */
+   
    public void insertTanque(Tanque t){
        Connection c = null;
        Statement stm = null;
@@ -154,7 +116,7 @@ public class InsertTable {
            System.out.println("Base de dados aberta");
            /**
             * criar variaveis para aabrir o tipo tanque 
-            */
+            
            String insert_tan;
            String temp;
            String oxi;
@@ -180,5 +142,5 @@ public class InsertTable {
             System.err.println(e.getClass().getName() + ": " +  e.getMessage());            
         }
        System.out.println("insert tanque successfully");
-   }
+   }*/
 }

@@ -1,20 +1,55 @@
 package psicultura;
 
 public class Gerente extends Pessoa {
-    public Gerente(String nome, String cpf, String turno, String cidade, String bairro, String lorgadouro, String complemento, String cep, boolean permissao,String email,String telefone){
-        // atributos de pessoa 
-        super.nome=nome;
-        super.cpf=cpf;
-        super.turno=turno;
-        super.cidade=cidade;  
-        super.bairro=bairro;
-        super.lorgadouro=lorgadouro;
-        super.complemento=complemento;
-        super.cep=cep;
-        super.permissao=permissao;
-        super.listadecontatos=new String[2];
-        super.listadecontatos[0] = email;
-        super.listadecontatos[1] = telefone;
-    } 
+    public Gerente(String nome,String cpf,Turno turno,String senha,Endereco moradia){
+        this.cargo.setGerente();
+        this.setNome(nome);
+        this.setCpf(cpf);
+        this.setTurno_de_trabalho(turno);
+        this.setSenha(senha);
+        this.AtualizarEndereco(moradia);        
+        
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public Endereco getMoradia() {
+        return moradia;
+    }
+
+    public void AtualizarEndereco(Endereco moradia) {
+        this.moradia = moradia;
+    }
+
+    public Turno getTurno_de_trabalho() {
+        return turno_de_trabalho;
+    }
+
+    public void setTurno_de_trabalho(Turno turno_de_trabalho) {
+        this.turno_de_trabalho = turno_de_trabalho;
+    }
+   
 }
-   // //
+   

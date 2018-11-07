@@ -1,45 +1,25 @@
 
+
 package psicultura;
+
+import java.util.Date;
 
 public class Tanque {
     float sensor_temp;
     float sensor_oxi;
     float sensor_ph;
     int id_tanque;
-    EspeciePeixe peixe;    
+    Peixe peixe; 
+    Date momento;
     
-    public Tanque(float temp,float oxi,float ph,int id_tanque){
-        this.sensor_temp=temp;
-        this.sensor_oxi=oxi;
-        this.sensor_ph=ph;
-        this.id_tanque=id_tanque;
-       
+    public Tanque(float temp,float oxi,float ph,int id_tanque,Date momento,Peixe peixe){
+        this.setId_tanque(id_tanque);
+        this.setSensor_ph(ph);
+        this.setSensor_oxi(oxi);
+        this.setSensor_temp(temp);
+        this.setPeixe(peixe);
+        this.setMomento(momento);
     }
-    /**
-     * 
-     * @param nome
-     * @param agua boolean true para agua doce, false para agua salgada; 
-     * @param temp_max
-     * @param temp_min
-     * @param ph_max
-     * @param ph_min
-     * @param porcetagem_oxi_max
-     * @param porcetagem_oxi_min 
-     */
-    public void criarAddPeixe(String nome, boolean agua, float temp_max, float temp_min, float ph_max, float ph_min,float porcetagem_oxi_max, float porcetagem_oxi_min){      
-      this.peixe= new EspeciePeixe( nome,agua, temp_max,  temp_min, ph_max,  ph_min, porcetagem_oxi_max, porcetagem_oxi_min);
-    }
-    public void addPeixe(EspeciePeixe peixe){
-        this.peixe=peixe;
-    }      
-    public boolean estaVazio(){
-        if(this.peixe==null){
-            return true;
-        }
-        return false;
-    }
-    
-    /*getter e setter*/
 
     public float getSensor_temp() {
         return sensor_temp;
@@ -73,14 +53,21 @@ public class Tanque {
         this.id_tanque = id_tanque;
     }
 
-    public EspeciePeixe getPeixe() {
+    public Peixe getPeixe() {
         return peixe;
     }
 
-    public void setPeixe(EspeciePeixe peixe) {
+    public void setPeixe(Peixe peixe) {
         this.peixe = peixe;
     }
-    
+
+    public Date getMomento() {
+        return momento;
+    }
+
+    public void setMomento(Date momento) {
+        this.momento = momento;
+    }
     
     
 }

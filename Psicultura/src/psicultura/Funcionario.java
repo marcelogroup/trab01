@@ -5,29 +5,93 @@
  */
 package psicultura;
 
-
+/**
+ * 
+ * @author marcelo
+ */
 public class Funcionario extends Pessoa{
     public Tanque tanque_do_func;
-      public Funcionario(String nome, String cpf, String turno, String cidade, String bairro, String lorgadouro, String complemento, String cep, boolean permissao,Tanque tanque_do_func,String email,String telefone){
-                         //"josé esmaraldo","1212","1"         ,"viana"       ,"azulino"    ,"rua carlos victor", "numero 12"       ,"29106080", true              ,null                ,"zees@gmail.com","33394433");   
-        super.nome=nome;
-        super.cpf=cpf;
-        super.turno=turno;
-        super.cidade=cidade;  
-        super.bairro=bairro;
-        super.lorgadouro=lorgadouro;
-        super.complemento=complemento;
-        super.cep=cep;
-        super.permissao=permissao;        
-        this.tanque_do_func=tanque_do_func;
-        super.listadecontatos=new String[2];
-        super.listadecontatos[0] = email;
-        super.listadecontatos[1] = telefone;
-    }   
-      
-    public String[] pega_contatos(Funcionario func){
-        return super.getListadecontatos();
-    }  
+    
+    public Funcionario(Tanque tanque,String nome,String cpf,Turno turno,String senha,Endereco moradia,Cargo cargo){
+        this.setTanque_do_func(tanque);
+        this.setNome(nome);
+        this.setCpf(cpf);
+        this.setTurno_de_trabalho(turno);
+        this.setSenha(senha);
+        this.setCargo(cargo);
+        this.setMoradia(moradia);        
         
+    } 
+
+    public Tanque getTanque_do_func() {
+        return tanque_do_func;
+    }
+
+    public void setTanque_do_func(Tanque tanque_do_func) {
+        this.tanque_do_func = tanque_do_func;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }    
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public Endereco getMoradia() {
+        return moradia;
+    }
+
+    public void setMoradia(Endereco moradia) {
+        this.moradia = moradia;
+    }
+
+    public Cargo getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(Cargo cargo) {
+        this.cargo = cargo;
+    }
+
+    public Turno getTurno_de_trabalho() {
+        return turno_de_trabalho;
+    }
+
+    public void setTurno_de_trabalho(Turno turno_de_trabalho) {
+        this.turno_de_trabalho = turno_de_trabalho;
+    }
+
+    /* camada de apresntação*/
+    public void AtualizarEndereco(Endereco end){
+        this.setMoradia(end);
+    }
+    public void AtualizarTanque(Tanque t){
+        this.setTanque_do_func(t);
+    }
+    /**
+     * pensar nisso  redundante
+     * @param cargo 
+     */
+    public void AtualizarCargo(Cargo cargo){
+        this.setCargo(cargo);
+    }
 }
 

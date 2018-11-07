@@ -1,5 +1,5 @@
 package psicultura;
-public class EspeciePeixe {
+public class Peixe {
     float temp_max;
     float temp_min;
     float ph_max;
@@ -7,11 +7,11 @@ public class EspeciePeixe {
     float porcetagem_oxi_max;
     float porcetagem_oxi_min;
     String nome_especie;
-    boolean tipo_agua;
+    String tipo_agua;
     
-    public EspeciePeixe(String nome, boolean agua, float temp_max, float temp_min, float ph_max, float ph_min,float porcetagem_oxi_max, float porcetagem_oxi_min){
+    public Peixe(String nome, String agua, float temp_max, float temp_min, float ph_max, float ph_min,float porcetagem_oxi_max, float porcetagem_oxi_min){
         this.nome_especie=nome;
-        this.tipo_agua=agua;
+    
         this.ph_max = ph_max;
         this.ph_max=ph_max;
         this.ph_min=ph_min;
@@ -78,11 +78,11 @@ public class EspeciePeixe {
         this.nome_especie = nome_especie;
     }
 
-    public boolean getTipo_agua() {
+    public String getTipo_agua() {
         return tipo_agua;
     }
 
-    public void setTipo_agua(boolean tipo_agua) {
+    public void setTipo_agua(String tipo_agua) {
         this.tipo_agua = tipo_agua;
     }
     
