@@ -19,7 +19,19 @@ public class Turno {
     public String getTurno(){
         return this.descricao;
     }
-
+    public String getIdTurno(Turno t){
+        String r = null;
+        if(t.getTurno().equals("manha") ){
+            r="1";
+        }
+        if(t.getTurno().equals("tarde") ){
+            r= "2";
+        }
+        if(t.getTurno().equals("noite")){
+            r ="3";
+        }
+        return r;
+    }
    
     
 }

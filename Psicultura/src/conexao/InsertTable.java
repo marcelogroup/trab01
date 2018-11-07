@@ -1,14 +1,18 @@
 /*NEED COFFEE*/
 package conexao;
 
+import com.sun.org.apache.bcel.internal.generic.Select;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import psicultura.EspeciePeixe;
+import psicultura.Endereco;
+import psicultura.Peixe;
 import psicultura.Funcionario;
 import psicultura.Tanque;
+import conexao.SelectTable;
 
 /**
  * banco = "jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv"
@@ -18,95 +22,130 @@ import psicultura.Tanque;
  */
 public class InsertTable {
 
- 
-    /**
-=======
     String banco;
     String user;
     String password;
-   
-    public InsertTable(String banco,String user,String password){
+   /**
+    * construtor here
+    * @param banco
+    * @param user
+    * @param password 
+    */
+    public  void InsertTable(String banco,String user,String password){
         this.setBanco(banco);
         this.setUser(user);
         this.setPassword(password);
     }
-    
-    
-   /**
->>>>>>> f8333e94c9450ac36f45f408cfbd855225232fa3
-      * devem ser feitos 3 inserts  para inserir um objeto funcinario dentro do banco
-      * @param f 
-      * aqui abrimos o objeto funcionario e transformamos em string de comando SQL
-         
-   public void insertFuncionario(Funcionario f){
+
+    public void InsertFuncionario(Funcionario fun) {
         Connection c = null;
-        Statement stmt_1 = null;
-        ArrayList dados ;
-        String comando_insFun;
-        int tam;
+        Statement stmt = null;
+        /*monstando a query */
+        //idfuncionario	nome	cpf	fk_tanque_idtanque	fk_turno_idturno	fk_cargo_idcargo
+        String query="INSERT INTO funcionarios( idfuncionario,nome,cpf,fk_tanque_idtanque,fk_turno_idturno,fk_cargo_idcargo) values";
+        String id, nome ,cpf, fk_idtanque, fk_idturno,fk_idcargo;
+        nome        = fun.getNome();
+        cpf         = fun.getCpf();
+        fk_idtanque = String.valueOf(fun.getTanque_do_func().getId_tanque());
+        fk_idturno  = fun.getTurno_de_trabalho().getIdTurno(fun.getTurno_de_trabalho());
+        fk_idcargo  = fun.getCargo().getIdcargo(fun.getCargo());
+        
+        nome="'"+nome+"'";
+        cpf="'"+cpf+"'";
+        query=query+"("+nome+","+cpf+","+fk_idtanque+","+fk_idturno+","+fk_idcargo+");";
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection(banco,user,password ); 
-            System.out.println("Base de dados aberta");
-            stmt_1 = c.createStatement();
-
-            
->>>>>>> f8333e94c9450ac36f45f408cfbd855225232fa3
-            String idfuncionario; 
-            String nome;
-            String cpf;
-            String idtanque;
-            String idturno;
-            String idcargo="2";
-            
-            SelectTable select = new SelectTable();
-            dados           = select.selectTable("SELECT * FROM funcionario;");
-            tam             = dados.size()+1;            
-            idfuncionario   = String.valueOf(tam);
-            nome            = f.getNome();
-            cpf             = f.getCpf();                       
-            //pegando tanque
-            if(f.tanque_do_func==null){
-                idtanque    = "null";
-            }else{
-                idtanque    = String.valueOf(f.tanque_do_func.getId_tanque());
-            }
-        
-
-    
-   private void insertContato(Funcionario f, String fk_id){
-       /*
-   }
-        Connection c  = null;
-        Statement stm = null;
-        try{
+            c = DriverManager.getConnection(banco,user,password );
+            c.createStatement();
+            stmt.executeUpdate(query); 
+            stmt.close();
+            c.close();
+         }catch(Exception e){
+             System.err.println(e.getClass().getName() + ": " +  e.getMessage());            
+         }
+         System.out.println("insercão de funcionario feita");
+    }
+    public void InsertEndereco(Funcionario fun) throws SQLException{
+        Connection c = null;
+        Statement stmt = null;
+        String query="INSERT INTO endereco(idfun, cidade, bairro, logradouro, complemento, cep, fk_funcionario_idfuncionario) values ";
+        String idfun, cidade, bairro, logradouro, complemento, cep, fk_idfuncionario;
+        /**/
+        idfun           = getIdFuncionario(fun);
+        cidade          = "'"+fun.getMoradia().getCidade()+"'";
+        bairro          = "'"+fun.getMoradia().getBairro()+"'";
+        logradouro      = "'"+fun.getMoradia().getLorgadouro()+"'";
+        complemento     = "'"+fun.getMoradia().getComplemento()+"'";
+        cep             = "'"+fun.getMoradia().getCep()+"'";  
+        fk_idfuncionario= idfun;
+        query=query+"("+idfun+","+cidade+","+bairro+","+logradouro+","+complemento+","+cep+","+fk_idfuncionario+");";
+        try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection(banco,user,password ); 
-            SelectTable select = new SelectTable();
-            ArrayList  tabela_contato = select.selectTable("SELECT * FROM contato;");
-            
-            String idcontato1         = String.valueOf(tabela_contato.size()+1);
-            String idcontato2         = String.valueOf(tabela_contato.size()+2);
-            String[] contatos         = f.pega_contatos(f);
-            String email              = contatos[0];
-            String telefone           = contatos[1];
-            String fk_tipocontato_idtipo;
-            String fk_funcionario_idfuncionario=fk_id ;
-            String ins_cont1 = idcontato1 + ",'" + email      + "' ,1 ,"+fk_funcionario_idfuncionario;
-            String ins_cont2 = idcontato2 + ",'" + telefone   + "' ,2 ,"+fk_funcionario_idfuncionario;
-            
-            ins_cont1 = "insert into contato(idcontato,dado,fk_tipocontato_idtipo,fk_funcionario_idfuncionario) values("+ins_cont1+");";
-            ins_cont2 = "insert into contato(idcontato,dado,fk_tipocontato_idtipo,fk_funcionario_idfuncionario) values("+ins_cont2+");";
-            
-        }catch (Exception e) {
-            System.err.println(e.getClass().getName() + ": " +  e.getMessage());            
-        }
-        System.out.println("insert successfully");
-   }
+            c = DriverManager.getConnection(banco,user,password );
+            c.createStatement();
+            stmt.executeUpdate(query); 
+            stmt.close();
+            c.close();
+         }catch(Exception e){
+             System.err.println(e.getClass().getName() + ": " +  e.getMessage());            
+         }
+    }
+    private String getIdFuncionario(Funcionario fun) throws SQLException{
+        String result=null;
+        String cpf=fun.getCpf();
+        SelectTable s = new SelectTable();
+        ArrayList reusltado_query;
+        reusltado_query = s.selectTable("SELECT id FROM funcionario where cpf='"+cpf+"';");
+        ResultSet rs =(ResultSet) reusltado_query.get(0);
+        result=rs.getString(1);
+        
+        
+        return result;
+    }
+    
+    //"SELECT id FROM funcionario where cpf='"+cpf+"';"
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public String getBanco() {
+        return banco;
+    }
 
-   public void insertTanque(Tanque t){
-       Connection c = null;
-       Statement stm = null;
+    public void setBanco(String banco) {
+        this.banco = banco;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
+}
+           
+   
+
+  
        /**
             * criar variaveis para aabrir o tipo tanque 
             
@@ -209,33 +248,4 @@ public class InsertTable {
    
    
    
-   /**
-    * getter e setter
-   
-    public String getBanco() {
-        return banco;
-    }
-
-    public void setBanco(String banco) {
-        this.banco = banco;
-    }
-
-    public String getUser() {
-        return user;
-    }
-
-    public void setUser(String user) {
-        this.user = user;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-   
-   */
-
-}
+ */

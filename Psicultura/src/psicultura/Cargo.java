@@ -16,5 +16,17 @@ public class Cargo {
     public void setFuncionario(){
         this.nomeCargo="funcionario";
     }
-    
+    public String getIdcargo(Cargo c){
+        String result=null;
+        if(c.getCargo().equals("estagiario")){
+            result="3";
+        }
+        if(c.getCargo().equals("gerente")){
+            result="1";
+        }
+        if(c.getCargo().equals("funcionario")){
+            result="2";
+        }
+        return result;
+    }
 }

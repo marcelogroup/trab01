@@ -16,19 +16,20 @@ import java.util.ArrayList;
  * @author 20171BSI0081
  */
 public class SelectTable {
+
+   
     public synchronized ArrayList selectTable(String comando) {
         ArrayList listResult = new ArrayList();        
         Connection c = null;
         Statement stmt = null;
         try {
             Class.forName("org.postgresql.Driver");
-            //c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/TrabIntegrado","postgres", "serra");   
+         
             c = DriverManager.getConnection("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv", "rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");   
             System.out.println("Opened database successfully");            
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery(comando);
-            //System.out.println("--------------");
-            //System.out.println(rs);
+         
             while (rs.next()) {
                 //System.out.print("Column 1 returned ");
                 //System.out.println(rs.getString(2));
