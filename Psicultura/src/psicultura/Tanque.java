@@ -17,10 +17,16 @@ public class Tanque {
         this.setSensor_ph(ph);
         this.setSensor_oxi(oxi);
         this.setSensor_temp(temp);
-        this.setPeixe(peixe);
+        this.AdicionarPeixe(peixe);
         this.setMomento(momento);
     }
 
+    /**
+     * 
+     * getter and setter
+     */
+    
+    
     public float getSensor_temp() {
         return sensor_temp;
     }
@@ -57,7 +63,7 @@ public class Tanque {
         return peixe;
     }
 
-    public void setPeixe(Peixe peixe) {
+    public void AdicionarPeixe(Peixe peixe) {
         this.peixe = peixe;
     }
 

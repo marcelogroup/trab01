@@ -103,7 +103,17 @@ public class InsertTable {
         return result;
     }
     
-    //"SELECT id FROM funcionario where cpf='"+cpf+"';"
+    public void InsertTanque(Tanque t){
+        Connection c = null;
+        Statement stmt = null;
+        String query="INSERT INTO tanque(idtanque,temperatura,ph,oxigenio,fk_peixe_idpeixe)values";
+        String id,temp,ph,oxi,fk_idpeixe;
+        id   = String.valueOf(t.getId_tanque());
+        temp = String.valueOf(t.getSensor_temp());
+        oxi  = String.valueOf(t.getSensor_oxi());
+        ph   = String.valueOf(t.getSensor_ph());
+        
+    }
     
     
     

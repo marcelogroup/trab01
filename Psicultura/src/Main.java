@@ -3,7 +3,7 @@
 
 import conexao.InsertTable;
 import conexao.SelectTable;
-import java.sql.*;
+
 import psicultura.Peixe;
 import psicultura.Funcionario;
 import psicultura.Gerente;
@@ -21,11 +21,11 @@ public class Main {
        Date agora= new Date();
        
        /* fazendo 5 tanques*/       
-       Tanque tanque_1=new Tanque(33.4f, 10.5f, 7.1f,1,agora,null);
-       Tanque tanque_2=new Tanque(32.5f, 11.2f, 6.9f,1,agora,null);
-       Tanque tanque_3=new Tanque(31.7f, 12.1f, 7.0f,1,agora,null);
-       Tanque tanque_4=new Tanque(33.1f, 10.1f, 7.5f,1,agora,null);        
-       Tanque tanque_5=new Tanque(33.4f, 10.2f, 7.2f,1,agora,null);
+       Tanque tanque_1=new Tanque(30.4f, 7.5f, 7.1f,1,agora,null);
+       Tanque tanque_2=new Tanque(32.5f, 9.2f, 6.9f,2,agora,null);
+       Tanque tanque_3=new Tanque(31.7f, 6.1f, 7.0f,3,agora,null);
+       Tanque tanque_4=new Tanque(30.1f, 7.1f, 7.5f,4,agora,null);        
+       Tanque tanque_5=new Tanque(29.4f, 5.2f, 7.2f,5,agora,null);
        
        
        /*funcionarios da manhã */
@@ -70,7 +70,16 @@ public class Main {
        Endereco end_g1 = new Endereco("29106120","vila velha","cristovao colombo","rua condado"," numero 7");
        g1.AtualizarEndereco(end_g1);
       
-
+       // dados reais
+       Peixe tilapia = new Peixe("tilapia","doce", 32.0f, 27.0f, 8.5f, 6.0f, 9.0f, 5.0f );
+       Peixe dourado = new Peixe("dourado","doce", 28.0f, 22.0f, 8.0f, 6.5f, 8.0f, 4.0f );
+       
+       tanque_1.AdicionarPeixe(tilapia);
+       tanque_2.AdicionarPeixe(tilapia);
+       tanque_3.AdicionarPeixe(dourado);
+       tanque_4.AdicionarPeixe(dourado);
+       tanque_5.AdicionarPeixe(tilapia);
+       
        
     }
 }
