@@ -160,7 +160,7 @@ https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/cria%C3%A
 https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/insers%C3%A3o%20de%20dados.txt
 
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELAS E INSERÇÃO DOS DADOS
-https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/criacao%20e%20insers%C3%A3o.txt
+https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/cria%C3%A7%C3%A3o%20e%20inser%C3%A7%C3%A3o.txt
 
 #### 8.3 INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS
 https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/deletar%20tabelas.txt
