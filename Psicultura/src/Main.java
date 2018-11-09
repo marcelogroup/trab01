@@ -1,9 +1,5 @@
 
-
-
 import conexao.InsertTable;
-import conexao.SelectTable;
-
 import psicultura.Peixe;
 import psicultura.Funcionario;
 import psicultura.Gerente;
@@ -17,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
         
-
+        
        Date agora= new Date();
        
        /* fazendo 5 tanques*/       
@@ -64,11 +60,12 @@ public class Main {
        f1.AtualizarTanque(tanque_5);
        f1.AtualizarCargo(funcionario);
        
-       Cargo gerente=new Cargo();
-       gerente.setGerente();
-       Gerente g1 = new Gerente("moises","56753612345",turno_manha,"12345",null);
+       //Cargo gerente = new Cargo();
+       //gerente.setGerente();
        Endereco end_g1 = new Endereco("29106120","vila velha","cristovao colombo","rua condado"," numero 7");
-       g1.AtualizarEndereco(end_g1);
+       Gerente g1 = new Gerente("moises","56753612345",turno_manha,"12345",end_g1);
+       
+       
       
        // dados reais
        Peixe tilapia = new Peixe("tilapia","doce", 32.0f, 27.0f, 8.5f, 6.0f, 9.0f, 5.0f );
@@ -80,6 +77,11 @@ public class Main {
        tanque_4.AdicionarPeixe(dourado);
        tanque_5.AdicionarPeixe(tilapia);
        
+       /**
+        * adicionando tanques ao banco
+        */
+       InsertTable insert_obj= new InsertTable("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv","rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");
+       insert_obj.AdicionarTanque(tanque_1);
        
     }
 }

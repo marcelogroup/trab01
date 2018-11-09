@@ -1,8 +1,17 @@
 package psicultura;
 
 public class Gerente extends Pessoa {
+
+    /**
+     *
+     * @param nome
+     * @param cpf
+     * @param turno
+     * @param senha
+     * @param moradia
+     */
     public Gerente(String nome,String cpf,Turno turno,String senha,Endereco moradia){
-        this.cargo.setGerente();
+       // this.cargo.setGerente();
         this.setNome(nome);
         this.setCpf(cpf);
         this.setTurno_de_trabalho(turno);
@@ -15,7 +24,7 @@ public class Gerente extends Pessoa {
         return nome;
     }
 
-    public void setNome(String nome) {
+    private void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -23,7 +32,7 @@ public class Gerente extends Pessoa {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    private void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -31,7 +40,7 @@ public class Gerente extends Pessoa {
         return senha;
     }
 
-    public void setSenha(String senha) {
+    private void setSenha(String senha) {
         this.senha = senha;
     }
 
@@ -47,7 +56,7 @@ public class Gerente extends Pessoa {
         return turno_de_trabalho;
     }
 
-    public void setTurno_de_trabalho(Turno turno_de_trabalho) {
+    private void setTurno_de_trabalho(Turno turno_de_trabalho) {
         this.turno_de_trabalho = turno_de_trabalho;
     }
    
