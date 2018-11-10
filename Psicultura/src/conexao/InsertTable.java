@@ -58,71 +58,109 @@ public class InsertTable {
         this.password = password;
     }
    
-    public synchronized void InsertPeixe(Peixe fish){
-        Connection c=null;
-        Statement stmt=null;
-        String nomecientifico="'"+fish.getNome_especie()+"'";
-        String query_1="select * from peixe where nomecientifico="+nomecientifico +";";
-        boolean tem_o_peixe=false;
+
+    public synchronized void InsertPeixe    (Peixe fish){
+       
         try{
+            Connection c=null;
+            Statement stmt=null;
+            String nomecientifico="'"+fish.getNome_especie()+"'";
+            String query_1="select * from peixe where nomecientifico="+nomecientifico +";";
+            boolean tem_o_peixe=false;
+            String query_2="select * from peixe;";
+            String id="";
+            int tam=0;
+            boolean esta_vazio=true;
             Class.forName("org.postgresql.Driver");
             c = DriverManager.getConnection(banco,user, password);           
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery(query_1);
             tem_o_peixe=rs.next();
             System.out.println(tem_o_peixe);
-        }catch(Exception e){
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
-        }
-        //gerar id
-        String query_2="select * from peixe;";
-        String id="";
-        int tam=0;
-        boolean esta_vazio=true;
-        try{
-            Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection(banco,user, password);           
-            stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery(query_2);
-            while(rs.next()){
+            
+            //stmt = c.createStatement();
+            ResultSet rsv2 = stmt.executeQuery(query_2);
+            while(rsv2.next()){
                 tam++;
                 esta_vazio=false;
             }
             System.out.println("banco esta vaxio ?"+esta_vazio+"\ntamanho do banco : "+tam);
-        }catch(Exception e){
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
-        }
-        tam++;
-        if(tem_o_peixe){
-            System.out.println("faça nada");
-        }else{
-            
-            if(esta_vazio){
-                System.out.println("id deve receber 1");
-                id="1";
+             tam++;
+            if(tem_o_peixe){
+                System.out.println("faça nada");
             }else{
-                System.out.println("id deve receber "+tam);
-                id=String.valueOf(tam);
+
+                if(esta_vazio){
+                    System.out.println("id deve receber 1");
+                    id="1";
+                }else{
+                    System.out.println("id deve receber "+tam);
+                    id=String.valueOf(tam);
+                }
+                System.out.println("inserir objeto");
+                String tipoagua="'"+fish.getTipo_agua()+"'";
+                String query_3="INSERT INTO peixe (idpeixe,nomecientifico,tipoagua,tempmin,tempmax,phmin,phmax,oxmin,oxmax)values";
+                String tempmin=String.valueOf(fish.getTemp_min());
+                String tempmax=String.valueOf(fish.getTemp_max());
+                String phmin=String.valueOf(fish.getPh_min());
+                String phmax=String.valueOf(fish.getPh_max());
+                String oxmin=String.valueOf(fish.getPorcetagem_oxi_min());
+                String oxmax=String.valueOf(fish.getPorcetagem_oxi_max());
+                query_3=query_3+"("+id+","+nomecientifico+","+tipoagua+","+tempmin+","+tempmax+","+phmin+","+phmax+","+oxmin+","+oxmax+");";
+                //stmt = c.createStatement();
+                try {
+                    stmt.executeUpdate(query_3);
+                } catch (SQLException ex) {
+                    Logger.getLogger(InsertTable.class.getName()).log(Level.SEVERE, null, ex);
+                }
+        
+  
             }
-            System.out.println("inserir objeto");
-            String tipoagua="'"+fish.getTipo_agua()+"'";
-            String query_3="INSERT INTO peixe (idpeixe,nomecientifico,tipoagua,tempmin,tempmax,phmin,phmax,oxmin,oxmax)values";
-            String tempmin=String.valueOf(fish.getTemp_min());
-            String tempmax=String.valueOf(fish.getTemp_max());
-            String phmin=String.valueOf(fish.getPh_min());
-            String phmax=String.valueOf(fish.getPh_max());
-            String oxmin=String.valueOf(fish.getPorcetagem_oxi_min());
-            String oxmax=String.valueOf(fish.getPorcetagem_oxi_max());
-            query_3=query_3+"("+id+","+nomecientifico+","+tipoagua+","+tempmin+","+tempmax+","+phmin+","+phmax+","+oxmin+","+oxmax+");";
-            try{
-            Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection(banco,user, password);           
-            stmt = c.createStatement();
-            stmt.executeUpdate(query_3);
-            }catch(Exception e){
-                System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            }
-            
+        }   catch (SQLException ex) {
+            Logger.getLogger(InsertTable.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(InsertTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     }
+    public synchronized void InsertTanque   (Tanque t){
+        //pegar chave estrangeira    
+        //converter objeto em comando
+        
+        try{
+        Connection c =null;
+        Statement stmt=null;
+        String idtanque  = String.valueOf(t.getId_tanque());
+        String sensor_ox = String.valueOf(t.getSensor_oxi());
+        String sensor_ph = String.valueOf(t.getSensor_ph());
+        String sensor_temp = String.valueOf(t.getSensor_temp());
+        String fk_peixe;
+        String nomecientifico="'"+String.valueOf(t.getPeixe().getNome_especie())+"'";
+        Class.forName("org.postgresql.Driver");
+        c = DriverManager.getConnection(banco,user, password);           
+        stmt = c.createStatement();
+        ResultSet rs = stmt.executeQuery("select * from peixe where nomecientifico="+nomecientifico+";");
+        rs.next();
+        fk_peixe=rs.getString(1);
+        String query="INSERT INTO tanque (idtanque,temperatura,ph,oxigenio,FK_Peixe_IdPeixe)values("+idtanque+","+sensor_temp+","+sensor_ph+","+sensor_ox+","+fk_peixe+");";
+        System.out.println(query);
+        stmt.executeUpdate(query);
+        stmt.close();
+        c.close();
+                
+        } catch (SQLException ex) {
+            Logger.getLogger(InsertTable.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(InsertTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    } 
+    public synchronized void AdicionarTanque(Tanque t){
+        InsertPeixe(t.getPeixe());
+        try{
+            Thread.sleep(10000);
+            InsertTanque(t);
+        }catch(Exception e){
+            System.out.println("Deu erro!");
         }
     }
 }

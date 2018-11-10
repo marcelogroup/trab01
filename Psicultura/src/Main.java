@@ -81,15 +81,15 @@ public class Main {
         * adicionando tanques ao banco
         */
        InsertTable insert_obj= new InsertTable("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv","rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");
-        //insert_obj.AdicionarTanque(tanque_1);
-        //insert_obj.AdicionarTanque(tanque_2);
-        //insert_obj.AdicionarTanque(tanque_3);
-        //insert_obj.AdicionarTanque(tanque_4);
-        //insert_obj.AdicionarTanque(tanque_5);
-        insert_obj.InsertPeixe(dourado);
-        insert_obj.InsertPeixe(tilapia);
-        insert_obj.InsertPeixe(dourado);
-        insert_obj.InsertPeixe(tilapia);
+        insert_obj.AdicionarTanque(tanque_1);
+        insert_obj.AdicionarTanque(tanque_2);
+        insert_obj.AdicionarTanque(tanque_3);
+        insert_obj.AdicionarTanque(tanque_4);
+        insert_obj.AdicionarTanque(tanque_5);
+        //insert_obj.InsertPeixe(dourado);
+        //insert_obj.InsertPeixe(tilapia);
+        //insert_obj.InsertPeixe(dourado);
+        //insert_obj.InsertPeixe(tilapia);
        
     }
 }
