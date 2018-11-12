@@ -202,6 +202,7 @@ https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/deletar%2
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
 ![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/97.png?raw=true "query")
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/9.8.png?raw=true "query")
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
 https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/99.sql
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
