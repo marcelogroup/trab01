@@ -55,7 +55,7 @@ Com o constante crescimento na area da piscicultura e os riscos que envolvem cri
 ![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/modelo_conceitual_v4.png?raw=true "Modelo Conceitual")
     
     B) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/modelagem%20de%20classe_trabalho.png?raw=true "Modelagem de classe")
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/Diagrama%20de%20classe%20An%C3%A1lise.jpg?raw=true "Modelagem de classe")
     C) QUALIDADE 
         Garantir que a semântica dos atributos seja clara no esquema
         Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
@@ -198,14 +198,15 @@ https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/deletar%2
 >## Marco de Entrega 04 em: (18/10/2017)<br>
 
 #### 9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO (Mínimo 6)<br>
-        a) Uma junção que envolva todas as tabelas possuindo no mínimo 3 registros no resultado
-        b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/96.png?raw=true "query")
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/97.png?raw=true "query")
 #### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/9.8.png?raw=true "query")
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
-        a) Uma junção que envolva Self Join
-        b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
+https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/99.sql
 #### 9.10	SUBCONSULTAS (Mínimo 3)<br>
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/910.png?raw=true "query")
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
 ### 11 Backup completo do banco de dados postgres 
