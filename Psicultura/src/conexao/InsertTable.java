@@ -60,10 +60,10 @@ public class InsertTable {
    
 
     public synchronized void InsertPeixe    (Peixe fish){
-       
+        Connection c = null;
+        Statement stmt=null;
         try{
-            Connection c=null;
-            Statement stmt=null;
+           
             String nomecientifico="'"+fish.getNome_especie()+"'";
             String query_1="select * from peixe where nomecientifico="+nomecientifico +";";
             boolean tem_o_peixe=false;
@@ -125,9 +125,9 @@ public class InsertTable {
     public synchronized void InsertTanque   (Tanque t){
         //pegar chave estrangeira    
         //converter objeto em comando
-        
-        try{
         Connection c =null;
+        try{
+        
         Statement stmt=null;
         String idtanque  = String.valueOf(t.getId_tanque());
         String sensor_ox = String.valueOf(t.getSensor_oxi());
@@ -141,27 +141,40 @@ public class InsertTable {
         ResultSet rs = stmt.executeQuery("select * from peixe where nomecientifico="+nomecientifico+";");
         rs.next();
         fk_peixe=rs.getString(1);
-        String query="INSERT INTO tanque (idtanque,temperatura,ph,oxigenio,FK_Peixe_IdPeixe)values("+idtanque+","+sensor_temp+","+sensor_ph+","+sensor_ox+","+fk_peixe+");";
+        String query="INSERT INTO tanque (temperatura,ph,oxigenio,FK_Peixe_IdPeixe)values("+sensor_temp+","+sensor_ph+","+sensor_ox+","+fk_peixe+");";
         System.out.println(query);
         stmt.executeUpdate(query);
         stmt.close();
-        c.close();
+        
                 
         } catch (SQLException ex) {
             Logger.getLogger(InsertTable.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(InsertTable.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            try {
+                c.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(InsertTable.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+        
+        
         
     } 
     public synchronized void AdicionarTanque(Tanque t){
         InsertPeixe(t.getPeixe());
-        try{
+        InsertTanque(t);
+        /*try{
             Thread.sleep(10000);
             InsertTanque(t);
         }catch(Exception e){
             System.out.println("Deu erro!");
-        }
+        }*/
     }
+    public void InsertFuncionario(Funcionario fun){
+        String comando="insert into funcionario(nome , cpf , fk_tanque_idtanque , fk_turno_idturno , fk_cargo_idcargo)values";
+    }
+
 }
      
