@@ -174,6 +174,25 @@ public class InsertTable {
     }
     public void InsertFuncionario(Funcionario fun){
         String comando="insert into funcionario(nome , cpf , fk_tanque_idtanque , fk_turno_idturno , fk_cargo_idcargo)values";
+        String nome="'"+fun.getNome()+"'";
+        String cpf="'"+fun.getCpf()+"'";
+        String idtanque=String.valueOf(fun.getTanque_do_func().getId_tanque());
+        String turno = fun.getTurno_de_trabalho().getIdTurno( fun.getTurno_de_trabalho() );
+        String cargo =fun.getCargo().getIdcargo(fun.getCargo());
+        comando=comando+"("+nome+","+cpf+","+idtanque+","+turno+","+cargo+");";
+        Connection c = null;
+        Statement stmt = null;
+        try{
+            Class.forName("org.postgresql.Driver");
+            c = DriverManager.getConnection(banco,user, password); 
+            stmt = c.createStatement();
+            stmt.executeUpdate(comando);
+            System.out.println("insercao realizada");
+        } catch (SQLException ex) {
+            Logger.getLogger(InsertTable.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(InsertTable.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }
