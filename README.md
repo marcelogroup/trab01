@@ -52,7 +52,7 @@ Com o constante crescimento na area da piscicultura e os riscos que envolvem cri
 
 ### 5.MODELO CONCEITUAL<br>
         
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/modelo_conceitual_v4.png?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/novosmodelos/modelo_conceitual_v5.png?raw=true "Modelo Conceitual")
     
     B) NOTACAO UML (Caso esteja fazendo a disciplina de analise)
 ![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/Diagrama%20de%20classe%20An%C3%A1lise.jpg?raw=true "Modelagem de classe")
@@ -146,7 +146,7 @@ Com o constante crescimento na area da piscicultura e os riscos que envolvem cri
 
 ### 6	MODELO LÓGICO<br>
 
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/logicoNovo_vs2.png?raw=true "Brmodelonovo")
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/novosmodelos/modelo_logico_v5.png?raw=true "Brmodelonovo")
         a) inclusão do modelo lógico do banco de dados
         b) verificação de correspondencia com o modelo conceitual 
         (não serão aceitos modelos que não estejam em conformidade)
