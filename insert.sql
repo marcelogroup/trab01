@@ -1,18 +1,30 @@
-INSERT INTO funcionario
-(,nome,cpf,fk_tanque_idtanque,fk_turno_idturno,fk_cargo_idcargo)
-values('marcelo','14730683714',null,1,2),
-('olavo','74731683511',null,1,2),
-('jose','71131683510',null,1,2),
-('joaquim','12331622510',null,1,2),
-('bilbo','98753612345',null,1,2);
+/*cargo*/
+INSERT INTO cargo(NomeCargo)values('gerente'),('funcionario');
+/*turno*/
+INSERT INTO turno (horario) values('manhã'),('tarde'),('noite');
+/*peixe*/
+insert INTO peixe (nomecientifico,tipoagua,tempmin,tempmax,phmin,phmax,oxmin,oxmax)values
+	('tilapia','doce',27,32,6,8.5,5,9),
+	('dourado','doce',22,28,6.5,8,4,8); 
+INSERT INTO TipoContato(idTipo, Tipo)
+VALUES  (1, 'email'),
+		(2, 'telefone');
+
+INSERT INTO funcionario (nome,cpf,fk_tanque_idtanque,fk_turno_idturno,fk_cargo_idcargo)values
+	('gabriela','24739683714',null,1,1),
+	('marcelo','14730683714',null,1,2),
+	('olavo','74731683511',null,1,2),
+	('jose','71131683510',null,1,2),
+	('joaquim','12331622510',null,1,2),
+	('bilbo','98753612345',null,1,2);
 
 INSERT INTO endereco
-(cidade,bairro,logradouro,complemento,cep,fk_funcionario_idfuncionario)values
-('vila velha','soteco','rua visconde de taunay',' numero 33','29106080',2),
-('vila velha','cocal','rua cravos verdes',' numero 33','29106090',3),
-('vila velha','cocal','rua laranja mecanica',' numero 33','29106100',4),
-('vila velha','soteco','rua dos alfaiates',' numero 33','29106110',5),
-('vila velha','condado','rua ponei saltitante',' numero 33','29106120',6);
+	(cidade,bairro,logradouro,complemento,cep,fk_funcionario_idfuncionario)values
+	('vila velha','soteco','rua visconde de taunay',' numero 33','29106080',2),
+	('vila velha','cocal','rua cravos verdes',' numero 33','29106090',3),
+	('vila velha','cocal','rua laranja mecanica',' numero 33','29106100',4),
+	('vila velha','soteco','rua dos alfaiates',' numero 33','29106110',5),
+	('vila velha','condado','rua ponei saltitante',' numero 33','29106120',6);
 
 /*respectivos contatos*/
 INSERT INTO contato
