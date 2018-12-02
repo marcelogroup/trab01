@@ -37,11 +37,11 @@ Com o constante crescimento na area da piscicultura e os riscos que envolvem cri
  
  > O cliente precisa que o sistema informe os seguintes dados:
     
- * O Ph do tanque, como é o dado mais sensível ele precisa ser atualizado constantemente.
- * O oxigênio do tanque.
- * A temperatura do tanque.
- * Um histórico dos Tanques, com base nos critérios dos funcionários.
- * Informações dos funcionários.
+ * Exibir quais especies de peixes estão em quais tanques no momento atual e o tipo da água.
+ * Mostrar estado atual de um tanque e quais dados estão fora do esperado.
+ * mostrar quais funcionarios estão responsaveis por quais tanques.
+ * Um histórico dos Tanques, com base nos funcionários.
+ * Mostrar dados de informções de contato dos funcionarios.
  
  
 #### 4.2 TABELA DE DADOS DO SISTEMA:
