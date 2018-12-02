@@ -170,12 +170,12 @@ https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/deletar%2
 ### 9 TABELAS E PRINCIPAIS CONSULTAS<br>
 
 
-(https://github.com/pisciculturainteligente/trab01/blob/master/item9.ipynb "item9")
+[item nove](https://github.com/pisciculturainteligente/trab01/blob/master/item9.ipynb)
 
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
 ### 11 Backup completo do banco de dados postgres 
-
+[arquivo de backup]https://github.com/pisciculturainteligente/trab01/blob/master/backupBD 
 
     a) deve ser realizado no formato "backup" 
         (Em Dump Options #1 Habilitar opções Don't Save Owner e Privilege)
