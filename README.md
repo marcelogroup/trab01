@@ -167,46 +167,7 @@ https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/deletar%2
 
 >## Marco de Entrega 03 em: (27/09/18) <br>
 
-### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
-    OBS: Incluir para cada tópico as instruções SQL + imagens (print da tela) mostrando os resultados.<br>
-#### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.1/todos.png?raw=true "query")
-#### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.2/todos.png?raw=true "query")
-#### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
-    
-	a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.3/a/compilado.png?raw=true "query")
 
-	b) Criar no mínimo 3 consultas com operadores aritméticos 
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.3/b/compilado.png?raw=true "query")
-
-	c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.3/c/compilado.png?raw=true "query")    
-	
-    
-	
-#### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) 
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.4/compilado.png?raw=true "query")
-    a) Criar outras 5 consultas que envolvam like ou ilike
-    b) Criar uma consulta para cada tipo de função data apresentada.
-
-#### 9.5	ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/query/9.5/compilado.png?raw=true "query")
-
-
->## Marco de Entrega 04 em: (18/10/2017)<br>
-
-#### 9.6	CONSULTAS COM JUNÇÃO E ORDENAÇÃO (Mínimo 6)<br>
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/96.png?raw=true "query")
-#### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/97.png?raw=true "query")
-#### 9.8	CONSULTAS COM LEFT E RIGHT JOIN (Mínimo 4)<br>
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/9.8.png?raw=true "query")
-#### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
-https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/99.sql
-#### 9.10	SUBCONSULTAS (Mínimo 3)<br>
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/910.png?raw=true "query")
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
 ### 11 Backup completo do banco de dados postgres 
