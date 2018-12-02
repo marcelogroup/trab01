@@ -16,7 +16,7 @@ DROP TABLE TANQUE CASCADE;
 
 DROP TABLE PEIXE CASCADE;
 
-DROP TABLE HISTORICOMEDICAO CASCADE;
+DROP TABLE medicao CASCADE;
 
 /* Criação de tabelas */
 
@@ -81,7 +81,7 @@ CREATE TABLE Peixe (
     OxMax FLOAT
 );
 
-CREATE TABLE HistoricoMedicao (
+CREATE TABLE medicao (
     IdHistorico INTEGER PRIMARY KEY,
     Temperatura FLOAT,
     Ph FLOAT,
