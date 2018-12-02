@@ -186,8 +186,8 @@ https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/deletar%2
 	Rafael dos Anjos
 
 ### 12	TUTORIAL COMPLETO DE PASSOS PARA RESTAURACAO DO BANCO E EXECUCAO DE PROCEDIMENTOS ENVOLVIDOS NO TRABALHO PARA OBTENÇÃO DOS RESULTADOS<br>
-        a) Outros grupos deverão ser capazes de restaurar o banco 
-		Tutorial de restauração
+         
+#####	Tutorial de restauração
 		Com o Download do backup feito e o pgadmin aberto, Siga os passos a seguir
 		![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/restore/criardatabase "criar")
 		
@@ -202,6 +202,7 @@ https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/deletar%2
 		
 		Clique em restore e aguarde
 		
+		a) Outros grupos deverão ser capazes de restaurar o banco
         b) executar todas as consultas presentes no trabalho
         c) executar códigos que tenham sido construídos para o trabalho 
         d) realizar qualquer procedimento executado pelo grupo que desenvolveu o trabalho
