@@ -190,14 +190,14 @@ Tutorial de restauração
 Com o Download do backup feito e o pgadmin aberto, Siga os passos a seguir
 ![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/restore/criardatabase.png?raw=true "criar")
 Crie um banco de dados para servir de restauração do backup
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/restore/criardatabase01.png?raw=true "Criar")	
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/restore/criardatabase01.png?raw=true "Criar1")	
 Com banco devidamente criado siga os passo a seguir para restaurar o banco
 ![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/restore/restore1.png?raw=true "restaurar")	
 Selecione onde você baixou o arquivo de backup e insira em filename
-![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/restore/restore2.png?raw=true "restaurar")     
+![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/restore/restore2.png?raw=true "restaurar1")     
 Clique em restore e aguarde
 		
-		a) Outros grupos deverão ser capazes de restaurar o banco
+	a) Outros grupos deverão ser capazes de restaurar o banco
         b) executar todas as consultas presentes no trabalho
         c) executar códigos que tenham sido construídos para o trabalho 
         d) realizar qualquer procedimento executado pelo grupo que desenvolveu o trabalho
