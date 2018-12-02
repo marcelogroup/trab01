@@ -31,7 +31,7 @@ Com o constante crescimento na area da piscicultura e os riscos que envolvem cri
 
 ### 4.RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
 
-![Protótipo feito no Balsamiq](https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/PsicIntBalsamiqProt.pdf?raw=true "Protótipo")
+[Protótipo feito no Balsami](https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/PsicIntBalsamiqProt.pdf)
 
 #### 4.1 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
  
@@ -46,7 +46,7 @@ Com o constante crescimento na area da piscicultura e os riscos que envolvem cri
  
 #### 4.2 TABELA DE DADOS DO SISTEMA:
    
-![Tabela](https://github.com/pisciculturainteligente/trab01/blob/master/Planilha%20Projeto%20Psicultura.xlsx?raw=true "Tabela")
+[Tabela](https://github.com/pisciculturainteligente/trab01/blob/master/Planilha%20Projeto%20Psicultura.xlsx)
     
 >## Marco de Entrega 01 em: (30/08/2018)<br>
 
