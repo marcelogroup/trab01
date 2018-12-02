@@ -167,6 +167,9 @@ https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/deletar%2
 
 >## Marco de Entrega 03 em: (27/09/18) <br>
 
+### 9 TABELAS E PRINCIPAIS CONSULTAS<br>
+
+![item 9](https://github.com/pisciculturainteligente/trab01/blob/master/item9.ipynb?raw=true "Protótipo")
 
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
