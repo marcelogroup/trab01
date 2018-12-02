@@ -152,18 +152,18 @@ Com o constante crescimento na area da piscicultura e os riscos que envolvem cri
         (não serão aceitos modelos que não estejam em conformidade)
 
 ### 7	MODELO FÍSICO<br>
-https://github.com/pisciculturainteligente/trab01/blob/master/modelo_fisico_v5.sql
+[modelo físico](https://github.com/pisciculturainteligente/trab01/blob/master/modelo_fisico_v5.sql)
       
         
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
 #### 8.1 DETALHAMENTO DAS INFORMAÇÕES
-https://github.com/pisciculturainteligente/trab01/blob/master/insert.sql
+[insert](https://github.com/pisciculturainteligente/trab01/blob/master/insert.sql)
 
 #### 8.2 INCLUSÃO DO SCRIPT PARA CRIAÇÃO DE TABELAS E INSERÇÃO DOS DADOS
-https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/cria%C3%A7%C3%A3o%20e%20inser%C3%A7%C3%A3o.txt
+[create +insert](https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/cria%C3%A7%C3%A3o%20e%20inser%C3%A7%C3%A3o.txt)
 
 #### 8.3 INCLUSÃO DO SCRIPT PARA EXCLUSÃO DE TABELAS EXISTENTES, CRIAÇÃO DE TABELA NOVAS E INSERÇÃO DOS DADOS
-https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/deletar%20tabelas.txt
+[exclusão](https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/deletar%20tabelas.txt)
 
 >## Marco de Entrega 03 em: (27/09/18) <br>
 
