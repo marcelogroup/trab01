@@ -170,7 +170,7 @@ https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/deletar%2
 ### 9 TABELAS E PRINCIPAIS CONSULTAS<br>
 
 
-(https://github.com/pisciculturainteligente/trab01/blob/master/item9.ipynb? "item9")
+(https://github.com/pisciculturainteligente/trab01/blob/master/item9.ipynb "item9")
 
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
 
@@ -179,9 +179,29 @@ https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/deletar%2
         (Em Dump Options #1 Habilitar opções Don't Save Owner e Privilege)
     b) antes de postar o arquivo no git o mesmo deve ser testado/restaurado por outro grupo de alunos/dupla
     c) informar aqui o grupo de alunos/dupla que realizou o teste.
+	
+	Andreas Hermes
+	Daniel Comério
+	Nicolas Sampaio
+	Rafael dos Anjos
 
 ### 12	TUTORIAL COMPLETO DE PASSOS PARA RESTAURACAO DO BANCO E EXECUCAO DE PROCEDIMENTOS ENVOLVIDOS NO TRABALHO PARA OBTENÇÃO DOS RESULTADOS<br>
         a) Outros grupos deverão ser capazes de restaurar o banco 
+		Tutorial de restauração
+		Com o Download do backup feito e o pgadmin aberto, Siga os passos a seguir
+		![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/restore/criardatabase "criar")
+		
+		Crie um banco de dados para servir de restauração do backup
+		![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/restore/criardatabase01 "Criar")
+		
+		Com banco devidamente criado siga os passo a seguir para restaurar o banco
+		![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/restore/restore1 "restaurar")
+		
+		Selecione onde você baixou o arquivo de backup e insira em filename
+		![Alt text](https://github.com/pisciculturainteligente/trab01/blob/master/images/restore/restore2 "restaurar")
+		
+		Clique em restore e aguarde
+		
         b) executar todas as consultas presentes no trabalho
         c) executar códigos que tenham sido construídos para o trabalho 
         d) realizar qualquer procedimento executado pelo grupo que desenvolveu o trabalho
