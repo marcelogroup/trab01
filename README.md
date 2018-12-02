@@ -169,6 +169,7 @@ https://github.com/pisciculturainteligente/trab01/blob/master/arquivos/deletar%2
 
 ### 9 TABELAS E PRINCIPAIS CONSULTAS<br>
 
+$ jupyter nbconvert --to html item9.ipynb
 ![item 9](https://github.com/pisciculturainteligente/trab01/blob/master/item9.ipynb? "item9")
 
 ### 10	ATUALIZAÇÃO DA DOCUMENTAÇÃO DOS SLIDES PARA APRESENTAÇAO FINAL (Mínimo 6 e Máximo 10)<br>
