@@ -5,6 +5,8 @@
  */
 package psicultura;
 
+import javax.swing.JOptionPane;
+
 /**
  * 
  * @author marcelo
@@ -12,19 +14,36 @@ package psicultura;
 public class Funcionario extends Pessoa{
     public Tanque tanque_do_func;
     
-    public Funcionario(Tanque tanque,String nome,String cpf,Turno turno,String senha,Endereco moradia,Cargo cargo){
-        this.setTanque_do_func(tanque);
-        this.setNome(nome);
-        this.setCpf(cpf);
-        this.setTurno_de_trabalho(turno);
-        this.setSenha(senha);
-        this.setCargo(cargo);
-        this.setMoradia(moradia);        
+    public Funcionario(String nome, String cpf, Tanque tanque, Cargo cargo, Endereco endereco){
+        this.nome=nome;
+        this.cpf=cpf;
+        this.tanque_do_func=tanque;
+        this.moradia=endereco;
         
-    } 
+        
+    }
+    public  Funcionario(){
+        this.nome   = JOptionPane.showInputDialog("entre com nome do funcionario\n");
+        this.cpf    = JOptionPane.showInputDialog("entre com cpf do funcionario\n");
+        this.tanque_do_func.setId_tanque(Integer.parseInt(JOptionPane.showInputDialog("entre com o codigo do tanque responsavel\n")));
+        this.cargo.nomeCargo=JOptionPane.showInputDialog("entre com cargo do funcionario\n");
+        this.turno_de_trabalho.descricao=JOptionPane.showInputDialog("entre com turno do funcionario\n");
+        this.moradia.setLorgadouro(JOptionPane.showInputDialog("entre com a rua do funcionario\n"));
+        this.moradia.setComplemento(JOptionPane.showInputDialog("entre com o numero da casa do funcionario\n"));
+        this.moradia.setBairro(JOptionPane.showInputDialog("entre com o bairro do funcionario\n"));
+        this.moradia.setCidade(JOptionPane.showInputDialog("entre com a cidade do funcionario\n"));
+        this.moradia.setCep(JOptionPane.showInputDialog("entre com o CEP do funcionario \n"));
+        
+    }
+    
+
+    
 
     public Tanque getTanque_do_func() {
         return tanque_do_func;
+    }
+    public int getTanqueId(){
+        return tanque_do_func.id_tanque;
     }
 
     public void setTanque_do_func(Tanque tanque_do_func) {
@@ -39,9 +58,7 @@ public class Funcionario extends Pessoa{
         this.nome = nome;
     }
 
-    public String getCpf() {
-        return cpf;
-    }
+    
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
@@ -53,14 +70,6 @@ public class Funcionario extends Pessoa{
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    public Endereco getMoradia() {
-        return moradia;
-    }
-
-    public void setMoradia(Endereco moradia) {
-        this.moradia = moradia;
     }
 
     public Cargo getCargo() {
@@ -78,7 +87,12 @@ public class Funcionario extends Pessoa{
     public void setTurno_de_trabalho(Turno turno_de_trabalho) {
         this.turno_de_trabalho = turno_de_trabalho;
     }
-
+    public String getIdCargo(){
+        return cargo.getIdcargo(cargo);
+    }
+    public String getIdTurno(){
+        return turno_de_trabalho.getIdTurno(turno_de_trabalho);
+    }
     /* camada de apresntação*/
     public void AtualizarEndereco(Endereco end){
         this.setMoradia(end);

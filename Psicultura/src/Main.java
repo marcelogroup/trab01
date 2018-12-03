@@ -1,30 +1,110 @@
 
+import conexao.CriaQuery;
 import conexao.InsertTable;
-import psicultura.Peixe;
-import psicultura.Funcionario;
-import psicultura.Gerente;
-import psicultura.Tanque;
+import psicultura.*;
+import Interface.*;
 import java.util.Date;
 import javax.swing.JOptionPane;
-import psicultura.Cargo;
-import psicultura.Endereco;
-import psicultura.Turno;
+
 
 public class Main {
 
     public static void main(String[] args) {
-        String operacao;
-        operacao = JOptionPane.showInputDialog("insira a operação\n 1 - inserir novo tanque \n 2- inserir novo funcionario\n 3 mostar tanque/peixe\n 4 verificar alertas");
-        /**
-         * para inserir novo tanque
-         */
-        String id_tanque = JOptionPane.showInputDialog("");
-        String ph;
-        String oxi;
-        String temp;
-        String peixe;
-        String momento;
         
+        String operacao;
+        int op;
+        CriaQuery q;
+        /**
+         * principáis relatórios 
+         *  1 O Ph do tanque, como é o dado mais sensível ele precisa ser atualizado constantemente.
+         *  2 O oxigênio do tanque.
+         *  3 A temperatura do tanque.
+         *  4 Um histórico dos Tanques, com base nos critérios dos funcionários.
+         *  5 Informações dos funcionários
+        
+         * principais adições de dados
+         *  1 inserir medicao
+         *  2 adicionar novo funcionario
+         *  3 adicionar especie
+         * 
+         */
+        
+        operacao = JOptionPane.showInputDialog("insira a operação \n"
+                                            + " 1 - Gerar relatorio \n"
+                                            + " 2 - Adição de dados \n"
+                                            + " 0 - Sair \n");
+        op = Integer.parseInt(operacao);
+        System.out.println(op);   
+        if(op==1){
+            /**
+             *  menu escolha do relatório
+             */
+            operacao = JOptionPane.showInputDialog("Escolha o ralatório \n"
+                    + " 1 - O Ph do tanque, como é o dado mais sensível ele precisa ser atualizado constantemente.\n"
+                    + " 2 - O oxigênio do tanque.\n"
+                    + " 3 - A temperatura do tanque.\n"
+                    + " 4 - Um histórico dos Tanques, com base nos critérios dos funcionários \n"
+                    + " 5 - Informações dos funcionários"
+                    + " 0 - voltar");        
+            op = Integer.parseInt(operacao);
+            if(op==1){
+                
+            }else if(op==2){
+                
+            }else if(op==3){
+                
+            }else if(op==4){
+                
+            }else if(op==5){
+                
+            }
+            
+        }else if(op==2){
+            /**
+             * menu escolher objeto do dominio
+             */  
+            operacao = JOptionPane.showInputDialog("Escolha ação\n"
+            + " 1 - Inserir nova especie \n"
+            + " 2 - Inserir novo tanque  \n"
+            + " 3 - Inserir funcionario  \n"
+            + " 4 - Inserir gerente      \n"
+            + " 0 - voltar << ");
+            op = Integer.parseInt(operacao);
+            switch (op) {
+                case 1:
+                    IPeixe interPeixe=new IPeixe();
+                    Peixe peixinho = new Peixe(interPeixe.getNome_especie(),interPeixe.getTipo_agua(),
+                            interPeixe.getTemp_max(),interPeixe.getTemp_min(),interPeixe.getPh_max(),
+                            interPeixe.getPh_min(),interPeixe.getPorcetagem_oxi_max(),interPeixe.getPorcetagem_oxi_min());
+                    q= new CriaQuery();
+                    q.peixe(peixinho);
+                    break;
+                case 2:
+                    ITanque interTanque= new ITanque();
+                    /*Tanque tanque = new Tanque();
+                    q=new CriaQuery();
+                    q.tanque(tanque);*/
+                    break;
+                case 3:
+                    Funcionario func= new Funcionario();
+                    q=new CriaQuery();
+                    q.funcionario(func);
+                    q.endereco(func);
+                    break;
+                case 4:
+                    Gerente gerente= new Gerente();
+                    q=new CriaQuery();
+                    q.gerente(gerente);
+                    q.endereco(gerente);
+                    break;
+                default:
+                    break;
+            }
+            
+        }
+        
+        
+       
         
     }
 }

@@ -3,6 +3,7 @@
 package psicultura;
 
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 public class Tanque {
     float sensor_temp;
@@ -11,16 +12,20 @@ public class Tanque {
     int id_tanque;
     Peixe peixe; 
     Date momento;
-    
-    public Tanque(float temp,float oxi,float ph,int id_tanque,Date momento,Peixe peixe){
-        this.setId_tanque(id_tanque);
-        this.setSensor_ph(ph);
-        this.setSensor_oxi(oxi);
-        this.setSensor_temp(temp);
+    String idPeixe;
+    public Tanque(String temp,String oxi,String ph,String id_tanque,Peixe peixe){
+        this.setId_tanque(Integer.parseInt(id_tanque));
+        this.setSensor_ph(Float.parseFloat(ph));
+        this.setSensor_oxi(Float.parseFloat(oxi));
+        this.setSensor_temp(Float.parseFloat(temp));
         this.AdicionarPeixe(peixe);
-        this.setMomento(momento);
     }
-
+    
+    
+    
+    
+    
+    
     /**
      * 
      * getter and setter
@@ -74,6 +79,8 @@ public class Tanque {
     public void setMomento(Date momento) {
         this.momento = momento;
     }
-    
+    public String getIdPeixe(){
+        return idPeixe;
+    }
     
 }

@@ -1,0 +1,28 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Interface;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author 20151bsi0436
+ */
+public class IEndereco {
+    String cep;
+    String cidade;
+    String bairro;
+    String lorgadouro;
+    String complemento;
+    
+    public IEndereco(){
+        this.lorgadouro=(JOptionPane.showInputDialog("entre com a rua do funcionario\n"));
+        this.complemento=(JOptionPane.showInputDialog("entre com o numero da casa do funcionario\n"));
+        this.bairro=(JOptionPane.showInputDialog("entre com o bairro do funcionario\n"));
+        this.cidade=(JOptionPane.showInputDialog("entre com a cidade do funcionario\n"));
+        this.cep=(JOptionPane.showInputDialog("entre com o CEP do funcionario \n"));
+    }
+}
