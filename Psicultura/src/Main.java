@@ -39,16 +39,18 @@ public class Main {
             /**
              *  menu escolha do relatório
              */
+            //objeto que imiprime relatorio
+            Relatorio relatorio=new Relatorio();
             operacao = JOptionPane.showInputDialog("Escolha o ralatório \n"
-                    + " 1 - O Ph do tanque, como é o dado mais sensível ele precisa ser atualizado constantemente.\n"
-                    + " 2 - O oxigênio do tanque.\n"
-                    + " 3 - A temperatura do tanque.\n"
-                    + " 4 - Um histórico dos Tanques, com base nos critérios dos funcionários \n"
-                    + " 5 - Informações dos funcionários"
+                    + " 1 - Exibir quais especies de peixes estão em quais tanques no momento atual e o tipo da água.\n"
+                    + " 2 - \n"
+                    + " 3 - \n"
+                    + " 4 - \n"
+                    + " 5 - \n"
                     + " 0 - voltar");        
             op = Integer.parseInt(operacao);
             if(op==1){
-                
+               relatorio.RelatorioUm();
             }else if(op==2){
                 
             }else if(op==3){

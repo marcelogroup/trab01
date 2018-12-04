@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 /**
  * 
  * @author marcelo
- */
+ */ 
 public class Funcionario extends Pessoa{
     public Tanque tanque_do_func;
     

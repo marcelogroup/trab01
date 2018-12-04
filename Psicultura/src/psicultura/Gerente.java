@@ -23,7 +23,7 @@ public class Gerente extends Pessoa {
         this.moradia.setCidade(JOptionPane.showInputDialog("entre com a cidade do gerente\n"));
         this.moradia.setCep(JOptionPane.showInputDialog("entre com o CEP do gerente\n"));  
         
-    }
+    } 
 
     public String getNome() {
         return nome;
