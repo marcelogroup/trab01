@@ -48,10 +48,19 @@ public class Relatorio {
     }
 
     public void RelatorioQuatro(){
-        String query ="";
+        String query ="SELECT nome,cpf,idtanque, medicao.temperatura,medicao.ph,medicao.oxigenio,nomecientifico,tipoagua,hora,data FROM  funcionario inner join tanque on(tanque.idtanque=funcionario.fk_tanque_idtanque) inner join peixe on (tanque.fk_peixe_idpeixe=peixe.idpeixe) inner join medicao on (medicao.fk_tanque_idtanque=tanque.idtanque) where (fk_turno_idturno=1) order by(hora,data);";
+        relatorio=select.selectTableRelatorioQuatro(query);
+        for(int i=0;i<relatorio.size();i++){            
+            System.out.println(relatorio.get(i));
+        }
+        
     }
     public void RelatorioCinco(){
-        String query ="";
+        String query ="SELECT nome,cpf,cidade,bairro,logradouro,cep,dado as telefone FROM  funcionario inner join endereco on (endereco.fk_funcionario_idfuncionario=funcionario.idfuncionario) inner join contato on (contato.fk_funcionario_idfuncionario=funcionario.idfuncionario) where fk_tipocontato_idtipo=2;";
+        relatorio=select.selectTableRelatorioCinco(query);
+        for(int i=0;i<relatorio.size();i++){            
+            System.out.println(relatorio.get(i));
+        }
     }
 
 }

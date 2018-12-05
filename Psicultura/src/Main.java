@@ -45,8 +45,8 @@ public class Main {
                     + " 1 - Exibir quais especies de peixes estão em quais tanques no momento atual e o tipo da água.\n"
                     + " 2 - Mostrar estado atual de um tanque e quais dados estão fora do esperado.\n"
                     + " 3 - Mostrar quais funcionarios estão responsaveis por quais tanques.\n"
-                    + " 4 - \n"
-                    + " 5 - \n"
+                    + " 4 - Um histórico dos Tanques, com base nos funcionários.\n"
+                    + " 5 - mostrar dados de informções de contato dos funcionarios.\n"
                     + " 0 - voltar");        
             op = Integer.parseInt(operacao);
             if(op==1){
@@ -56,9 +56,9 @@ public class Main {
             }else if(op==3){
                 relatorio.RelatorioTres();
             }else if(op==4){
-                
+                relatorio.RelatorioQuatro();
             }else if(op==5){
-                
+                relatorio.RelatorioCinco();
             }
             
         }else if(op==2){

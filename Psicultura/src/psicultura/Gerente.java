@@ -11,7 +11,7 @@ public class Gerente extends Pessoa {
      * @param turno
      * @param senha
      * @param moradia
-     */
+     */ 
     public Gerente(){
         this.nome=JOptionPane.showInputDialog("entre com nome do gerente\n");
         this.cpf=JOptionPane.showInputDialog("entre com cpf do gerente\n");

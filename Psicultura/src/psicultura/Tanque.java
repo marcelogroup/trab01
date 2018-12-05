@@ -18,8 +18,7 @@ public class Tanque {
         this.setSensor_oxi(Float.parseFloat(oxi));
         this.setSensor_temp(Float.parseFloat(temp));
         this.AdicionarPeixe(peixe);
-    }
-    
+    }  
     
     
     
