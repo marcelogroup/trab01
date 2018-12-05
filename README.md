@@ -43,6 +43,8 @@ Com o constante crescimento na area da piscicultura e os riscos que envolvem cri
  * Um histórico dos Tanques, com base nos funcionários.
  * Mostrar dados de informções de contato dos funcionarios.
  
+ [Relatorio](https://github.com/pisciculturainteligente/trab01/blob/master/relatorio/Relatorios.ipynb)
+      
  
 #### 4.2 TABELA DE DADOS DO SISTEMA:
    
