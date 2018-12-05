@@ -6,7 +6,7 @@ public class Gerente extends Pessoa {
 
     /**
      *
-     * @param nome
+     * @param nome 
      * @param cpf
      * @param turno
      * @param senha

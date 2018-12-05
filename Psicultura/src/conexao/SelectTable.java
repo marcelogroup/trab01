@@ -31,7 +31,7 @@ public class SelectTable {
             ResultSet rs = stmt.executeQuery(comando);
          
             while (rs.next()) {
-                //falha de segmentação
+               
                 
                 listResult.add(rs);
             }
@@ -47,7 +47,104 @@ public class SelectTable {
     }
     
     
-
+    /* marcelo */
+    public synchronized ArrayList selectTableRelatorioUm  (String comando){
+        ArrayList listResult = new ArrayList();    
+        Connection c = null;
+        Statement stmt = null;
+        try {
+            Class.forName("org.postgresql.Driver");
+         
+            c = DriverManager.getConnection("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv", "rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");   
+            //System.out.println("RElatorio um inciando");            
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery(comando);
+           
+            while (rs.next()) {
+                String saida= new String();
+                saida = rs.getString(1)+","+rs.getString(2)+","+rs.getString(3);                
+                listResult.add(saida);
+            }
+            //System.out.println("--------------");
+            rs.close();
+            stmt.close();
+            c.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());            
+        }
+        //System.out.println(listResult.get(2));
+        
+        return listResult;
+    }
+    public synchronized ArrayList selectTableRelatorioDois(String comando){
+        ArrayList listResult = new ArrayList();    
+        Connection c = null;
+        Statement stmt = null;
+        try {
+            Class.forName("org.postgresql.Driver");
+         
+            c = DriverManager.getConnection("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv", "rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");   
+            //System.out.println("RElatorio um inciando");            
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery(comando);
+           
+            while (rs.next()) {
+                String saida= new String();
+                // numero de colunas é de 14
+                    //System.out.println(rs.getFloat(3));
+                    saida =  rs.getString(1)+", "+rs.getFloat(2) +", "+rs.getFloat(3) +", "+rs.getFloat(4)+", "+rs.getString(5)+", ";
+                    saida =  saida + rs.getString(6)+", "+rs.getString(7)+", "+rs.getString(8)+", "+rs.getString(9)+", "+rs.getString(10)+", ";
+                    saida =  saida + rs.getString(11)+", "+rs.getString(12)+", "+rs.getString(13)+", "+rs.getString(14);
+                
+                
+                
+                // saida = rs.getString(1)+","+rs.getString(2)+","+rs.getString(3);                
+                listResult.add(saida);
+            }
+            //System.out.println("--------------");
+            rs.close();
+            stmt.close();
+            c.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());            
+        }
+        //System.out.println(listResult);
+        
+        return listResult;
+    }
+    public synchronized ArrayList selectTableRelatorioTres(String comando){
+        ArrayList listResult = new ArrayList();    
+        Connection c = null;
+        Statement stmt = null;
+        try {
+            Class.forName("org.postgresql.Driver");
+         
+            c = DriverManager.getConnection("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv", "rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");   
+            //System.out.println("RElatorio um inciando");            
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery(comando);
+           
+            while (rs.next()) {
+                String saida= new String();               
+                saida =  rs.getString(1)+", "+rs.getString(2); 
+                              
+                listResult.add(saida);
+            }
+            //System.out.println("--------------");
+            rs.close();
+            stmt.close();
+            c.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());            
+        }
+        //System.out.println(listResult);
+        
+        return listResult;
+    }
+    
+    
+    
+    /* altivo*/
     public synchronized ArrayList selectTableString(String comando){
         ArrayList listResult = new ArrayList();        
         Connection c = null;
@@ -72,7 +169,7 @@ public class SelectTable {
         System.out.println("Operation done successfully select");
         return listResult;
     }
-    public synchronized String selectId(String comando){
+    public synchronized String    selectId(String comando){
         String id="";
         Connection c = null;
         Statement stmt = null;

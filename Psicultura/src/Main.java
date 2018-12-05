@@ -43,8 +43,8 @@ public class Main {
             Relatorio relatorio=new Relatorio();
             operacao = JOptionPane.showInputDialog("Escolha o ralatório \n"
                     + " 1 - Exibir quais especies de peixes estão em quais tanques no momento atual e o tipo da água.\n"
-                    + " 2 - \n"
-                    + " 3 - \n"
+                    + " 2 - Mostrar estado atual de um tanque e quais dados estão fora do esperado.\n"
+                    + " 3 - Mostrar quais funcionarios estão responsaveis por quais tanques.\n"
                     + " 4 - \n"
                     + " 5 - \n"
                     + " 0 - voltar");        
@@ -52,9 +52,9 @@ public class Main {
             if(op==1){
                relatorio.RelatorioUm();
             }else if(op==2){
-                
+               relatorio.RelatorioDois();
             }else if(op==3){
-                
+                relatorio.RelatorioTres();
             }else if(op==4){
                 
             }else if(op==5){

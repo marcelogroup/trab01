@@ -4,7 +4,7 @@ package psicultura;
 
 import java.util.Date;
 import javax.swing.JOptionPane;
-
+ 
 public class Tanque {
     float sensor_temp;
     float sensor_oxi;
@@ -19,7 +19,6 @@ public class Tanque {
         this.setSensor_temp(Float.parseFloat(temp));
         this.AdicionarPeixe(peixe);
     }
-    
     
     
     
