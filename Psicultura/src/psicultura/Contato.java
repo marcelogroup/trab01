@@ -12,12 +12,13 @@ package psicultura;
 public class Contato {
     String dado;
     TipoContato tipo;
+    String dono;
     /**
      * 
      * @param d dado
      * @param t tipo do dado
      */
-    public Contato(String d,String t){
+    public Contato(String d,String t,String cpf){
         this.dado=d;
         if(t.equals("telefone")){
             tipo.set_Telefone();
@@ -26,5 +27,15 @@ public class Contato {
                 tipo.set_email();
             }
         }
+        this.dono=cpf;
+    }
+    public String getCPFDono(){
+        return dono;
+    }
+    public String getDado(){
+        return dado;
+    }
+    public TipoContato getTipo(){
+        return tipo;
     }
 }

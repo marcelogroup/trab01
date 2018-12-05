@@ -53,12 +53,12 @@ public class CriaQuery {
         return query;
     }
     public String gerente(Gerente func){
-        query = "insert into funcionario(nome,cpf,fk_turno_idturno,fk_cargo_idcargo)values";
+        query = "insert into funcionario(nome,cpf,fk_tanque_idtanque,fk_turno_idturno,fk_cargo_idcargo)values";
         String nome= func.getNome();
         String cpf= func.getCpf();
         String fk_cargo = func.getIdCargo();
         String fk_turno = func.getIdTurno();
-        query=query+"('"+nome+"','"+cpf+"','"+fk_turno+"','"+fk_cargo+"');";
+        query=query+"('"+nome+"','"+cpf+"',0,'"+fk_turno+"','"+fk_cargo+"');";
         System.out.println(query);
         return query;
     }
@@ -70,7 +70,7 @@ public class CriaQuery {
         String bairro=endereco.getBairro();
         String cidade=endereco.getCidade();
         String cep= endereco.getCep();
-        String id=String.valueOf(selectTable.selectId("Select id from Funcionario where cpf="+func.getCpf()));
+        String id=String.valueOf(selectTable.selectFunc("Select id from Funcionario where cpf="+func.getCpf()+";").get(0));
         query=query+"('"+cidade+"','"+bairro+"','"+rua+"','"+complemento+"','"+cep+","+id+"');";
         System.out.println(query);
         return query;
@@ -78,11 +78,19 @@ public class CriaQuery {
     public String tanque(Tanque tanque){
         String query="insert into tanque(temperatura , ph , oxigenio , fk_peixe_idpeixe)values";
         String temp = String.valueOf(tanque.getSensor_temp());              
-        String ph   = String.valueOf("informe o ph \n");
-        String oxigenio = String.valueOf("informe a % oxigenio\n");
-        String fk_peixe = selectTable.selectId("Select id from peixe where nome="+tanque.getPeixe().getNome_especie());
+        String ph   = String.valueOf(tanque.getSensor_ph());  
+        String oxigenio = String.valueOf(tanque.getSensor_oxi());  
+        String fk_peixe = String.valueOf(tanque.getPeixe().getId());
         query=query+"("+temp+","+ph+","+oxigenio+","+fk_peixe+");";
         System.out.println(query);
+        return query;
+    }
+    public String contato(Contato contato){
+        String query="insert into contato(dado,fk_TipoContato_idTipo,fk_funcionario_idfuncionario) values";
+        String dado= contato.getDado();
+        String tipo= contato.getTipo().getId();
+        String dono=String.valueOf(selectTable.selectFunc("Select id from Funcionario where cpf="+contato.getCPFDono()+";").get(0));
+        query=query+"("+dado+","+tipo+","+dono+");";
         System.out.println(query);
         return query;
     }

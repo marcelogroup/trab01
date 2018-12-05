@@ -14,6 +14,10 @@ public class Main {
         String operacao;
         int op;
         CriaQuery q;
+        InsertTable insertobj;
+        Endereco endereco;
+        Cargo cargo;
+        Turno turno;
         /**
          * principáis relatórios 
          *  1 O Ph do tanque, como é o dado mais sensível ele precisa ser atualizado constantemente.
@@ -70,6 +74,7 @@ public class Main {
             + " 2 - Inserir novo tanque  \n"
             + " 3 - Inserir funcionario  \n"
             + " 4 - Inserir gerente      \n"
+            + " 5 - Inserir Contato      \n"
             + " 0 - voltar << ");
             op = Integer.parseInt(operacao);
             switch (op) {
@@ -88,19 +93,19 @@ public class Main {
                     q.tanque(tanque);
                     break;
                 case 3:
-                    InsertTable insertobj= new InsertTable("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv","rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");
+                    insertobj= new InsertTable("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv","rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");
                     
                     IFuncionario interFunc= new IFuncionario();
-                    Endereco ende =  new Endereco(interFunc.getEndereco().getCep(),
+                    endereco =  new Endereco(interFunc.getEndereco().getCep(),
                                     interFunc.getEndereco().getCidade(),interFunc.getEndereco().getBairro(),
                                     interFunc.getEndereco().getLorgadouro(),interFunc.getEndereco().getComplemento());
-                    Cargo cargo= new Cargo();
+                    cargo= new Cargo();
                     if("funcionario".equals(interFunc.getCargo())){
                         cargo.setFuncionario();
                     }else if("estagiario".equals(interFunc.getCargo())){
                         cargo.setEstagiario();
                     }
-                    Turno turno=new Turno();
+                    turno=new Turno();
                     if("manha".equals(interFunc.getTurno_de_trabalho())){
                         turno.setManha();
                     }else if("tarde".equals(interFunc.getTurno_de_trabalho())){
@@ -108,18 +113,43 @@ public class Main {
                     }else if("noite".equals(interFunc.getTurno_de_trabalho())){
                         turno.setNoite();
                     }
-                    Funcionario func = new Funcionario(interFunc.getNome(),interFunc.getCpf(),interFunc.getTanque_do_func(),cargo,turno,ende);
+                    Funcionario func = new Funcionario(interFunc.getNome(),interFunc.getCpf(),
+                            interFunc.getTanque_do_func(),cargo,turno,endereco);
                     q=new CriaQuery();
-                    String query_insert_func = q.funcionario(func);
-                    insertobj.insert(query_insert_func);    /* inserindo no banco */
+                    insertobj.insert(q.funcionario(func));    /* inserindo no banco */
                     
-                    q.endereco(func);
+                    insertobj.insert(q.endereco(func));
                     break;
                 case 4:
-                    Gerente gerente= new Gerente();
+                    insertobj= new InsertTable("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv","rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");
+                    IFuncionario interGen= new IFuncionario();
+                    endereco =  new Endereco(interGen.getEndereco().getCep(),
+                                    interGen.getEndereco().getCidade(),interGen.getEndereco().getBairro(),
+                                    interGen.getEndereco().getLorgadouro(),interGen.getEndereco().getComplemento());
+                    
+                    cargo = new Cargo();
+                    cargo.setGerente();
+                    turno=new Turno();
+                    if("manha".equals(interGen.getTurno_de_trabalho())){
+                        turno.setManha();
+                    }else if("tarde".equals(interGen.getTurno_de_trabalho())){
+                        turno.setTarde();
+                    }else if("noite".equals(interGen.getTurno_de_trabalho())){
+                        turno.setNoite();
+                    }
+                    Gerente gerente= new Gerente(interGen.getNome(),interGen.getCpf(),
+                            interGen.getTanque_do_func(),cargo,turno,endereco);
                     q=new CriaQuery();
-                    q.gerente(gerente);
+                    insertobj.insert(q.gerente(gerente));
                     q.endereco(gerente);
+                    insertobj.insert(q.endereco(gerente));
+                    break;
+                case 5:
+                    insertobj= new InsertTable("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv","rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");
+                    IContato interCon= new IContato();
+                    Contato contato= new Contato(interCon.getDado(),interCon.getTipo(),interCon.getCPFDono());
+                    q=new CriaQuery();
+                    insertobj.insert(q.contato(contato));
                     break;
                 default:
                     break;
