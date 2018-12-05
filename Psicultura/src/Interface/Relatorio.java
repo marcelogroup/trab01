@@ -28,7 +28,6 @@ public class Relatorio {
         //subistituir pro joptionpane
         System.out.println("relatorio 1\n"+saida);
     }
-
     public void RelatorioDois(){
         String query  ="select * from tanque inner join peixe on(tanque.fk_peixe_idpeixe=peixe.idpeixe);";
         relatorio=select.selectTableRelatorioDois(query);
@@ -36,8 +35,7 @@ public class Relatorio {
         for(int i=0;i<relatorio.size();i++){            
             System.out.println(relatorio.get(i));
         }
-    }
-    
+    }   
     public void RelatorioTres(){
         String query = "SELECT nome as funcionario,idtanque as tanque FROM  funcionario inner join tanque on(tanque.idtanque=funcionario.fk_tanque_idtanque) where idtanque!=0;";
         relatorio=select.selectTableRelatorioTres(query);
@@ -46,7 +44,6 @@ public class Relatorio {
             System.out.println(relatorio.get(i));
         }
     }
-
     public void RelatorioQuatro(){
         String query ="SELECT nome,cpf,idtanque, medicao.temperatura,medicao.ph,medicao.oxigenio,nomecientifico,tipoagua,hora,data FROM  funcionario inner join tanque on(tanque.idtanque=funcionario.fk_tanque_idtanque) inner join peixe on (tanque.fk_peixe_idpeixe=peixe.idpeixe) inner join medicao on (medicao.fk_tanque_idtanque=tanque.idtanque) where (fk_turno_idturno=1) order by(hora,data);";
         relatorio=select.selectTableRelatorioQuatro(query);

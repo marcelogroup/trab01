@@ -41,7 +41,6 @@ public class CriaQuery {
         System.out.println(query);
         return query;
     }
-   
     public String funcionario(Funcionario func){
         query = "insert into funcionario(nome,cpf,fk_tanque_idtanque,fk_turno_idturno,fk_cargo_idcargo)values";
         String nome      = func.getNome();
@@ -49,7 +48,7 @@ public class CriaQuery {
         String fk_tanque = String.valueOf(func.getTanqueId());
         String fk_cargo  = func.getIdCargo();
         String fk_turno  = func.getIdTurno();
-        query=query+"('"+nome+"','"+cpf+"','"+fk_tanque+"','"+fk_turno+"','"+fk_cargo+"');";
+        query=query+"('"+nome+"','"+cpf+"',"+fk_tanque+","+fk_turno+","+fk_cargo+");";
         System.out.println(query);
         return query;
     }
@@ -75,9 +74,8 @@ public class CriaQuery {
         query=query+"('"+cidade+"','"+bairro+"','"+rua+"','"+complemento+"','"+cep+","+id+"');";
         System.out.println(query);
         return query;
-    }
-  
-     public String tanque(Tanque tanque){
+    }  
+    public String tanque(Tanque tanque){
         String query="insert into tanque(temperatura , ph , oxigenio , fk_peixe_idpeixe)values";
         String temp = String.valueOf(tanque.getSensor_temp());              
         String ph   = String.valueOf("informe o ph \n");

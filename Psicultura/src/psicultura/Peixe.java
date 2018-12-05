@@ -14,7 +14,7 @@ public class Peixe {
     String idPeixe;
   
     public Peixe(String nome, String agua, String temp_max, String temp_min, String ph_max, String ph_min,String porcetagem_oxi_max, String porcetagem_oxi_min){
-        this.nome_especie=nome;
+        this.nome_especie       =   nome;
         this.tipo_agua          =   agua;
         this.ph_max             =   Float.parseFloat(ph_max);
         this.ph_min             =   Float.parseFloat(ph_min);

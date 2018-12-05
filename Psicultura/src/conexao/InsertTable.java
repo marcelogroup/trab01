@@ -49,16 +49,12 @@ public class InsertTable {
     private void setUser(String user) {
         this.user = user;
     }
-
     public String getPassword() {
         return password;
     }
-
     private void setPassword(String password) {
         this.password = password;
     }
-   
-
     public synchronized void InsertPeixe    (Peixe fish){
         Connection c = null;
         Statement stmt=null;
@@ -194,6 +190,20 @@ public class InsertTable {
             Logger.getLogger(InsertTable.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    public synchronized void insert(String query){
+       Connection c = null;
+        Statement stmt = null;
+        try{
+            Class.forName("org.postgresql.Driver");
+            c = DriverManager.getConnection(banco,user, password); 
+            stmt = c.createStatement();
+            stmt.executeUpdate(query);
+            System.out.println("insercao realizada");
+        } catch (SQLException ex) {
+            Logger.getLogger(InsertTable.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(InsertTable.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+    }
 }
      

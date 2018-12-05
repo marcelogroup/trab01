@@ -74,11 +74,11 @@ public class Main {
             op = Integer.parseInt(operacao);
             switch (op) {
                 case 1:
-                    IPeixe interPeixe=new IPeixe();
+                    IPeixe interPeixe = new IPeixe();
                     Peixe peixinho = new Peixe(interPeixe.getNome_especie(),interPeixe.getTipo_agua(),
-                            interPeixe.getTemp_max(),interPeixe.getTemp_min(),interPeixe.getPh_max(),
-                            interPeixe.getPh_min(),interPeixe.getPorcetagem_oxi_max(),interPeixe.getPorcetagem_oxi_min());
-                    q= new CriaQuery();
+                                    interPeixe.getTemp_max(),interPeixe.getTemp_min(),interPeixe.getPh_max(),
+                                    interPeixe.getPh_min(),interPeixe.getPorcetagem_oxi_max(),interPeixe.getPorcetagem_oxi_min());
+                    q = new CriaQuery();
                     q.peixe(peixinho);
                     break;
                 case 2:
@@ -88,10 +88,12 @@ public class Main {
                     q.tanque(tanque);
                     break;
                 case 3:
+                    InsertTable insertobj= new InsertTable("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv","rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");
+                    
                     IFuncionario interFunc= new IFuncionario();
-                    Endereco ende= new Endereco(interFunc.getEndereco().getCep(),
-                            interFunc.getEndereco().getCidade(),interFunc.getEndereco().getBairro(),
-                            interFunc.getEndereco().getLorgadouro(),interFunc.getEndereco().getComplemento());
+                    Endereco ende =  new Endereco(interFunc.getEndereco().getCep(),
+                                    interFunc.getEndereco().getCidade(),interFunc.getEndereco().getBairro(),
+                                    interFunc.getEndereco().getLorgadouro(),interFunc.getEndereco().getComplemento());
                     Cargo cargo= new Cargo();
                     if("funcionario".equals(interFunc.getCargo())){
                         cargo.setFuncionario();
@@ -106,9 +108,11 @@ public class Main {
                     }else if("noite".equals(interFunc.getTurno_de_trabalho())){
                         turno.setNoite();
                     }
-                    Funcionario func= new Funcionario(interFunc.getNome(),interFunc.getCpf(),interFunc.getTanque_do_func(),cargo,turno,ende);
+                    Funcionario func = new Funcionario(interFunc.getNome(),interFunc.getCpf(),interFunc.getTanque_do_func(),cargo,turno,ende);
                     q=new CriaQuery();
-                    q.funcionario(func);
+                    String query_insert_func = q.funcionario(func);
+                    insertobj.insert(query_insert_func);    /* inserindo no banco */
+                    
                     q.endereco(func);
                     break;
                 case 4:
