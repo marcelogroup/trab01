@@ -11,6 +11,7 @@ public class Peixe {
     float porcetagem_oxi_min;
     String nome_especie;
     String tipo_agua;
+    String idPeixe;
   
     public Peixe(String nome, String agua, String temp_max, String temp_min, String ph_max, String ph_min,String porcetagem_oxi_max, String porcetagem_oxi_min){
         this.nome_especie=nome;
@@ -27,7 +28,12 @@ public class Peixe {
     
     
     /*getter e setter*/
-
+    public String getId(){
+        return idPeixe;
+    }
+    public void setId(String id){
+        this.idPeixe=id;
+    }
     public float getTemp_max() {
         return temp_max;
     }

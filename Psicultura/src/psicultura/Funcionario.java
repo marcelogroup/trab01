@@ -14,26 +14,13 @@ import javax.swing.JOptionPane;
 public class Funcionario extends Pessoa{
     public Tanque tanque_do_func;
     
-    public Funcionario(String nome, String cpf, Tanque tanque, Cargo cargo, Endereco endereco){
+    public Funcionario(String nome, String cpf, Tanque tanque, Cargo cargo,Turno turno, Endereco endereco){
         this.nome=nome;
         this.cpf=cpf;
         this.tanque_do_func=tanque;
         this.moradia=endereco;
-        
-        
-    }
-    public  Funcionario(){
-        this.nome   = JOptionPane.showInputDialog("entre com nome do funcionario\n");
-        this.cpf    = JOptionPane.showInputDialog("entre com cpf do funcionario\n");
-        this.tanque_do_func.setId_tanque(Integer.parseInt(JOptionPane.showInputDialog("entre com o codigo do tanque responsavel\n")));
-        this.cargo.nomeCargo=JOptionPane.showInputDialog("entre com cargo do funcionario\n");
-        this.turno_de_trabalho.descricao=JOptionPane.showInputDialog("entre com turno do funcionario\n");
-        this.moradia.setLorgadouro(JOptionPane.showInputDialog("entre com a rua do funcionario\n"));
-        this.moradia.setComplemento(JOptionPane.showInputDialog("entre com o numero da casa do funcionario\n"));
-        this.moradia.setBairro(JOptionPane.showInputDialog("entre com o bairro do funcionario\n"));
-        this.moradia.setCidade(JOptionPane.showInputDialog("entre com a cidade do funcionario\n"));
-        this.moradia.setCep(JOptionPane.showInputDialog("entre com o CEP do funcionario \n"));
-        
+        this.cargo=cargo;
+        this.turno_de_trabalho=turno;
     }
     
 

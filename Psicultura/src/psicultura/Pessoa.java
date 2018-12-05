@@ -3,6 +3,7 @@ package psicultura;
 
 
 public abstract class Pessoa {
+   String id;
    String   nome;
    String   cpf;
    String   senha;
@@ -19,6 +20,9 @@ public abstract class Pessoa {
     }
     public String getCpf() {
         return cpf;
+    }
+    public String getId(){
+        return id;
     }
   //Tanque tanque;
 }

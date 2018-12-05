@@ -29,7 +29,24 @@ public class ITanque {
         this.sensor_ph          = (JOptionPane.showInputDialog("informe o ph \n"));
         this.nomePeixe          = JOptionPane.showInputDialog("Qual especie de peixe estara no tanque\n");
         SelectTable selecionar  = new SelectTable();
-        lista_de_peixes=selecionar.selectTable("Select * from peixe where nomecientifico= '"+nomePeixe+"';");
-        fish=new Peixe(String.valueOf(lista_de_peixes.get(2)),String.valueOf( lista_de_peixes.get(3)), String.valueOf(lista_de_peixes.get(4)), String.valueOf(lista_de_peixes.get(5)), String.valueOf(lista_de_peixes.get(6)), String.valueOf(lista_de_peixes.get(7)), String.valueOf(lista_de_peixes.get(8)), String.valueOf(lista_de_peixes.get(9)));
+        lista_de_peixes=selecionar.selectPeixe("Select * from peixe where nomecientifico= '"+nomePeixe+"';");
+        fish=new Peixe(String.valueOf(lista_de_peixes.get(1)),String.valueOf( lista_de_peixes.get(2)), 
+                        String.valueOf(lista_de_peixes.get(3)), String.valueOf(lista_de_peixes.get(4)), 
+                        String.valueOf(lista_de_peixes.get(5)), String.valueOf(lista_de_peixes.get(6)), 
+                        String.valueOf(lista_de_peixes.get(7)), String.valueOf(lista_de_peixes.get(8)));
+        fish.setId(String.valueOf(lista_de_peixes.get(0)));
+        
+    }
+    public String getSensor_temp() {
+        return sensor_temp;
+    }
+    public String getSensor_oxi() {
+        return sensor_oxi;
+    }
+    public String getSensor_ph() {
+        return sensor_ph;
+    }
+    public Peixe getPeixe() {
+        return fish;
     }
 }

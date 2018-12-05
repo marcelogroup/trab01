@@ -83,12 +83,30 @@ public class Main {
                     break;
                 case 2:
                     ITanque interTanque= new ITanque();
-                    /*Tanque tanque = new Tanque();
+                    Tanque tanque = new Tanque(interTanque.getSensor_temp(),interTanque.getSensor_oxi(),interTanque.getSensor_ph(),interTanque.getPeixe());
                     q=new CriaQuery();
-                    q.tanque(tanque);*/
+                    q.tanque(tanque);
                     break;
                 case 3:
-                    Funcionario func= new Funcionario();
+                    IFuncionario interFunc= new IFuncionario();
+                    Endereco ende= new Endereco(interFunc.getEndereco().getCep(),
+                            interFunc.getEndereco().getCidade(),interFunc.getEndereco().getBairro(),
+                            interFunc.getEndereco().getLorgadouro(),interFunc.getEndereco().getComplemento());
+                    Cargo cargo= new Cargo();
+                    if("funcionario".equals(interFunc.getCargo())){
+                        cargo.setFuncionario();
+                    }else if("estagiario".equals(interFunc.getCargo())){
+                        cargo.setEstagiario();
+                    }
+                    Turno turno=new Turno();
+                    if("manha".equals(interFunc.getTurno_de_trabalho())){
+                        turno.setManha();
+                    }else if("tarde".equals(interFunc.getTurno_de_trabalho())){
+                        turno.setTarde();
+                    }else if("noite".equals(interFunc.getTurno_de_trabalho())){
+                        turno.setNoite();
+                    }
+                    Funcionario func= new Funcionario(interFunc.getNome(),interFunc.getCpf(),interFunc.getTanque_do_func(),cargo,turno,ende);
                     q=new CriaQuery();
                     q.funcionario(func);
                     q.endereco(func);

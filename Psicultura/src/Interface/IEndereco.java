@@ -25,4 +25,19 @@ public class IEndereco {
         this.cidade=(JOptionPane.showInputDialog("entre com a cidade do funcionario\n"));
         this.cep=(JOptionPane.showInputDialog("entre com o CEP do funcionario \n"));
     }
+    public String getCep() {
+        return cep;
+    }
+    public String getCidade() {
+        return cidade;
+    }
+    public String getBairro() {
+        return bairro;
+    }
+    public String getLorgadouro() {
+        return lorgadouro;
+    }
+    public String getComplemento() {
+        return complemento;
+    }
 }

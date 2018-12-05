@@ -17,6 +17,7 @@ public class IPeixe {
     String tipo_agua;
     
     
+    
        public IPeixe(){
         this.nome_especie       = JOptionPane.showInputDialog("Entre com nome da espécie\n");
         this.tipo_agua          = JOptionPane.showInputDialog("Entre com tipo da agua\n doce ou salgada");  
