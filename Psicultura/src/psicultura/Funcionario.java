@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class Funcionario extends Pessoa{
     public Tanque tanque_do_func;
     
-    public Funcionario(String nome, String cpf, Tanque tanque, Cargo cargo,Turno turno, Endereco endereco){
+    public Funcionario(String nome, String cpf, Tanque tanque, Cargo cargo,Turno turno, Endereco endereco){ 
         this.nome               = nome;
         this.cpf                = cpf;
         this.tanque_do_func     = tanque;

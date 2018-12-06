@@ -345,6 +345,7 @@ public class SelectTable {
                 listResult.add(rs.getString(4));
                
                 listResult.add(rs.getString(5));
+                listResult.add(rs.getString(6));
             }
             //System.out.println("--------------");
             rs.close();

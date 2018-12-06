@@ -13,7 +13,7 @@ public class Tanque {
     Peixe peixe; 
     Date momento;
     String idPeixe;
-    public Tanque(String temp,String oxi,String ph,Peixe peixe){
+    public Tanque(String temp,String oxi,String ph,Peixe peixe){ 
         this.setSensor_ph(Float.parseFloat(ph));
         this.setSensor_oxi(Float.parseFloat(oxi));
         this.setSensor_temp(Float.parseFloat(temp));

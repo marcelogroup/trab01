@@ -11,7 +11,7 @@ import java.util.Date;
  * 
  * @author marcelo
  */ 
-public class HistoricoMedicao {
+public class HistoricoMedicao { 
     public Date data_medicao; 
     public Tanque tanque;
     public float ph;

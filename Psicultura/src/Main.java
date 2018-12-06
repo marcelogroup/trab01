@@ -60,7 +60,7 @@ public class Main {
             }else if(op==3){
                 relatorio.RelatorioTres();
             }else if(op==4){
-                relatorio.RelatorioQuatro();
+                relatorio.RelatorioQuatro(); 
             }else if(op==5){
                 relatorio.RelatorioCinco();
             }
@@ -79,18 +79,22 @@ public class Main {
             op = Integer.parseInt(operacao);
             switch (op) {
                 case 1:
+                    insertobj= new InsertTable("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv","rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");
+                    
                     IPeixe interPeixe = new IPeixe();
                     Peixe peixinho = new Peixe(interPeixe.getNome_especie(),interPeixe.getTipo_agua(),
                                     interPeixe.getTemp_max(),interPeixe.getTemp_min(),interPeixe.getPh_max(),
                                     interPeixe.getPh_min(),interPeixe.getPorcetagem_oxi_max(),interPeixe.getPorcetagem_oxi_min());
                     q = new CriaQuery();
-                    q.peixe(peixinho);
+                    insertobj.insert(q.peixe(peixinho));
                     break;
                 case 2:
+                    insertobj= new InsertTable("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv","rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");
+                    
                     ITanque interTanque= new ITanque();
                     Tanque tanque = new Tanque(interTanque.getSensor_temp(),interTanque.getSensor_oxi(),interTanque.getSensor_ph(),interTanque.getPeixe());
                     q=new CriaQuery();
-                    q.tanque(tanque);
+                    insertobj.insert(q.tanque(tanque));
                     break;
                 case 3:
                     insertobj= new InsertTable("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv","rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");
@@ -137,11 +141,9 @@ public class Main {
                     }else if("noite".equals(interGen.getTurno_de_trabalho())){
                         turno.setNoite();
                     }
-                    Gerente gerente= new Gerente(interGen.getNome(),interGen.getCpf(),
-                            interGen.getTanque_do_func(),cargo,turno,endereco);
+                    Gerente gerente= new Gerente(interGen.getNome(),interGen.getCpf(),interGen.getTanque_do_func(),cargo,turno,endereco);
                     q=new CriaQuery();
                     insertobj.insert(q.gerente(gerente));
-                    q.endereco(gerente);
                     insertobj.insert(q.endereco(gerente));
                     break;
                 case 5:

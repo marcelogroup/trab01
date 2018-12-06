@@ -11,7 +11,7 @@ package psicultura;
  */
 public class Contato {
     String dado;
-    TipoContato tipo;
+    TipoContato tipo=new TipoContato();
     String dono;
     /**
      * 

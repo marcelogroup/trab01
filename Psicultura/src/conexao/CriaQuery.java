@@ -5,6 +5,7 @@
  */
 package conexao;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import psicultura.*;
 
@@ -17,6 +18,7 @@ import psicultura.*;
 public class CriaQuery {
     String query;
     SelectTable selectTable;
+    ArrayList lista;
     
     public String peixe(Peixe fish){
         query =" insert into peixe (nomecientifico,tipoagua,tempmin,tempmax,phmin,phmax,oxmin,oxmax) values";
@@ -63,6 +65,7 @@ public class CriaQuery {
         return query;
     }
     public String endereco(Pessoa func){
+        selectTable  = new SelectTable();
         query="insert into endereco (cidade,bairro,logradouro,complemento,cep,fk_funcionario_idfuncionario)values";
         Endereco endereco= func.getMoradia();
         String rua= endereco.getLorgadouro();
@@ -70,8 +73,9 @@ public class CriaQuery {
         String bairro=endereco.getBairro();
         String cidade=endereco.getCidade();
         String cep= endereco.getCep();
-        String id=String.valueOf(selectTable.selectFunc("Select id from Funcionario where cpf="+func.getCpf()+";").get(0));
-        query=query+"('"+cidade+"','"+bairro+"','"+rua+"','"+complemento+"','"+cep+","+id+"');";
+        lista=selectTable.selectFunc("Select idfuncionario from Funcionario where cpf='"+func.getCpf()+"';");
+        String id=String.valueOf(lista.get(0));
+        query=query+"('"+cidade+"','"+bairro+"','"+rua+"','"+complemento+"','"+cep+"',"+id+");";
         System.out.println(query);
         return query;
     }  
@@ -86,10 +90,12 @@ public class CriaQuery {
         return query;
     }
     public String contato(Contato contato){
+        selectTable  = new SelectTable();
         String query="insert into contato(dado,fk_TipoContato_idTipo,fk_funcionario_idfuncionario) values";
         String dado= contato.getDado();
         String tipo= contato.getTipo().getId();
-        String dono=String.valueOf(selectTable.selectFunc("Select id from Funcionario where cpf="+contato.getCPFDono()+";").get(0));
+        lista=selectTable.selectFunc("Select idfuncionario from Funcionario where cpf='"+contato.getCPFDono()+"';");
+        String dono=String.valueOf(lista.get(0));
         query=query+"("+dado+","+tipo+","+dono+");";
         System.out.println(query);
         return query;
