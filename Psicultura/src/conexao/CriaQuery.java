@@ -154,7 +154,6 @@ public class CriaQuery {
         System.out.println(query_retorno);
         return query_retorno;
     }
-    
     public String updateTanque(){
         String query_retorno="";
         String id = JOptionPane.showInputDialog("informe o numero do tanque que você deseja alterar.");
@@ -170,8 +169,29 @@ public class CriaQuery {
         System.out.println(query_retorno);
         return query_retorno;
     }
-
     
+    public String updateFuncionario(){
+        String query_retorno="";
+        String nome = JOptionPane.showInputDialog("informe o nome do funcionario que você deseja alterar.");
+        selectTable = new SelectTable();
+        String query_pesquisa="select * from funcionario where nome='"+nome+"';";
+        lista=selectTable.selectFunc(query_pesquisa);
+        String nome_func          = JOptionPane.showInputDialog("NOVO nome.");
+        String cpf                = JOptionPane.showInputDialog("NOVO cpf.");
+        String tanque_do_func     = JOptionPane.showInputDialog("NOVO  numero do tanque.");
+        String cargo              = JOptionPane.showInputDialog("NOVO cargo.");
+        String turno_de_trabalho  = JOptionPane.showInputDialog("NOVO turno.");
+        Cargo c = new Cargo();
+        c.setCargo(cargo);
+        cargo=c.getIdcargo(c);
+        
+        Turno t = new Turno();
+        t.setTurno(turno_de_trabalho);
+        turno_de_trabalho=t.getIdTurno(t);
+        
+        query_retorno="update funcionario set idfuncionario="+ lista.get(0) +",nome='"+nome_func+"',cpf='"+cpf+"',fk_tanque_idtanque="+tanque_do_func+",fk_turno_idturno="+turno_de_trabalho+",fk_cargo_idcargo="+cargo+"  where idfuncionario="+ lista.get(0)+";";
+        return query_retorno;
+    }
 
 }
 

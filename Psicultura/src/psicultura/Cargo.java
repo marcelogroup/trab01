@@ -16,6 +16,10 @@ public class Cargo {
     public void setFuncionario(){
         this.nomeCargo="funcionario";
     }
+        public void setCargo(String cargo){
+        this.nomeCargo=cargo;
+    }
+    
     public String getIdcargo(Cargo c){
         String result=null;
         if(c.getCargo().equals("estagiario")){

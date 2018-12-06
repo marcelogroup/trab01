@@ -19,6 +19,9 @@ public class Turno {
     public String getTurno(){
         return this.descricao;
     }
+    public void setTurno(String turno){
+         this.descricao = turno ;
+    }
     public String getIdTurno(Turno t){
         String r = null;
         if(t.getTurno().equals("manha") ){
