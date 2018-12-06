@@ -222,8 +222,8 @@ public class SelectTable {
         System.out.println("Operation done successfully select");
         return listResult;
     }
-    public synchronized String    selectId(String comando){
-        String id="";
+    public synchronized ArrayList selectId(String comando){
+        ArrayList listResult = new ArrayList();   
         Connection c = null;
         Statement stmt = null;
         try {
@@ -235,7 +235,8 @@ public class SelectTable {
             ResultSet rs = stmt.executeQuery(comando);
          
             while (rs.next()) {
-                id = rs.getString("id");
+                System.out.println(rs.getString(1));
+                listResult.add(rs.getString(1));
             }
             rs.close();
             stmt.close();
@@ -244,7 +245,7 @@ public class SelectTable {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());            
         }
         System.out.println("Operation done successfully select");
-        return id;
+        return listResult;
     }
     public synchronized ArrayList selectPeixe(String comando) {
         ArrayList listResult = new ArrayList();        
@@ -377,6 +378,33 @@ public class SelectTable {
                 listResult.add(rs.getString(5));
                 listResult.add(rs.getString(6));
                 listResult.add(rs.getString(7));
+            }
+            //System.out.println("--------------");
+            rs.close();
+            stmt.close();
+            c.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());            
+        }
+        System.out.println("select endereco");
+        return listResult;
+    }
+    public synchronized ArrayList selectContato(String comando) {
+        ArrayList listResult = new ArrayList();        
+        Connection c = null;
+        Statement stmt = null;
+        try {
+            Class.forName("org.postgresql.Driver");
+         
+            c = DriverManager.getConnection("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv", "rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");   
+            System.out.println("Opened database successfully");            
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery(comando);
+         
+            while (rs.next()) {                
+                listResult.add(rs.getString(1));                
+                listResult.add(rs.getString(2));               
+                listResult.add(rs.getString(3));                
             }
             //System.out.println("--------------");
             rs.close();

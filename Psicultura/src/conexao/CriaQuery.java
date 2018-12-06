@@ -196,14 +196,34 @@ public class CriaQuery {
         String query_pesquisa="select * from funcionario where nome='"+nome+"';";
         lista=selectTable.selectFunc(query_pesquisa);
         lista = selectTable.selectEndereco("select * from endereco where fk_funcionario_idfuncionario ="+lista.get(0)+";");
-        String idtanque =   String.valueOf(lista.get(0));
+        String idEndereco =   String.valueOf(lista.get(0));
         String fk       =   String.valueOf(lista.get(6));
         String cidade = JOptionPane.showInputDialog("NOVO informe a cidade");
         String bairro = JOptionPane.showInputDialog("NOVO informe a bairro");
         String logradouro = JOptionPane.showInputDialog("NOVO informe a lorgadouro");
         String complemento = JOptionPane.showInputDialog("NOVO informe a complemento");
         String cep = JOptionPane.showInputDialog("NOVO informe a cep");        
-        query_retorno="update endereco set idendereco="+idtanque+",cidade='"+ cidade +"',bairro='"+bairro+"',logradouro= '"+logradouro+"' ,complemento='"+complemento+"',cep="+cep+",fk_funcionario_idfuncionario="+fk+" where idfuncionario="+fk+";";
+        query_retorno="update endereco set idendereco="+idEndereco+",cidade='"+ cidade +"',bairro='"+bairro+"',logradouro= '"+logradouro+"' ,complemento='"+complemento+"',cep="+cep+",fk_funcionario_idfuncionario="+fk+" where idfuncionario="+fk+";";
+        return query_retorno;
+    }
+    public String updateContato(){
+        String query_retorno="";
+        String nome = JOptionPane.showInputDialog("informe o nome do funcionario que você deseja alterar.");
+        selectTable = new SelectTable();
+        String query_pesquisa="select * from funcionario where nome='"+nome+"';";
+        lista=selectTable.selectFunc(query_pesquisa);
+        lista = selectTable.selectContato("select * from contato where fk_funcionario_idfuncionario ="+lista.get(0)+";");
+        String idContato =   String.valueOf(lista.get(0));
+        String fk       =   String.valueOf(lista.get(2));
+        String dado = JOptionPane.showInputDialog("NOVO informe o contato");
+        String tipo = JOptionPane.showInputDialog("NOVO informe o tipo do contato");
+        String idTipo="";
+        if (tipo=="email"){
+            idTipo="1";
+        }else if (tipo=="telefone"){
+            idTipo="2";
+        }
+        query_retorno="update contato set idContato="+idContato+",dado='"+ dado +"',fk_tipoContato_idTipo="+idTipo+",fk_funcionario_idfuncionario="+fk+" where idfuncionario="+fk+";";
         return query_retorno;
     }
 }

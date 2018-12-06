@@ -32,9 +32,10 @@ public class Main {
         
          * principais adições de dados
          *  1 inserir medicao
-         *  2 adicionar novo funcionario
+         *  2 adicionar novo funcionario e seu endereco
          *  3 adicionar especie
-         *  Inserir gerente 
+         *  4 inserir gerente e seu endereco
+         *  5 inserir contato
          */
         /**
          * atualizar dados da espécie 
@@ -185,20 +186,26 @@ public class Main {
             + " 1 - apagar uma especie.\n"
             + " 2 - apagar um tanque. \n"
             + " 3 - apagar um funcionario.\n"
-            + " 4 -   \n"
-            + " 5 -   \n"
+            + " 4 - apagar um endereco  \n"
+            + " 5 - apagar um contato  \n"
             + " 0 - voltar << ");
             op = Integer.parseInt(operacao); 
             DeleteTable delete = new DeleteTable();
             CriaQuery query = new CriaQuery();
             if(op==1){
-                delete.deletePeixe(query.delecaoPeixe());                
+                delete.deletePeixe();                
             }
             else if(op==2){
-                delete.deleteTanque(query.delecaoTanque());
+                delete.deleteTanque();
             }
             else if(op==3){
-                delete.deleteFunc(query.delecaoFuncionario());
+                delete.deleteFunc();
+            }
+            else if(op==4){
+                delete.deleteEndereco();
+            }
+            else if(op==5){
+                delete.deleteContato();
             }
         }else if (op==4){
             operacao = JOptionPane.showInputDialog("Escolha ação\n"
@@ -206,7 +213,7 @@ public class Main {
             + " 2 - atualizar um tanque. \n"
             + " 3 - atualizar um funcionario.\n"
             + " 4 - atualizar um endereco.\n"
-            + " 5 -   \n"
+            + " 5 - atualizar um contato  \n"
             + " 0 - voltar << ");
             op = Integer.parseInt(operacao); 
             CriaQuery query = new CriaQuery();
@@ -222,6 +229,9 @@ public class Main {
             }
             else if(op==4){
                up.updateEndereco(query.updateEndereco());
+            }
+            else if (op==5){
+                up.updateContato(query.updateContato());
             }
         }
         
