@@ -5,6 +5,7 @@
  */
 package conexao;
 
+import Interface.IPeixe;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import psicultura.*;
@@ -100,5 +101,77 @@ public class CriaQuery {
         System.out.println(query);
         return query;
     }
+    
+    public String delecaoPeixe(){
+        String nome= JOptionPane.showInputDialog("de o nome cientifico da espécie");
+        String query = "delete from peixe where nomecientifico='"+ nome +"';";
+        return query;
+    }
+    public String delecaoTanque(){
+        String tanque= JOptionPane.showInputDialog("informe o numero do tanque que você vai deletar");
+        String query = "delete from tanque where idtanque='"+ tanque +"';";
+        return query;
+    }
+    public String delecaoFuncionario(){
+        String nome= JOptionPane.showInputDialog("informe o nome do funcionario que você vai deletar");
+        String query = "delete from funcionario where nome='"+ nome +"' ;";
+        return query;
+    }
+    
+    
+    
+    public String updatePeixe(){
+        selectTable = new SelectTable();
+        String query_retorno="";        
+        String id = JOptionPane.showInputDialog("informe o codigo da especie que vc deseja atualizar.");
+        String query_pesquisa="select * from peixe where idpeixe="+id+";";
+        lista=selectTable.selectPeixe(query_pesquisa);
+        System.out.println( lista );
+        
+        String nome_especie       =  String.valueOf(lista.get(1));
+        String tipo_agua          =  String.valueOf(lista.get(2));
+        String ph_max             =  String.valueOf(lista.get(4));
+        String ph_min             =  String.valueOf(lista.get(3));
+        String temp_max           =  String.valueOf(lista.get(6));
+        String temp_min           =  String.valueOf(lista.get(5));
+        String porcetagem_oxi_max =  String.valueOf(lista.get(8));
+        String porcetagem_oxi_min =  String.valueOf(lista.get(7));
+        
+        Peixe peixe = new Peixe(nome_especie,tipo_agua,ph_max, ph_min, temp_max , temp_min, porcetagem_oxi_max , porcetagem_oxi_min );
+              
+        nome_especie      = JOptionPane.showInputDialog("Entre com NOVO nome da espécie\n");
+        tipo_agua          = JOptionPane.showInputDialog("Entre com NOVO tipo da agua\n doce ou salgada");  
+        ph_max             =(JOptionPane.showInputDialog("PH maximo NOVO suportado\n"));
+        ph_min             =(JOptionPane.showInputDialog("PH minimo NOVO suportado\n"));
+        temp_max           =(JOptionPane.showInputDialog("NOVO temperatura maxima suportada \n"));
+        temp_min           =(JOptionPane.showInputDialog("NOVO temperatura minima suportada \n"));
+        porcetagem_oxi_max =(JOptionPane.showInputDialog("NOVO oxigenacao maxima suportada\n"));
+        porcetagem_oxi_min =(JOptionPane.showInputDialog("NOVO oxigenacao minima suportada\n"));
+    
+        Peixe peixenovo = new Peixe(nome_especie,tipo_agua,ph_max, ph_min, temp_max , temp_min, porcetagem_oxi_max , porcetagem_oxi_min );
+            
+        query_retorno="UPDATE peixe set idpeixe="+lista.get(0)+",nomecientifico='"+nome_especie+"',tipoagua='"+tipo_agua+"',tempmin="+temp_min+",tempmax="+temp_max+",phmin="+ph_min+",phmax="+ph_max+",oxmin="+porcetagem_oxi_min+",oxmax="+porcetagem_oxi_max+" where idpeixe="+lista.get(0)+";";
+        System.out.println(query_retorno);
+        return query_retorno;
+    }
+    
+    public String updateTanque(){
+        String query_retorno="";
+        String id = JOptionPane.showInputDialog("informe o numero do tanque que você deseja alterar.");
+        
+        String ph           =  JOptionPane.showInputDialog("de NOVO ph\n");
+        String oxi          =  JOptionPane.showInputDialog("de NOVO % oxigenio");  
+        String temp         = (JOptionPane.showInputDialog("de NOVA tempretatura\n"));
+        String nome_espe    = (JOptionPane.showInputDialog("informa aespecie do peixe\n"));
+        selectTable = new SelectTable();
+        String query_pesquisa="select * from peixe where nomecientifico='"+nome_espe+"';";
+        lista=selectTable.selectPeixe(query_pesquisa);
+        query_retorno ="UPDATE TANQUE SET idtanque="+id+",temperatura="+temp+",ph="+ph+",oxigenio="+oxi+",fk_peixe_idpeixe="+lista.get(0)+ " where idtanque="+id+";";
+        System.out.println(query_retorno);
+        return query_retorno;
+    }
+
+    
+
 }
 

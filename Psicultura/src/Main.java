@@ -3,6 +3,10 @@ import conexao.CriaQuery;
 import conexao.InsertTable;
 import psicultura.*;
 import Interface.*;
+import conexao.DeleteTable;
+import conexao.SelectTable;
+import conexao.Update;
+import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
@@ -30,12 +34,31 @@ public class Main {
          *  1 inserir medicao
          *  2 adicionar novo funcionario
          *  3 adicionar especie
-         * 
+         *  Inserir gerente 
          */
+        /**
+         * atualizar dados da espécie 
+         * atualizar dados do tanque
+         * atualizar dados do gerente
+         * atualizar dados do funcionario
+         * atualizar contato
+         */
+        /**
+         *  principais deleções 
+         *  1 - deletar especie  
+         *  2 - deletear tanque
+         *  3 - deletar contato
+         *  4 - deletar funcionario
+         *  5 - deletar gerente
+         *  0 << voltar
+         */
+       
         
         operacao = JOptionPane.showInputDialog("insira a operação \n"
-                                            + " 1 - Gerar relatorio \n"
-                                            + " 2 - Adição de dados \n"
+                                            + " 1 - Gerar relatorio. \n"
+                                            + " 2 - Adição de dados. \n"
+                                            + " 3 - Apagar dados.\n"
+                                            + " 4 - Alterar dados.\n"    
                                             + " 0 - Sair \n");
         op = Integer.parseInt(operacao);
         System.out.println(op);   
@@ -157,6 +180,49 @@ public class Main {
                     break;
             }
             
+        }else if (op==3){
+            operacao = JOptionPane.showInputDialog("Escolha ação\n"
+            + " 1 - apagar uma especie.\n"
+            + " 2 - apagar um tanque. \n"
+            + " 3 - apagar um funcionario.\n"
+            + " 4 -   \n"
+            + " 5 -   \n"
+            + " 0 - voltar << ");
+            op = Integer.parseInt(operacao); 
+            DeleteTable delete = new DeleteTable();
+            CriaQuery query = new CriaQuery();
+            if(op==1){
+                delete.deletePeixe(query.delecaoPeixe());                
+            }
+            else if(op==2){
+                delete.deleteTanque(query.delecaoTanque());
+            }
+            else if(op==3){
+                delete.deleteFunc(query.delecaoFuncionario());
+            }
+        }else if (op==4){
+            operacao = JOptionPane.showInputDialog("Escolha ação\n"
+            + " 1 - atualizar uma especie.\n"
+            + " 2 - atualizar um tanque. \n"
+            + " 3 - atualizar um funcionario.\n"
+            + " 4 - atualizar um endereco.\n"
+            + " 5 -   \n"
+            + " 0 - voltar << ");
+            op = Integer.parseInt(operacao); 
+            CriaQuery query = new CriaQuery();
+            Update up = new Update("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv","rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");
+            if(op==1){
+                up.updatePeixe(query.updatePeixe());
+            }
+            else if(op==2){
+                up.updateTanque(query.updateTanque());
+            }
+            else if(op==3){
+             
+            }
+            else if(op==4){
+                
+            }
         }
         
         

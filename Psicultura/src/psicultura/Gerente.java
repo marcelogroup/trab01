@@ -11,7 +11,7 @@ public class Gerente extends Pessoa {
      * @param turno
      * @param senha
      * @param moradia
-     */ 
+     */  
     public Gerente(String nome, String cpf, Tanque tanque, Cargo cargo,Turno turno, Endereco endereco){ 
         this.nome               = nome;
         this.cpf                = cpf;

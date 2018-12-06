@@ -1,5 +1,3 @@
-
-
 package psicultura;
 
 import java.util.Date;
@@ -10,7 +8,7 @@ public class Tanque {
     float sensor_oxi;
     float sensor_ph;
     int id_tanque;
-    Peixe peixe; 
+    Peixe peixe;  
     Date momento;
     String idPeixe;
     public Tanque(String temp,String oxi,String ph,Peixe peixe){ 
@@ -19,8 +17,6 @@ public class Tanque {
         this.setSensor_temp(Float.parseFloat(temp));
         this.AdicionarPeixe(peixe);
     }  
-    
-    
     
     
     /**

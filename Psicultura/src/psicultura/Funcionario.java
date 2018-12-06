@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package psicultura;
 
 import javax.swing.JOptionPane;
@@ -13,7 +8,7 @@ import javax.swing.JOptionPane;
  */ 
 public class Funcionario extends Pessoa{
     public Tanque tanque_do_func;
-    
+     
     public Funcionario(String nome, String cpf, Tanque tanque, Cargo cargo,Turno turno, Endereco endereco){ 
         this.nome               = nome;
         this.cpf                = cpf;

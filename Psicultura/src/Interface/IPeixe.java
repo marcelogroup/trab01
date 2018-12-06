@@ -18,7 +18,7 @@ public class IPeixe {
     
     
     
-       public IPeixe(){
+    public IPeixe(){
         this.nome_especie       = JOptionPane.showInputDialog("Entre com nome da espécie\n");
         this.tipo_agua          = JOptionPane.showInputDialog("Entre com tipo da agua\n doce ou salgada");  
         this.ph_max             =(JOptionPane.showInputDialog("PH maximo suportado\n"));
@@ -28,6 +28,10 @@ public class IPeixe {
         this.porcetagem_oxi_max =(JOptionPane.showInputDialog("oxigenacao maxima suportada\n"));
         this.porcetagem_oxi_min =(JOptionPane.showInputDialog("oxigenacao minima suportada\n"));
     } 
+    
+   
+       
+       
      public String getTemp_max() {
         return temp_max;
     }
