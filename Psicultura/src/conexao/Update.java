@@ -81,6 +81,40 @@ public class Update {
         }
         System.out.println("peixe atualizado");
     }
+        public synchronized void updateEndereco(String comando){
+        Connection c = null;
+        Statement stmt = null;
+        try {
+            Class.forName("org.postgresql.Driver");         
+            c = DriverManager.getConnection(this.banco,this.user,this.password);   
+            System.out.println("Opened database successfully");            
+            stmt = c.createStatement();
+            stmt.executeUpdate(comando);
+            //rs.close();
+            stmt.close();
+            c.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());            
+        }
+        System.out.println("peixe atualizado");
+    }
+    public synchronized void updateFuncionario(String comando){
+        Connection c = null;
+        Statement stmt = null;
+        try {
+            Class.forName("org.postgresql.Driver");         
+            c = DriverManager.getConnection(this.banco,this.user,this.password);   
+            System.out.println("Opened database successfully");            
+            stmt = c.createStatement();
+            stmt.executeUpdate(comando);
+            //rs.close();
+            stmt.close();
+            c.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());            
+        }
+        System.out.println("peixe atualizado");
+    }
     
     
     

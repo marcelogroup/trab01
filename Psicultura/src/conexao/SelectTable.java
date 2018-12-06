@@ -357,5 +357,37 @@ public class SelectTable {
         System.out.println("Operation done successfully select");
         return listResult;
     }
+    public synchronized ArrayList selectEndereco(String comando) {
+        ArrayList listResult = new ArrayList();        
+        Connection c = null;
+        Statement stmt = null;
+        try {
+            Class.forName("org.postgresql.Driver");
+         
+            c = DriverManager.getConnection("jdbc:postgresql://stampy.db.elephantsql.com:5432/pvunmqpv","pvunmqpv", "rX3CKCsGeqAIlEut5W2HeMxF8f-uyYNA");   
+            System.out.println("Opened database successfully");            
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery(comando);
+         
+            while (rs.next()) {                
+                listResult.add(rs.getString(1));                
+                listResult.add(rs.getString(2));               
+                listResult.add(rs.getString(3));                
+                listResult.add(rs.getString(4));               
+                listResult.add(rs.getString(5));
+                listResult.add(rs.getString(6));
+                listResult.add(rs.getString(7));
+            }
+            //System.out.println("--------------");
+            rs.close();
+            stmt.close();
+            c.close();
+        } catch (Exception e) {
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());            
+        }
+        System.out.println("select endereco");
+        return listResult;
+    }
+
 }
                 

@@ -218,10 +218,10 @@ public class Main {
                 up.updateTanque(query.updateTanque());
             }
             else if(op==3){
-                System.out.println(query.updateFuncionario());
+                up.updateFuncionario(query.updateFuncionario());
             }
             else if(op==4){
-                
+               up.updateEndereco(query.updateEndereco());
             }
         }
         

@@ -118,8 +118,6 @@ public class CriaQuery {
         return query;
     }
     
-    
-    
     public String updatePeixe(){
         selectTable = new SelectTable();
         String query_retorno="";        
@@ -169,7 +167,6 @@ public class CriaQuery {
         System.out.println(query_retorno);
         return query_retorno;
     }
-    
     public String updateFuncionario(){
         String query_retorno="";
         String nome = JOptionPane.showInputDialog("informe o nome do funcionario que você deseja alterar.");
@@ -192,6 +189,22 @@ public class CriaQuery {
         query_retorno="update funcionario set idfuncionario="+ lista.get(0) +",nome='"+nome_func+"',cpf='"+cpf+"',fk_tanque_idtanque="+tanque_do_func+",fk_turno_idturno="+turno_de_trabalho+",fk_cargo_idcargo="+cargo+"  where idfuncionario="+ lista.get(0)+";";
         return query_retorno;
     }
-
+    public String updateEndereco(){
+        String query_retorno="";
+        String nome = JOptionPane.showInputDialog("informe o nome do funcionario que você deseja alterar.");
+        selectTable = new SelectTable();
+        String query_pesquisa="select * from funcionario where nome='"+nome+"';";
+        lista=selectTable.selectFunc(query_pesquisa);
+        lista = selectTable.selectEndereco("select * from endereco where fk_funcionario_idfuncionario ="+lista.get(0)+";");
+        String idtanque =   String.valueOf(lista.get(0));
+        String fk       =   String.valueOf(lista.get(6));
+        String cidade = JOptionPane.showInputDialog("NOVO informe a cidade");
+        String bairro = JOptionPane.showInputDialog("NOVO informe a bairro");
+        String logradouro = JOptionPane.showInputDialog("NOVO informe a lorgadouro");
+        String complemento = JOptionPane.showInputDialog("NOVO informe a complemento");
+        String cep = JOptionPane.showInputDialog("NOVO informe a cep");        
+        query_retorno="update endereco set idendereco="+idtanque+",cidade='"+ cidade +"',bairro='"+bairro+"',logradouro= '"+logradouro+"' ,complemento='"+complemento+"',cep="+cep+",fk_funcionario_idfuncionario="+fk+" where idfuncionario="+fk+";";
+        return query_retorno;
+    }
 }
 
