@@ -1,8 +1,12 @@
 
+import interfaceUsuario.IPeixe;
+import interfaceUsuario.Relatorio;
+import interfaceUsuario.IContato;
+import interfaceUsuario.ITanque;
+import interfaceUsuario.IFuncionario;
 import conexao.CriaQuery;
 import conexao.InsertTable;
 import psicultura.*;
-import Interface.*;
 import conexao.DeleteTable;
 import conexao.SelectTable;
 import conexao.Update;

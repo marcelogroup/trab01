@@ -60,7 +60,7 @@ public class InsertTable {
         Statement stmt=null;
         try{
            
-            String nomecientifico="'"+fish.getNome_especie()+"'";
+            String nomecientifico="'"+fish.getNomeEspecie()+"'";
             String query_1="select * from peixe where nomecientifico="+nomecientifico +";";
             boolean tem_o_peixe=false;
             String query_2="select * from peixe;";
@@ -94,11 +94,11 @@ public class InsertTable {
                     id=String.valueOf(tam);
                 }
                 System.out.println("inserir objeto");
-                String tipoagua="'"+fish.getTipo_agua()+"'";
+                String tipoagua="'"+fish.getTipoAgua()+"'";
                 String query_3="INSERT INTO peixe (idpeixe,nomecientifico,tipoagua,tempmin,tempmax,phmin,phmax,oxmin,oxmax)values";
-                String tempmin=String.valueOf(fish.getTemp_min());
-                String tempmax=String.valueOf(fish.getTemp_max());
-                String phmin=String.valueOf(fish.getPh_min());
+                String tempmin=String.valueOf(fish.getTempMin());
+                String tempmax=String.valueOf(fish.getTempMax());
+                String phmin=String.valueOf(fish.getPhMin());
                 String phmax=String.valueOf(fish.getPh_max());
                 String oxmin=String.valueOf(fish.getPorcetagem_oxi_min());
                 String oxmax=String.valueOf(fish.getPorcetagem_oxi_max());
@@ -130,7 +130,7 @@ public class InsertTable {
         String sensor_ph = String.valueOf(t.getSensorPh());
         String sensor_temp = String.valueOf(t.getSensorTemp());
         String fk_peixe;
-        String nomecientifico="'"+String.valueOf(t.getPeixe().getNome_especie())+"'";
+        String nomecientifico="'"+String.valueOf(t.getPeixe().getNomeEspecie())+"'";
         Class.forName("org.postgresql.Driver");
         c = DriverManager.getConnection(banco,user, password);           
         stmt = c.createStatement();

@@ -34,19 +34,19 @@ public class Peixe {
     public void setId(String id){
         this.idPeixe=id;
     }
-    public float getTemp_max() {
+    public float getTempMax() {
         return temp_max;
     }
 
-    public void setTemp_max(float temp_max) {
+    public void setTempMax(float temp_max) {
         this.temp_max = temp_max;
     }
 
-    public float getTemp_min() {
+    public float getTempMin() {
         return temp_min;
     }
    
-    public void setTemp_min(float temp_min) {
+    public void setTempMin(float temp_min) {
         this.temp_min = temp_min;
     }
 
@@ -54,11 +54,11 @@ public class Peixe {
         return ph_max;
     }
 
-    public void setPh_max(float ph_max) {
+    public void setPhMax(float ph_max) {
         this.ph_max = ph_max;
     }
 
-    public float getPh_min() {
+    public float getPhMin() {
         return ph_min;
     }
 
@@ -82,19 +82,19 @@ public class Peixe {
         this.porcetagem_oxi_min = porcetagem_oxi_min;
     }
 
-    public String getNome_especie() {
+    public String getNomeEspecie() {
         return nome_especie;
     }
 
-    public void setNome_especie(String nome_especie) {
+    public void setNomeEspecie(String nome_especie) {
         this.nome_especie = nome_especie;
     }
 
-    public String getTipo_agua() {
+    public String getTipoAgua() {
         return tipo_agua;
     }
 
-    public void setTipo_agua(String tipo_agua) {
+    public void setTipoAgua(String tipo_agua) {
         this.tipo_agua = tipo_agua;
     }
     

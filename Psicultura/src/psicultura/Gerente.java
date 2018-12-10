@@ -1,17 +1,9 @@
 package psicultura;
 
-import javax.swing.JOptionPane;
 
 public class Gerente extends Pessoa {
     public Tanque tanque_do_func;
-    /**
-     *
-     * @param nome 
-     * @param cpf
-     * @param turno
-     * @param senha
-     * @param moradia
-     */  
+   
     public Gerente(String nome, String cpf, Tanque tanque, Cargo cargo,Turno turno, Endereco endereco){ 
         this.nome               = nome;
         this.cpf                = cpf;
@@ -29,8 +21,6 @@ public class Gerente extends Pessoa {
     private void setNome(String nome) {
         this.nome = nome;
     }
-
-   
 
     private void setCpf(String cpf) {
         this.cpf = cpf;

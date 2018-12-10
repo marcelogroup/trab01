@@ -5,7 +5,7 @@
  */
 package conexao;
 
-import Interface.IPeixe;
+import interfaceUsuario.IPeixe;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import psicultura.*;
@@ -31,12 +31,12 @@ public class CriaQuery {
         String ph_min;
         String porcetagem_oxi_max;
         String porcetagem_oxi_min;
-        nome ="'"+fish.getNome_especie()+"'";
-        agua ="'"+fish.getTipo_agua()+"'";     
-        temp_max =String.valueOf(fish.getTemp_max());            
-        temp_min =String.valueOf(fish.getTemp_min());        
+        nome ="'"+fish.getNomeEspecie()+"'";
+        agua ="'"+fish.getTipoAgua()+"'";     
+        temp_max =String.valueOf(fish.getTempMax());            
+        temp_min =String.valueOf(fish.getTempMin());        
         ph_max   =String.valueOf(fish.getPh_max()); 
-        ph_min   =String.valueOf(fish.getPh_min());       
+        ph_min   =String.valueOf(fish.getPhMin());       
         porcetagem_oxi_max  =String.valueOf(fish.getPorcetagem_oxi_max());    
         porcetagem_oxi_min  =String.valueOf(fish.getPorcetagem_oxi_min());         
         query =query+"("+ nome +","+agua+","+temp_min+","+temp_max+","+ph_min+","+ph_max+","+porcetagem_oxi_min+","+porcetagem_oxi_max+");";
@@ -218,9 +218,9 @@ public class CriaQuery {
         String dado = JOptionPane.showInputDialog("NOVO informe o contato");
         String tipo = JOptionPane.showInputDialog("NOVO informe o tipo do contato");
         String idTipo="";
-        if (tipo=="email"){
+        if (tipo.equals("email")){
             idTipo="1";
-        }else if (tipo=="telefone"){
+        }else if (tipo.equals("telefone")){
             idTipo="2";
         }
         query_retorno="update contato set idContato="+idContato+",dado='"+ dado +"',fk_tipoContato_idTipo="+idTipo+",fk_funcionario_idfuncionario="+fk+" where idfuncionario="+fk+";";

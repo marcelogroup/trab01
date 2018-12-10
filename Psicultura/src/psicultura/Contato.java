@@ -5,10 +5,7 @@
  */
 package psicultura;
 
-/**@author marcelo
- *
- * 
- */
+
 public class Contato {
     String dado;
     TipoContato tipo=new TipoContato();
