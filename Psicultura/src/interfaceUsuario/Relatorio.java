@@ -6,9 +6,7 @@
 package interfaceUsuario;
 
 import conexao.SelectTable;
-import java.sql.ResultSet;
 import java.util.ArrayList;
-import static javax.swing.UIManager.getString;
 
 /**
  *

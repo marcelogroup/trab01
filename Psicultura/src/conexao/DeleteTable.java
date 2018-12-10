@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 
 public class DeleteTable {
- SelectTable select= new SelectTable();
+SelectTable select= new SelectTable();
 public synchronized void  deletePeixe() {
         Connection c = null;
         Statement stmt = null;

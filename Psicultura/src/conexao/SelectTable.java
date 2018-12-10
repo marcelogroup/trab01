@@ -11,10 +11,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-/**
- *
- * @author 20151bsi0436
- */
+
 public class SelectTable {
 
    

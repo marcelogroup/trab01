@@ -55,11 +55,15 @@ public class InsertTable {
     private void setPassword(String password) {
         this.password = password;
     }
-    public synchronized void InsertPeixe    (Peixe fish){
-        Connection c = null;
-        Statement stmt=null;
+    /**
+     * 
+     * @param fish 
+     */
+    public synchronized void InsertPeixe(Peixe fish){
+       
         try{
-           
+            Connection c = null;
+            Statement stmt=null;
             String nomecientifico="'"+fish.getNomeEspecie()+"'";
             String query_1="select * from peixe where nomecientifico="+nomecientifico +";";
             boolean tem_o_peixe=false;

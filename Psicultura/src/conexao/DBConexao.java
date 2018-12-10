@@ -5,7 +5,6 @@
  */
 package conexao;
 import java.sql.Connection;
-import java.sql.DriverManager;
 
 public class DBConexao {
     private static Connection instance = null;

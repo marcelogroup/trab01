@@ -5,7 +5,6 @@
  */
 package conexao;
 
-import interfaceUsuario.IPeixe;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import psicultura.*;
