@@ -34,10 +34,10 @@ public class CriaQuery {
         agua ="'"+fish.getTipoAgua()+"'";     
         temp_max =String.valueOf(fish.getTempMax());            
         temp_min =String.valueOf(fish.getTempMin());        
-        ph_max   =String.valueOf(fish.getPh_max()); 
+        ph_max   =String.valueOf(fish.getPhMax()); 
         ph_min   =String.valueOf(fish.getPhMin());       
-        porcetagem_oxi_max  =String.valueOf(fish.getPorcetagem_oxi_max());    
-        porcetagem_oxi_min  =String.valueOf(fish.getPorcetagem_oxi_min());         
+        porcetagem_oxi_max  =String.valueOf(fish.getPorcetagemOxiMax());    
+        porcetagem_oxi_min  =String.valueOf(fish.getPorcetagemOxiMin());         
         query =query+"("+ nome +","+agua+","+temp_min+","+temp_max+","+ph_min+","+ph_max+","+porcetagem_oxi_min+","+porcetagem_oxi_max+");";
         
         System.out.println(query);

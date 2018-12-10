@@ -99,9 +99,9 @@ public class InsertTable {
                 String tempmin=String.valueOf(fish.getTempMin());
                 String tempmax=String.valueOf(fish.getTempMax());
                 String phmin=String.valueOf(fish.getPhMin());
-                String phmax=String.valueOf(fish.getPh_max());
-                String oxmin=String.valueOf(fish.getPorcetagem_oxi_min());
-                String oxmax=String.valueOf(fish.getPorcetagem_oxi_max());
+                String phmax=String.valueOf(fish.getPhMax());
+                String oxmin=String.valueOf(fish.getPorcetagemOxiMin());
+                String oxmax=String.valueOf(fish.getPorcetagemOxiMax());
                 query_3=query_3+"("+id+","+nomecientifico+","+tipoagua+","+tempmin+","+tempmax+","+phmin+","+phmax+","+oxmin+","+oxmax+");";
                 //stmt = c.createStatement();
                 try {
@@ -167,8 +167,8 @@ public class InsertTable {
         String comando="insert into funcionario(nome , cpf , fk_tanque_idtanque , fk_turno_idturno , fk_cargo_idcargo)values";
         String nome="'"+fun.getNome()+"'";
         String cpf="'"+fun.getCpf()+"'";
-        String idtanque=String.valueOf(fun.getTanque_do_func().getIdTanque());
-        String turno = fun.getTurno_de_trabalho().getIdTurno( fun.getTurno_de_trabalho() );
+        String idtanque=String.valueOf(fun.getTanqueFunc().getIdTanque());
+        String turno = fun.getTurnoTrabalho().getIdTurno( fun.getTurnoTrabalho() );
         String cargo =fun.getCargo().getIdcargo(fun.getCargo());
         comando=comando+"("+nome+","+cpf+","+idtanque+","+turno+","+cargo+");";
         Connection c = null;

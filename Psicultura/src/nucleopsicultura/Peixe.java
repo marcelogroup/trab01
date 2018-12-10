@@ -1,6 +1,5 @@
 package nucleopsicultura;
 
-import javax.swing.JOptionPane;
 
 public class Peixe {
     float temp_max;
@@ -50,7 +49,7 @@ public class Peixe {
         this.temp_min = temp_min;
     }
 
-    public float getPh_max() {
+    public float getPhMax() {
         return ph_max;
     }
 
@@ -62,23 +61,23 @@ public class Peixe {
         return ph_min;
     }
 
-    public void setPh_min(float ph_min) {
+    public void setPhMin(float ph_min) {
         this.ph_min = ph_min;
     }
 
-    public float getPorcetagem_oxi_max() {
+    public float getPorcetagemOxiMax() {
         return porcetagem_oxi_max;
     }
 
-    public void setPorcetagem_oxi_max(float porcetagem_oxi_max) {
+    public void setPorcetagemOxiMax(float porcetagem_oxi_max) {
         this.porcetagem_oxi_max = porcetagem_oxi_max;
     }
 
-    public float getPorcetagem_oxi_min() {
+    public float getPorcetagemOxiMin() {
         return porcetagem_oxi_min;
     }
 
-    public void setPorcetagem_oxi_min(float porcetagem_oxi_min) {
+    public void setPorcetagemOxiMin(float porcetagem_oxi_min) {
         this.porcetagem_oxi_min = porcetagem_oxi_min;
     }
 

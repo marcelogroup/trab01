@@ -18,14 +18,14 @@ public class Funcionario extends Pessoa{
         this.turno_de_trabalho  = turno;
     }
     
-    public Tanque getTanque_do_func() {
+    public Tanque getTanqueFunc() {
         return tanque_do_func;
     }
     public int getTanqueId(){
         return tanque_do_func.id_tanque;
     }
 
-    public void setTanque_do_func(Tanque tanque_do_func) {
+    public void setTanqueFunc(Tanque tanque_do_func) {
         this.tanque_do_func = tanque_do_func;
     }
 
@@ -36,8 +36,6 @@ public class Funcionario extends Pessoa{
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
@@ -59,7 +57,7 @@ public class Funcionario extends Pessoa{
         this.cargo = cargo;
     }
 
-    public Turno getTurno_de_trabalho() {
+    public Turno getTurnoTrabalho() {
         return turno_de_trabalho;
     }
 
@@ -77,7 +75,7 @@ public class Funcionario extends Pessoa{
         this.setMoradia(end);
     }
     public void AtualizarTanque(Tanque t){
-        this.setTanque_do_func(t);
+        this.setTanqueFunc(t);
     }
     /**
      * pensar nisso  redundante

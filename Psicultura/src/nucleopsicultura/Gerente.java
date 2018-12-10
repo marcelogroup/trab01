@@ -38,11 +38,11 @@ public class Gerente extends Pessoa {
         this.moradia = moradia;
     }
 
-    public Turno getTurno_de_trabalho() {
+    public Turno getTurnoTrabalho() {
         return turno_de_trabalho;
     }
 
-    private void setTurno_de_trabalho(Turno turno_de_trabalho) {
+    private void setTurnoTrabalho(Turno turno_de_trabalho) {
         this.turno_de_trabalho = turno_de_trabalho;
     }
    public String getIdTurno(){

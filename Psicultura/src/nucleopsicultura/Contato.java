@@ -18,10 +18,10 @@ public class Contato {
     public Contato(String d,String t,String cpf){
         this.dado=d;
         if(t.equals("telefone")){
-            tipo.set_Telefone();
+            tipo.setTelefone();
         }else{
             if(t.equals("email")){
-                tipo.set_email();
+                tipo.setEmail();
             }
         }
         this.dono=cpf;

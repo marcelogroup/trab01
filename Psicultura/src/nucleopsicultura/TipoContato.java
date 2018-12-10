@@ -10,11 +10,11 @@ public class TipoContato {
     public String getId(){
         return this.id;
     }
-    public void set_Telefone(){
+    public void setTelefone(){
         this.tipo="telefone";
         this.id="2";
     }
-    public void set_email(){
+    public void setEmail(){
         this.tipo="email";
         this.id="1";
     }
