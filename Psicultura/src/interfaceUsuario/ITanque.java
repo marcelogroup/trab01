@@ -15,12 +15,12 @@ import nucleopsicultura.Peixe;
  * @author 20151bsi0436
  */
 public class ITanque {
-    String sensor_temp;
-    String sensor_oxi;
-    String sensor_ph;
-    String nomePeixe;
-    ArrayList lista_de_peixes;
-    Peixe fish;
+    private String sensor_temp;
+    private String sensor_oxi;
+    private String sensor_ph;
+    private String nomePeixe;
+    private ArrayList lista_de_peixes;
+    private Peixe fish;
     
     
     public ITanque(){
