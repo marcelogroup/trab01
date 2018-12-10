@@ -12,11 +12,11 @@ import javax.swing.JOptionPane;
  * @author 20151bsi0436
  */
 public class IEndereco {
-    String cep;
-    String cidade;
-    String bairro;
-    String lorgadouro;
-    String complemento;
+    private String cep;
+    private String cidade;
+    private String bairro;
+    private String lorgadouro;
+    private String complemento;
     
     public IEndereco(){
         this.lorgadouro  = (JOptionPane.showInputDialog("entre com a rua do funcionario.\n"));

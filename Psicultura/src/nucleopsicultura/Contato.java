@@ -7,14 +7,11 @@ package nucleopsicultura;
 
 
 public class Contato {
-    String dado;
-    TipoContato tipo=new TipoContato();
-    String dono;
-    /**
-     * 
-     * @param d dado
-     * @param t tipo do dado
-     */
+    private String dado;
+    private TipoContato tipo=new TipoContato();
+    private String dono;
+
+    
     public Contato(String d,String t,String cpf){
         this.dado=d;
         if(t.equals("telefone")){

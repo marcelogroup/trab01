@@ -6,20 +6,13 @@
 package interfaceUsuario;
 
 import conexao.SelectTable;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import nucleopsicultura.Pessoa;
 
-/**
- *
- * @author 20151BSI0436
- */
+
 public class IContato {
-    String dado;
-    String tipo;
-    String cpfDono;
-    Pessoa pessoa;
-    ArrayList dadosDono;
+    private String dado;
+    private String tipo;
+    private String cpfDono;
     
     public IContato(){
         SelectTable selecionar  = new SelectTable();

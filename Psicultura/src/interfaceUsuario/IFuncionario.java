@@ -17,21 +17,19 @@ import nucleopsicultura.Tanque;
  * @author 20151bsi0436
  */
 public class IFuncionario {
-   String nome;
-   String cpf;
-   String senha;   
-   String  cargo;
-   String  turno_de_trabalho;
-   String idTanque;
-   Peixe fish;
-   ArrayList lista_de_tanque;
-   ArrayList lista_de_peixes;
-   IEndereco endereco; 
+   private String nome;
+   private String cpf; 
+   private String  cargo;
+   private String  turno_de_trabalho;
+   private String idTanque;
+   private  Peixe fish;
+   private  ArrayList lista_de_tanque;
+   private  ArrayList lista_de_peixes;
+   private  IEndereco endereco;   
    
-   
-   Tanque tanque;
-   Cargo cargoO;
-   
+   private Tanque tanque;
+   private Cargo cargoO;
+
    public IFuncionario(){
         SelectTable selecionar  = new SelectTable();
         

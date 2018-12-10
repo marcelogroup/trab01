@@ -6,11 +6,11 @@ package nucleopsicultura;
  * @author marcelo
  */
 public class Endereco {
-    String cep;
-    String cidade;
-    String bairro;
-    String lorgadouro;
-    String complemento;
+    private String cep;
+    private String cidade;
+    private String bairro;
+    private String lorgadouro;
+    private String complemento;
     
     public Endereco(String cep,String cidade, String bairro, String lorgadouro,String complemento){
         this.setCep(cep);

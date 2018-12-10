@@ -9,8 +9,8 @@ import java.util.ArrayList;
  * @author marcelo
  */
 public class Relatorio {
-    ArrayList relatorio;
-    SelectTable select = new SelectTable();
+    private ArrayList relatorio;
+    private SelectTable select = new SelectTable();
     
     public void relatorioUm(){      
         String query="Select idtanque,nomecientifico,tipoagua from tanque inner join peixe on(tanque.fk_peixe_idpeixe=peixe.idpeixe) ;";

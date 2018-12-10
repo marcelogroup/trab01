@@ -14,9 +14,9 @@ import java.sql.Statement;
  * @author 20151BSI0436
  */
 public class Update {
-    String banco;
-    String user;
-    String password;
+    private String banco;
+    private String user;
+    private String password;
 
     public Update(String banco,String user,String password){
         this.setBanco(banco);

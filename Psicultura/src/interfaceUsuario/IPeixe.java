@@ -7,14 +7,14 @@ import javax.swing.JOptionPane;
  * @author 20151bsi0436
  */
 public class IPeixe {
-    String temp_max;
-    String temp_min;
-    String ph_max;
-    String ph_min;
-    String porcetagem_oxi_max;
-    String porcetagem_oxi_min;
-    String nome_especie;
-    String tipo_agua;
+    private String temp_max;
+    private String temp_min;
+    private String ph_max;
+    private String ph_min;
+    private String porcetagem_oxi_max;
+    private String porcetagem_oxi_min;
+    private String nome_especie;
+    private String tipo_agua;
     
     
     
