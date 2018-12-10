@@ -125,10 +125,10 @@ public class InsertTable {
         try{
         
         Statement stmt=null;
-        String idtanque  = String.valueOf(t.getId_tanque());
-        String sensor_ox = String.valueOf(t.getSensor_oxi());
-        String sensor_ph = String.valueOf(t.getSensor_ph());
-        String sensor_temp = String.valueOf(t.getSensor_temp());
+        String idtanque  = String.valueOf(t.getIdTanque());
+        String sensor_ox = String.valueOf(t.getSensorOxi());
+        String sensor_ph = String.valueOf(t.getSensorPh());
+        String sensor_temp = String.valueOf(t.getSensorTemp());
         String fk_peixe;
         String nomecientifico="'"+String.valueOf(t.getPeixe().getNome_especie())+"'";
         Class.forName("org.postgresql.Driver");
@@ -172,7 +172,7 @@ public class InsertTable {
         String comando="insert into funcionario(nome , cpf , fk_tanque_idtanque , fk_turno_idturno , fk_cargo_idcargo)values";
         String nome="'"+fun.getNome()+"'";
         String cpf="'"+fun.getCpf()+"'";
-        String idtanque=String.valueOf(fun.getTanque_do_func().getId_tanque());
+        String idtanque=String.valueOf(fun.getTanque_do_func().getIdTanque());
         String turno = fun.getTurno_de_trabalho().getIdTurno( fun.getTurno_de_trabalho() );
         String cargo =fun.getCargo().getIdcargo(fun.getCargo());
         comando=comando+"("+nome+","+cpf+","+idtanque+","+turno+","+cargo+");";

@@ -82,9 +82,9 @@ public class CriaQuery {
     }  
     public String tanque(Tanque tanque){
         String query="insert into tanque(temperatura , ph , oxigenio , fk_peixe_idpeixe)values";
-        String temp = String.valueOf(tanque.getSensor_temp());              
-        String ph   = String.valueOf(tanque.getSensor_ph());  
-        String oxigenio = String.valueOf(tanque.getSensor_oxi());  
+        String temp = String.valueOf(tanque.getSensorTemp());              
+        String ph   = String.valueOf(tanque.getSensorPh());  
+        String oxigenio = String.valueOf(tanque.getSensorOxi());  
         String fk_peixe = String.valueOf(tanque.getPeixe().getId());
         query=query+"("+temp+","+ph+","+oxigenio+","+fk_peixe+");";
         System.out.println(query);

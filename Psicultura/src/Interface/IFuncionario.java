@@ -50,7 +50,7 @@ public class IFuncionario {
         tanque=new Tanque(String.valueOf(lista_de_tanque.get(1)),String.valueOf(lista_de_tanque.get(2)),
                           String.valueOf(lista_de_tanque.get(3)),fish);
         //ok
-        tanque.setId_tanque(Integer.parseInt(idTanque));
+        tanque.setIdTanque(Integer.parseInt(idTanque));
         this.cargo             = JOptionPane.showInputDialog("entre com cargo do funcionario\n");
         this.turno_de_trabalho = JOptionPane.showInputDialog("entre com turno do funcionario\n");
         this.endereco          = new IEndereco();
