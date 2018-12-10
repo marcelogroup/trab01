@@ -1,4 +1,4 @@
-package psicultura;
+package nucleopsicultura;
 
 public class Cargo {
     String nomeCargo;

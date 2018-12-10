@@ -8,7 +8,7 @@ package interfaceUsuario;
 import conexao.SelectTable;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import psicultura.Pessoa;
+import nucleopsicultura.Pessoa;
 
 /**
  *

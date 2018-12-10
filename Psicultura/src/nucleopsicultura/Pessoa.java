@@ -1,5 +1,5 @@
 
-package psicultura;
+package nucleopsicultura;
 
 
 public abstract class Pessoa {

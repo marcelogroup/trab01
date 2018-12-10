@@ -8,9 +8,9 @@ package interfaceUsuario;
 import conexao.SelectTable;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import psicultura.Cargo;
-import psicultura.Peixe;
-import psicultura.Tanque;
+import nucleopsicultura.Cargo;
+import nucleopsicultura.Peixe;
+import nucleopsicultura.Tanque;
 
 /**
  *

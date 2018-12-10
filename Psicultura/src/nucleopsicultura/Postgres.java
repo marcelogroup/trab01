@@ -1,4 +1,4 @@
-package psicultura;
+package nucleopsicultura;
 import java.sql.*;
 public class Postgres {
     public static void Postgres(){

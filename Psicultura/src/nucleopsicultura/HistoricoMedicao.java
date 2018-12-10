@@ -1,4 +1,4 @@
-package psicultura;
+package nucleopsicultura;
 
 import java.util.Date;
 

@@ -1,5 +1,5 @@
 
-package psicultura;
+package nucleopsicultura;
 
 /**
   *classe que define o endereço do funcionario
