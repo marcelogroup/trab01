@@ -8,10 +8,7 @@ import conexao.CriaQuery;
 import conexao.InsertTable;
 import nucleopsicultura.*;
 import conexao.DeleteTable;
-import conexao.SelectTable;
 import conexao.Update;
-import java.util.ArrayList;
-import java.util.Date;
 import javax.swing.JOptionPane;
 
 

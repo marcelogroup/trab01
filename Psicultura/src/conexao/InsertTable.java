@@ -1,18 +1,14 @@
 /*NEED COFFEE*/
 package conexao;
 
-//import com.sun.org.apache.bcel.internal.generic.Select;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import nucleopsicultura.Endereco;
 import nucleopsicultura.Peixe;
 import nucleopsicultura.Funcionario;
 import nucleopsicultura.Tanque;
-import conexao.SelectTable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -165,13 +161,8 @@ public class InsertTable {
     public synchronized void AdicionarTanque(Tanque t){
         InsertPeixe(t.getPeixe());
         InsertTanque(t);
-        /*try{
-            Thread.sleep(10000);
-            InsertTanque(t);
-        }catch(Exception e){
-            System.out.println("Deu erro!");
-        }*/
     }
+    
     public void InsertFuncionario(Funcionario fun){
         String comando="insert into funcionario(nome , cpf , fk_tanque_idtanque , fk_turno_idturno , fk_cargo_idcargo)values";
         String nome="'"+fun.getNome()+"'";
