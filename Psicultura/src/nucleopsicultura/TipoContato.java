@@ -2,8 +2,9 @@
 package nucleopsicultura;
 
 public class TipoContato {
-    String tipo;
-    String id;
+    private String tipo;
+    private String id;
+   
     public String getTipo(){
         return this.tipo;
     }

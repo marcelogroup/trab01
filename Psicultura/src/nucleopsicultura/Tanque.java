@@ -3,13 +3,14 @@ package nucleopsicultura;
 import java.util.Date;
  
 public class Tanque {
-    float sensor_temp;
-    float sensor_oxi;
-    float sensor_ph;
-    int id_tanque;
-    Peixe peixe;  
-    Date momento;
-    String idPeixe;
+    private float sensor_temp;
+    private float sensor_oxi;
+    private float sensor_ph;
+    private int id_tanque;
+    private Peixe peixe;  
+    private Date momento;
+    private String idPeixe;
+    
     public Tanque(String temp,String oxi,String ph,Peixe peixe){ 
         this.setSensorPh(Float.parseFloat(ph));
         this.setSensorOxi(Float.parseFloat(oxi));

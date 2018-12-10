@@ -3,7 +3,8 @@ package nucleopsicultura;
 
 
 public class Turno {
-    String descricao;//chamado erronhamente de horario
+    private String descricao;//chamado erronhamente de horario
+    
     public Turno(){
         
     } 

@@ -3,13 +3,13 @@ package nucleopsicultura;
 
 
 public abstract class Pessoa {
-   String id;
-   String   nome;
-   String   cpf;
-   String   senha;
-   Endereco moradia;
-   Cargo    cargo;
-   Turno    turno_de_trabalho;
+   public  String id;
+   public String nome;
+   public String cpf;
+   public String senha;
+   public Endereco moradia;
+   public Cargo cargo;
+   public Turno turno_de_trabalho;
    
    public Endereco getMoradia() {
         return moradia;
@@ -24,5 +24,5 @@ public abstract class Pessoa {
     public String getId(){
         return id;
     }
-  //Tanque tanque;
+  
 }

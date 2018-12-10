@@ -1,6 +1,4 @@
 package nucleopsicultura;
-
-import javax.swing.JOptionPane;
  
 /** 
  * 
@@ -22,7 +20,7 @@ public class Funcionario extends Pessoa{
         return tanque_do_func;
     }
     public int getTanqueId(){
-        return tanque_do_func.id_tanque;
+        return tanque_do_func.getIdTanque();
     }
 
     public void setTanqueFunc(Tanque tanque_do_func) {

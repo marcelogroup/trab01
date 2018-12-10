@@ -2,15 +2,15 @@ package nucleopsicultura;
 
 
 public class Peixe {
-    float temp_max;
-    float temp_min;
-    float ph_max;
-    float ph_min;
-    float porcetagem_oxi_max;
-    float porcetagem_oxi_min;
-    String nome_especie;
-    String tipo_agua;
-    String idPeixe;
+    private float temp_max;
+    private float temp_min;
+    private float ph_max;
+    private float ph_min;
+    private float porcetagem_oxi_max;
+    private float porcetagem_oxi_min;
+    private String nome_especie;
+    private String tipo_agua;
+    private String idPeixe;
   
     public Peixe(String nome, String agua, String temp_max, String temp_min, String ph_max, String ph_min,String porcetagem_oxi_max, String porcetagem_oxi_min){
         this.nome_especie       =   nome;
@@ -22,11 +22,7 @@ public class Peixe {
         this.porcetagem_oxi_max =   Float.parseFloat( porcetagem_oxi_max);
         this.porcetagem_oxi_min =   Float.parseFloat( porcetagem_oxi_min);
     }
-
-   
     
-    
-    /*getter e setter*/
     public String getId(){
         return idPeixe;
     }

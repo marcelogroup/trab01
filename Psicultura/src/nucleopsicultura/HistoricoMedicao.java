@@ -16,8 +16,8 @@ public class HistoricoMedicao {
      
     public void historico(Tanque tanque,Date data_medicao){
         this.data_medicao=data_medicao;
-        this.oxi=tanque.sensor_oxi;
-        this.temp=tanque.sensor_temp;
-        this.ph=tanque.sensor_ph;
+        this.oxi=tanque.getSensorOxi();
+        this.temp=tanque. getSensorTemp();
+        this.ph=tanque.getSensorPh();
     }
 }
