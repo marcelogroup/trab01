@@ -41,13 +41,13 @@ public class ITanque {
         
         
     }
-    public String getSensor_temp() {
+    public String getSensorTemp() {
         return sensor_temp;
     }
-    public String getSensor_oxi() {
+    public String getSensorOxi() {
         return sensor_oxi;
     }
-    public String getSensor_ph() {
+    public String getSensorPh() {
         return sensor_ph;
     }
     public Peixe getPeixe() {

@@ -32,67 +32,67 @@ public class IPeixe {
    
        
        
-     public String getTemp_max() {
+     public String getTempMax() {
         return temp_max;
     }
 
-    public void setTemp_max(String temp_max) {
+    public void setTempMax(String temp_max) {
         this.temp_max = temp_max;
     }
 
-    public String getTemp_min() {
+    public String getTempMin() {
         return temp_min;
     }
    
-    public void setTemp_min(String temp_min) {
+    public void setTempMin(String temp_min) {
         this.temp_min = temp_min;
     }
 
-    public String getPh_max() {
+    public String getPhMax() {
         return ph_max;
     }
 
-    public void setPh_max(String ph_max) {
+    public void setPhMax(String ph_max) {
         this.ph_max = ph_max;
     }
 
-    public String getPh_min() {
+    public String getPhMin() {
         return ph_min;
     }
 
-    public void setPh_min(String ph_min) {
+    public void setPhMin(String ph_min) {
         this.ph_min = ph_min;
     }
 
-    public String getPorcetagem_oxi_max() {
+    public String getPorcetagemOxiMax() {
         return porcetagem_oxi_max;
     }
 
-    public void setPorcetagem_oxi_max(String porcetagem_oxi_max) {
+    public void setPorcetagemOxiMax(String porcetagem_oxi_max) {
         this.porcetagem_oxi_max = porcetagem_oxi_max;
     }
 
-    public String getPorcetagem_oxi_min() {
+    public String getPorcetagemOxiMin() {
         return porcetagem_oxi_min;
     }
 
-    public void setPorcetagem_oxi_min(String porcetagem_oxi_min) {
+    public void setPorcetagemOxiMin(String porcetagem_oxi_min) {
         this.porcetagem_oxi_min = porcetagem_oxi_min;
     }
 
-    public String getNome_especie() {
+    public String getNomeEspecie() {
         return nome_especie;
     }
 
-    public void setNome_especie(String nome_especie) {
+    public void setNomeEspecie(String nome_especie) {
         this.nome_especie = nome_especie;
     }
 
-    public String getTipo_agua() {
+    public String getTipoAgua() {
         return tipo_agua;
     }
 
-    public void setTipo_agua(String tipo_agua) {
+    public void setTipoAgua(String tipo_agua) {
         this.tipo_agua = tipo_agua;
     }
 }

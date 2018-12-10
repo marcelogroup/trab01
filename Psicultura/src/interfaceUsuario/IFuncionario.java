@@ -58,7 +58,7 @@ public class IFuncionario {
     public String getCpf() {
         return cpf;
     }
-    public Tanque getTanque_do_func() {
+    public Tanque getTanqueFunc() {
         return tanque;
     }
     public String getNome() {
@@ -67,7 +67,7 @@ public class IFuncionario {
     public String getCargo() {
         return cargo;
     }
-    public String getTurno_de_trabalho() {
+    public String getTurnoTrabalho() {
         return turno_de_trabalho;
     }
     public IEndereco getEndereco(){
