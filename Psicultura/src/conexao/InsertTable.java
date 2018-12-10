@@ -55,7 +55,7 @@ public class InsertTable {
      * 
      * @param fish 
      */
-    public synchronized void InsertPeixe(Peixe fish){
+    public synchronized void insertPeixe(Peixe fish){
        
         try{
             Connection c = null;
@@ -118,7 +118,7 @@ public class InsertTable {
             Logger.getLogger(InsertTable.class.getName()).log(Level.SEVERE, null, ex);
         }
      }
-    public synchronized void InsertTanque   (Tanque t){
+    public synchronized void insertTanque   (Tanque t){
         //pegar chave estrangeira    
         //converter objeto em comando
         Connection c =null;
@@ -158,12 +158,12 @@ public class InsertTable {
         
         
     } 
-    public synchronized void AdicionarTanque(Tanque t){
-        InsertPeixe(t.getPeixe());
-        InsertTanque(t);
+    public synchronized void adicionarTanque(Tanque t){
+        insertPeixe(t.getPeixe());
+        insertTanque(t);
     }
     
-    public void InsertFuncionario(Funcionario fun){
+    public synchronized void insertFuncionario(Funcionario fun){
         String comando="insert into funcionario(nome , cpf , fk_tanque_idtanque , fk_turno_idturno , fk_cargo_idcargo)values";
         String nome="'"+fun.getNome()+"'";
         String cpf="'"+fun.getCpf()+"'";

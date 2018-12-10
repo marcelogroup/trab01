@@ -79,15 +79,15 @@ public class Main {
                     + " 0 - voltar");        
             op = Integer.parseInt(operacao);
             if(op==1){
-               relatorio.RelatorioUm();
+               relatorio.relatorioUm();
             }else if(op==2){
-               relatorio.RelatorioDois();
+               relatorio.relatorioDois();
             }else if(op==3){
-                relatorio.RelatorioTres();
+                relatorio.relatorioTres();
             }else if(op==4){
-                relatorio.RelatorioQuatro(); 
+                relatorio.relatorioQuatro(); 
             }else if(op==5){
-                relatorio.RelatorioCinco();
+                relatorio.relatorioCinco();
             }
             
         }else if(op==2){

@@ -14,7 +14,7 @@ public class Tanque {
         this.setSensorPh(Float.parseFloat(ph));
         this.setSensorOxi(Float.parseFloat(oxi));
         this.setSensorTemp(Float.parseFloat(temp));
-        this.AdicionarPeixe(peixe);
+        this.adicionarPeixe(peixe);
     }  
     
     
@@ -55,7 +55,7 @@ public class Tanque {
         return peixe;
     }
 
-    public void AdicionarPeixe(Peixe peixe) {
+    public void adicionarPeixe(Peixe peixe) {
         this.peixe = peixe;
     }
 

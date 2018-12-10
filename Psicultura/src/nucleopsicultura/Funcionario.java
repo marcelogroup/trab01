@@ -60,8 +60,11 @@ public class Funcionario extends Pessoa{
     public Turno getTurnoTrabalho() {
         return turno_de_trabalho;
     }
-
-    public void setTurno_de_trabalho(Turno turno_de_trabalho) {
+/**
+ * 
+ * @param turno_de_trabalho 
+ */
+    public void setTurnoTrabalho(Turno turno_de_trabalho) {
         this.turno_de_trabalho = turno_de_trabalho;
     }
     public String getIdCargo(){
