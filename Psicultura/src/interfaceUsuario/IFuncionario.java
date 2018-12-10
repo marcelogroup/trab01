@@ -8,7 +8,7 @@ package interfaceUsuario;
 import conexao.SelectTable;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import nucleopsicultura.Cargo;
+
 import nucleopsicultura.Peixe;
 import nucleopsicultura.Tanque;
 
@@ -28,7 +28,6 @@ public class IFuncionario {
    private  IEndereco endereco;   
    
    private Tanque tanque;
-   private Cargo cargoO;
 
    public IFuncionario(){
         SelectTable selecionar  = new SelectTable();

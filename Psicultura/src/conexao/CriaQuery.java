@@ -16,9 +16,9 @@ import nucleopsicultura.*;
  * 
  */
 public class CriaQuery {
-    String query;
-    SelectTable selectTable;
-    ArrayList lista;
+    private String query;
+    private SelectTable selectTable;
+    private ArrayList lista;
     
     public String peixe(Peixe fish){
         query =" insert into peixe (nomecientifico,tipoagua,tempmin,tempmax,phmin,phmax,oxmin,oxmax) values";
@@ -145,7 +145,7 @@ public class CriaQuery {
         porcetagem_oxi_max =(JOptionPane.showInputDialog("NOVO oxigenacao maxima suportada\n"));
         porcetagem_oxi_min =(JOptionPane.showInputDialog("NOVO oxigenacao minima suportada\n"));
     
-        Peixe peixenovo = new Peixe(nome_especie,tipo_agua,ph_max, ph_min, temp_max , temp_min, porcetagem_oxi_max , porcetagem_oxi_min );
+       // Peixe peixenovo = new Peixe(nome_especie,tipo_agua,ph_max, ph_min, temp_max , temp_min, porcetagem_oxi_max , porcetagem_oxi_min );
             
         query_retorno="UPDATE peixe set idpeixe="+lista.get(0)+",nomecientifico='"+nome_especie+"',tipoagua='"+tipo_agua+"',tempmin="+temp_min+",tempmax="+temp_max+",phmin="+ph_min+",phmax="+ph_max+",oxmin="+porcetagem_oxi_min+",oxmax="+porcetagem_oxi_max+" where idpeixe="+lista.get(0)+";";
         System.out.println(query_retorno);

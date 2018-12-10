@@ -20,9 +20,9 @@ import java.util.logging.Logger;
  */
 public class InsertTable {
 
-    String banco;
-    String user;
-    String password;
+    private String banco;
+    private String user;
+    private String password;
 
     public InsertTable(String banco,String user,String password){
         this.setBanco(banco);

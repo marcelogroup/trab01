@@ -15,7 +15,7 @@ public class Relatorio {
     public void relatorioUm(){      
         String query="Select idtanque,nomecientifico,tipoagua from tanque inner join peixe on(tanque.fk_peixe_idpeixe=peixe.idpeixe) ;";
         relatorio = select.selectTableRelatorioUm(query);
-        String saida=new String();
+        String saida="";
         for (int i=0 ; i<relatorio.size() ; i++){
                     saida = saida +(String) relatorio.get(i)+"\n";
         }

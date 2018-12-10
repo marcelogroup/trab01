@@ -18,12 +18,12 @@ public class ITanque {
     private String sensor_temp;
     private String sensor_oxi;
     private String sensor_ph;
-    private String nomePeixe;
-    private ArrayList lista_de_peixes;
+    private String nomePeixe;    
     private Peixe fish;
     
     
     public ITanque(){
+        ArrayList lista_de_peixes;
         this.sensor_temp        = (JOptionPane.showInputDialog("informe a temperatura\n"));
         this.sensor_oxi         = (JOptionPane.showInputDialog("informe a % oxigenio\n"));
         this.sensor_ph          = (JOptionPane.showInputDialog("informe o ph \n"));
