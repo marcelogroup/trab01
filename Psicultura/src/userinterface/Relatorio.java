@@ -1,5 +1,5 @@
 
-package interfaceUsuario;
+package userinterface;
 
 import conexao.SelectTable;
 import java.util.ArrayList;

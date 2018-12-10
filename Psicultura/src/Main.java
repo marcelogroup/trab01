@@ -1,9 +1,9 @@
 
-import interfaceUsuario.IPeixe;
-import interfaceUsuario.Relatorio;
-import interfaceUsuario.IContato;
-import interfaceUsuario.ITanque;
-import interfaceUsuario.IFuncionario;
+import userinterface.IPeixe;
+import userinterface.Relatorio;
+import userinterface.IContato;
+import userinterface.ITanque;
+import userinterface.IFuncionario;
 import conexao.CriaQuery;
 import conexao.InsertTable;
 import nucleopsicultura.*;

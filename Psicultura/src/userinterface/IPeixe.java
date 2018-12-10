@@ -1,4 +1,4 @@
-package interfaceUsuario;
+package userinterface;
 
 import javax.swing.JOptionPane;
 
