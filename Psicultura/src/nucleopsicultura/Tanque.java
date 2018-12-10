@@ -1,7 +1,6 @@
 package nucleopsicultura;
 
 import java.util.Date;
-import javax.swing.JOptionPane;
  
 public class Tanque {
     float sensor_temp;
@@ -19,12 +18,7 @@ public class Tanque {
     }  
     
     
-    /**
-     * 
-     * getter and setter
-     */
-    
-    
+  
     public float getSensorTemp() {
         return sensor_temp;
     }
